@@ -3,20 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Spitaki Milos | Διαμονή στη Μήλο</title>
-  <meta name="description" content="Spitaki Milos – άνετη διαμονή στη Μήλο. Δες φωτογραφίες και κλείσε στο Airbnb." />
+  <meta name="description" content="Spitaki Milos – διαμονή στη Μήλο (Τρυπητή) με βεράντες και θέα στη θάλασσα. Στείλε αίτημα διαθεσιμότητας ή επικοινώνησε στο WhatsApp." />
+  <link rel="canonical" href="https://spitakimilos.com/" />
+
+  <!-- Open Graph (για ωραίο preview όταν το στέλνεις) -->
+  <meta property="og:title" content="Spitaki Milos | Διαμονή στη Μήλο" />
+  <meta property="og:description" content="Τρυπητή Μήλου • Βεράντες με θέα στη θάλασσα • Στείλε αίτημα διαθεσιμότητας" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://spitakimilos.com/" />
+
   <style>
     :root{--bg:#0b1220;--card:#0f1a33;--text:#eef2ff;--muted:#b7c0ff;--accent:#7dd3fc;--accent2:#a78bfa}
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#070b14,#0b1220);color:var(--text)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#070b14,#0b1220);color:var(--text)}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1050px;margin:0 auto;padding:24px}
+
     .top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:22px}
     .brand{display:flex;flex-direction:column;line-height:1.1}
     .brand b{font-size:18px;letter-spacing:.2px}
     .brand span{font-size:13px;color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border-radius:14px;font-weight:650}
-    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#04101c}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border-radius:14px;font-weight:650;cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#04101c;border:none}
     .btn.ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
     .card{background:rgba(15,26,51,.85);border:1px solid rgba(255,255,255,.12);border-radius:22px;box-shadow:0 12px 35px rgba(0,0,0,.35)}
     .heroLeft{padding:26px}
@@ -25,24 +39,41 @@
     .tags{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
     .tag{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:13px}
     .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+
     .heroRight{padding:18px;display:flex;flex-direction:column;gap:12px}
-    .ph{border-radius:18px;min-height:220px;background:
-      radial-gradient(1200px 420px at 30% 20%, rgba(125,211,252,.30), transparent 60%),
-      radial-gradient(900px 360px at 80% 40%, rgba(167,139,250,.25), transparent 60%),
-      rgba(255,255,255,.06);
-      border:1px dashed rgba(255,255,255,.22);
-      display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.75);text-align:center;padding:18px}
+
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
     .mini{padding:16px}
     .mini b{display:block;margin-bottom:6px}
-    .section{margin-top:18px}
-    .section h2{font-size:20px;margin:0 0 10px}
     .list{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
+
+    .section{margin-top:18px}
     .footer{margin:26px 0 6px;color:rgba(255,255,255,.55);font-size:13px}
+
+    /* Contact form */
+    .form{margin-top:10px}
+    .formGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+    .formGrid .full{grid-column:1 / -1}
+    label{display:block;font-size:12px;color:rgba(255,255,255,.75);margin-bottom:6px}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:110px;resize:vertical}
+    input::placeholder, textarea::placeholder{color:rgba(255,255,255,.45)}
+    .helper{color:rgba(255,255,255,.55);font-size:12px;line-height:1.5;margin-top:8px}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+
     @media (max-width:880px){
       .hero{grid-template-columns:1fr}
       h1{font-size:30px}
       .grid{grid-template-columns:1fr}
+      .formGrid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -54,9 +85,10 @@
         <b>Spitaki Milos</b>
         <span>Ιδιωτική διαμονή στη Μήλο</span>
       </div>
+
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn ghost" href="#info">Πληροφορίες</a>
-        <a class="btn primary" href="https://www.spitakimilos.com" target="_blank" rel="noopener">Κράτηση στο Airbnb</a>
+        <a class="btn primary" href="#contact">Επικοινωνία</a>
       </div>
     </div>
 
@@ -64,8 +96,8 @@
       <div class="card heroLeft">
         <h1>Ήρεμη διαμονή στη Μήλο, με άνεση σαν στο σπίτι</h1>
         <p>
-          Καλωσήρθες στο <b>Spitaki Milos</b>. Εδώ θα βρεις μια καθαρή, ζεστή και πρακτική βάση για να εξερευνήσεις τη Μήλο.
-          Δες φωτογραφίες, παροχές και κλείσε εύκολα μέσω Airbnb.
+          Καλωσήρθες στο <b>Spitaki Milos</b>. Δες φωτογραφίες, παροχές και τοποθεσία και
+          <b>στείλε αίτημα διαθεσιμότητας</b> για τις ημερομηνίες που σε ενδιαφέρουν.
         </p>
 
         <div class="tags">
@@ -74,19 +106,16 @@
           <span class="tag">Smart TV</span>
           <span class="tag">Εξοπλισμένη κουζίνα</span>
           <span class="tag">Πλυντήριο</span>
-          <span class="tag">Βεράντες</span>
+          <span class="tag">Βεράντες • Θέα θάλασσα</span>
         </div>
 
         <div class="cta">
-          <!-- ΒΑΛΕ ΕΔΩ ΤΟ ΠΡΑΓΜΑΤΙΚΟ LINK ΤΟΥ AIRBNB -->
-          <a class="btn primary" href="https://www.spitakimilos.com" target="_blank" rel="noopener">Δες διαθεσιμότητα</a>
-
-          <!-- ΒΑΛΕ ΕΔΩ ΤΟ ΤΗΛΕΦΩΝΟ ΣΟΥ (π.χ. 3069XXXXXXXX) -->
+          <a class="btn primary" href="#contact">Στείλε αίτημα διαθεσιμότητας</a>
           <a class="btn ghost" href="https://wa.me/306977214642" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn ghost" href="mailto:info@spitakimilos.com">Email</a>
 
-          <!-- Προαιρετικό -->
-          <a class="btn ghost" href="mailto:info@spitakimilos.com?subject=Ερώτηση%20για%20διαθεσιμότητα%20-%20Spitaki%20Milos&body=Γεια%20σας,%0A%0AΘα%20ήθελα%20να%20ρωτήσω%20για%20διαθεσιμότητα%20στις%20ημερομηνίες:%20____%0AΆτομα:%20____%0A%0AΕυχαριστώ!">Email</a>
-
+          <!-- ΜΟΛΙΣ ΔΗΜΟΣΙΕΥΣΕΙΣ AIRBNB: άλλαξε αυτό σε link αγγελίας (airbnb.com/rooms/...) -->
+          <!-- <a class="btn ghost" href="https://www.airbnb.com/rooms/XXXXXXXX" target="_blank" rel="noopener">Airbnb</a> -->
         </div>
       </div>
 
@@ -97,7 +126,7 @@
         <div class="card mini" style="background:rgba(255,255,255,.06)">
           <b>Tip</b>
           <span style="color:var(--muted);font-size:13px;line-height:1.6">
-            Κράτα το site απλό: παρουσίαση + link στο Airbnb. Direct bookings μπορείς να βάλεις αργότερα.
+            Για γρήγορη απάντηση, στείλε τις ημερομηνίες σου από τη φόρμα ή στο WhatsApp.
           </span>
         </div>
       </div>
@@ -110,31 +139,101 @@
           <li>Wi-Fi, A/C, Smart TV</li>
           <li>Κουζίνα με πλήρη εξοπλισμό</li>
           <li>Πλυντήριο ρούχων, είδη καθαριότητας</li>
-          <li>Φούρνος μικροκυμάτων & Φούρνο</li>
+          <li>Φούρνος μικροκυμάτων & φούρνος</li>
           <li>Έπιπλα εξωτερικού χώρου</li>
-          <li>Φρυγανιέρα & Καφετιέρα</li>
-          <li>Σίτες σε ολα τα παράθυρα </li>
+          <li>Φρυγανιέρα & καφετιέρα</li>
+          <li>Σίτες σε όλα τα παράθυρα</li>
           <li>Πιστολάκι μαλλιών</li>
-          <li>Full size ψυγείο</li>
+          <li>Μεγάλο ψυγείο</li>
         </ul>
       </div>
+
       <div class="card mini">
         <b>Τοποθεσία</b>
         <p style="color:var(--muted);margin:0;line-height:1.6">
-          Το Spitaki Milos βρίσκεται στην Τρυπητή. Το highlight του σπιτιού είναι οι βεράντες με θέα στη θάλασσα — μια ξύλινη βεράντα 
-          σε ιδιωτικό δρόμο (χωρίς φασαρία από αυτοκίνητα και κόσμο), ιδανική για καφέ/ποτό, και μια μεγάλη βεράντα για χαλάρωση, 
-          φαγητό ή παρέα. Για τα καθημερινά σου, θα βρεις ΑΒ Βασιλόπουλο σε περίπου 10 λεπτά, ενώ στάση λεωφορείου και φούρνος 
-          είναι περίπου 10 λεπτά με τα πόδια.
+          Το <b>Spitaki Milos</b> βρίσκεται στην <b>Τρυπητή</b>. Το highlight του σπιτιού είναι οι
+          <b>βεράντες με θέα στη θάλασσα</b> — μια <b>ξύλινη βεράντα</b> σε ιδιωτικό δρόμο (χωρίς φασαρία από αυτοκίνητα και κόσμο),
+          ιδανική για καφέ/ποτό, και μια <b>μεγάλη βεράντα</b> για χαλάρωση, φαγητό ή παρέα.
+          Για τα καθημερινά σου, θα βρεις <b>ΑΒ Βασιλόπουλο</b> σε περίπου <b>10 λεπτά</b>, ενώ <b>στάση λεωφορείου</b> και <b>φούρνος</b>
+          είναι περίπου <b>10 λεπτά με τα πόδια</b>.
         </p>
-        <!-- ΒΑΛΕ ΕΔΩ LINK GOOGLE MAPS -->
-        <p style="margin:10px 0 0"><a class="btn ghost" href="https://maps.app.goo.gl/fMrSmKsphguYmS2f9" target="_blank" rel="noopener">Άνοιγμα χάρτη</a></p>
+        <p style="margin:10px 0 0">
+          <a class="btn ghost" href="https://maps.app.goo.gl/fMrSmKsphguYmS2f9" target="_blank" rel="noopener">Άνοιγμα χάρτη</a>
+        </p>
       </div>
+
       <div class="card mini">
-        <b>Κράτηση</b>
+        <b>Αίτημα διαθεσιμότητας</b>
         <p style="color:var(--muted);margin:0;line-height:1.6">
-          Δες τιμές/διαθεσιμότητα και κλείσε με ασφάλεια μέσω Airbnb.
+          Στείλε μας ημερομηνίες, άτομα και τυχόν σημειώσεις. Θα σου απαντήσουμε με διαθεσιμότητα και τιμή.
         </p>
-        <p style="margin:10px 0 0"><a class="btn primary" href="https://www.spitakimilos.com" target="_blank" rel="noopener">Κράτηση στο Airbnb</a></p>
+        <p style="margin:10px 0 0;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="#contact">Συμπλήρωσε φόρμα</a>
+          <a class="btn ghost" href="https://wa.me/306977214642" target="_blank" rel="noopener">WhatsApp</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="section" id="contact">
+      <div class="card mini">
+        <b>Επικοινωνία / Αίτημα διαθεσιμότητας</b>
+        <p style="color:var(--muted);margin:8px 0 0;line-height:1.6">
+          Συμπλήρωσε τα στοιχεία και πάτα “Στείλε αίτημα”. Θα ανοίξει έτοιμο email προς <b>info@spitakimilos.com</b>
+          (ή μπορείς να στείλεις το ίδιο μήνυμα στο WhatsApp).
+        </p>
+
+        <form class="form" id="inquiryForm" onsubmit="return composeEmail(event)">
+          <div class="formGrid">
+            <div>
+              <label for="name">Ονοματεπώνυμο</label>
+              <input id="name" name="name" placeholder="π.χ. Γιώργος Παπαδόπουλος" required />
+            </div>
+
+            <div>
+              <label for="phone">Τηλέφωνο (προαιρετικό)</label>
+              <input id="phone" name="phone" placeholder="π.χ. 69XXXXXXXX" />
+            </div>
+
+            <div>
+              <label for="email">Email επικοινωνίας</label>
+              <input id="email" name="email" type="email" placeholder="π.χ. name@gmail.com" required />
+            </div>
+
+            <div>
+              <label for="guests">Άτομα</label>
+              <select id="guests" name="guests" required>
+                <option value="" selected disabled>Επίλεξε</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="checkin">Check-in</label>
+              <input id="checkin" name="checkin" type="date" required />
+            </div>
+
+            <div>
+              <label for="checkout">Check-out</label>
+              <input id="checkout" name="checkout" type="date" required />
+            </div>
+
+            <div class="full">
+              <label for="message">Μήνυμα (προαιρετικό)</label>
+              <textarea id="message" name="message" placeholder="Π.χ. ώρα άφιξης, ειδικές ανάγκες, ερωτήσεις κλπ"></textarea>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn primary" type="submit">Στείλε αίτημα (Email)</button>
+            <a class="btn ghost" id="waBtn" href="#" target="_blank" rel="noopener">Στείλε στο WhatsApp</a>
+          </div>
+
+          <div class="helper">
+            * Δεν αποθηκεύουμε δεδομένα. Η φόρμα απλώς δημιουργεί έτοιμο μήνυμα email/WhatsApp για να σταλεί.
+          </div>
+        </form>
       </div>
     </div>
 
@@ -145,6 +244,74 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    const DEST_EMAIL = "info@spitakimilos.com";
+    const WA_NUMBER = "306977214642";
+
+    function buildMessage() {
+      const f = document.getElementById("inquiryForm");
+      const name = f.name.value.trim();
+      const phone = f.phone.value.trim();
+      const email = f.email.value.trim();
+      const guests = f.guests.value;
+      const checkin = f.checkin.value;
+      const checkout = f.checkout.value;
+      const msg = f.message.value.trim();
+
+      const lines = [
+        "Γεια σας,",
+        "",
+        "Θα ήθελα να ρωτήσω για διαθεσιμότητα στο Spitaki Milos:",
+        `• Όνομα: ${name}`,
+        `• Email: ${email}`,
+        phone ? `• Τηλέφωνο: ${phone}` : null,
+        `• Άτομα: ${guests}`,
+        `• Check-in: ${checkin}`,
+        `• Check-out: ${checkout}`,
+        msg ? "" : null,
+        msg ? "Μήνυμα:" : null,
+        msg ? msg : null,
+        "",
+        "Ευχαριστώ!"
+      ].filter(Boolean);
+
+      return lines.join("\n");
+    }
+
+    function composeEmail(e) {
+      e.preventDefault();
+
+      const f = document.getElementById("inquiryForm");
+      const checkin = f.checkin.value;
+      const checkout = f.checkout.value;
+
+      if (checkin && checkout && checkout <= checkin) {
+        alert("Το Check-out πρέπει να είναι μετά το Check-in.");
+        return false;
+      }
+
+      const subject = "Αίτημα διαθεσιμότητας | Spitaki Milos";
+      const body = buildMessage();
+      const mailto = `mailto:${DEST_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+      return false;
+    }
+
+    function updateWhatsAppLink() {
+      const f = document.getElementById("inquiryForm");
+      if (!f) return;
+      const body = buildMessage();
+      const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(body)}`;
+      const waBtn = document.getElementById("waBtn");
+      if (waBtn) waBtn.href = url;
+    }
+
+    document.addEventListener("input", (e) => {
+      if (e.target && e.target.closest("#inquiryForm")) updateWhatsAppLink();
+    });
+
+    // αρχικό set
+    updateWhatsAppLink();
   </script>
 </body>
 </html>
