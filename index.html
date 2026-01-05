@@ -16,34 +16,36 @@
 
   <style>
    :root{
-  /* THEME 1: Santorini Blue & White */
-  --bg:#eaf7ff;
-  --text:#0b2a3c;
-  --muted:#356b7b;
+  /* Aegean / Greek-island palette (v2 - πιο ζωηρό) */
+  --bgTop:#bfeaff;      /* ουρανός */
+  --bgMid:#f0fbff;      /* καθαρό φως */
+  --bgBottom:#ffe7b3;   /* άμμος/ήλιος */
 
-  --accent:#0ea5e9;   /* Aegean blue */
-  --accent2:#2563eb;  /* Deep blue */
+  --card:rgba(255,255,255,.94);
+  --card2:rgba(255,255,255,.88);
 
-  --card: rgba(255,255,255,.92);
-  --border: rgba(11,42,60,.12);
-  --shadow: 0 14px 38px rgba(11,42,60,.14);
+  --text:#08263a;       /* βαθύ ναυτικό */
+  --muted:#2f5c73;
 
-  --ghost: rgba(255,255,255,.85);
-  --inputBg: rgba(255,255,255,.88);
-  --inputBorder: rgba(11,42,60,.18);
+  --accent:#0ea5e9;     /* αιγαίο μπλε */
+  --accent2:#fb7185;    /* bougainvillea ροζ */
+  --accent3:#f59e0b;    /* ήλιος */
+
+  --border:rgba(8,38,58,.12);
+  --shadow:0 18px 55px rgba(8,38,58,.16);
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:
-    radial-gradient(1200px 520px at 18% 0%, rgba(14,165,233,.20), transparent 60%),
-    radial-gradient(900px 520px at 92% 10%, rgba(37,99,235,.14), transparent 60%),
-    linear-gradient(180deg, #eaf7ff 0%, #f7fdff 45%, #fff8ea 100%);
   color:var(--text);
+  background:
+    radial-gradient(1000px 520px at 18% 0%, rgba(14,165,233,.42), transparent 62%),
+    radial-gradient(900px 520px at 88% 8%, rgba(251,113,133,.28), transparent 60%),
+    radial-gradient(900px 520px at 70% 95%, rgba(245,158,11,.25), transparent 60%),
+    linear-gradient(180deg, var(--bgTop) 0%, var(--bgMid) 35%, var(--bgBottom) 100%);
 }
 
 a{color:inherit;text-decoration:none}
@@ -57,48 +59,60 @@ a{color:inherit;text-decoration:none}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:12px 14px;border-radius:14px;font-weight:650;cursor:pointer;
-  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+  transition:transform .08s ease, box-shadow .12s ease, background .12s ease;
+  user-select:none;
 }
-.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(1px)}
 .btn.primary{
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  background:linear-gradient(90deg, var(--accent), var(--accent2));
   color:#ffffff;
   border:none;
-  box-shadow:0 10px 22px rgba(14,165,233,.18);
+  box-shadow:0 10px 22px rgba(14,165,233,.22);
 }
+.btn.primary:hover{box-shadow:0 14px 28px rgba(14,165,233,.28)}
 .btn.ghost{
-  background:var(--ghost);
+  background:rgba(255,255,255,.78);
   border:1px solid var(--border);
   color:var(--text);
-  box-shadow:0 10px 20px rgba(11,42,60,.10);
 }
+.btn.ghost:hover{background:rgba(255,255,255,.90)}
 
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
 
 .card{
-  background:var(--card);
+  background:linear-gradient(180deg, var(--card), var(--card2));
   border:1px solid var(--border);
   border-radius:22px;
   box-shadow:var(--shadow);
-  backdrop-filter: blur(8px);
+  backdrop-filter:saturate(120%) blur(6px);
 }
 
 .heroLeft{padding:26px}
-h1{margin:0 0 10px;font-size:36px}
+h1{margin:0 0 10px;font-size:36px;letter-spacing:-.2px}
 p{margin:0 0 14px;color:var(--muted);line-height:1.6}
 
 .tags{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
 .tag{
-  padding:8px 10px;border-radius:999px;
-  background:rgba(14,165,233,.12);
-  border:1px solid rgba(14,165,233,.25);
-  font-size:13px;
-  color:rgba(11,42,60,.92);
+  padding:8px 10px;border-radius:999px;font-size:13px;
+  background:rgba(14,165,233,.14);
+  border:1px solid rgba(14,165,233,.22);
+  color:#0b3a54;
 }
 
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 
 .heroRight{padding:18px;display:flex;flex-direction:column;gap:12px}
+
+/* Κάνει τα images να “δένουν” με το theme, ακόμα κι αν έχουν inline border */
+.heroRight img{
+  border:1px solid rgba(8,38,58,.16) !important;
+  box-shadow:0 10px 22px rgba(8,38,58,.10);
+}
+
+/* Το Tip card (που έχει inline background) να μη βγαίνει “ξεπλυμένο” */
+.heroRight .mini{
+  background:rgba(255,255,255,.92) !important;
+}
 
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
 .mini{padding:16px}
@@ -106,28 +120,31 @@ p{margin:0 0 14px;color:var(--muted);line-height:1.6}
 .list{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
 
 .section{margin-top:18px}
-.footer{margin:26px 0 6px;color:rgba(11,42,60,.58);font-size:13px}
+.footer{margin:26px 0 6px;color:rgba(8,38,58,.55);font-size:13px}
 
 /* Contact form */
 .form{margin-top:10px}
 .formGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 .formGrid .full{grid-column:1 / -1}
-
-label{display:block;font-size:12px;color:rgba(11,42,60,.72);margin-bottom:6px}
+label{display:block;font-size:12px;color:rgba(8,38,58,.75);margin-bottom:6px}
 
 input, textarea, select{
   width:100%;
   padding:12px 12px;
   border-radius:14px;
-  border:1px solid var(--inputBorder);
-  background:var(--inputBg);
+  border:1px solid rgba(8,38,58,.16);
+  background:rgba(255,255,255,.92);
   color:var(--text);
   outline:none;
+  transition:border-color .12s ease, box-shadow .12s ease, transform .08s ease;
 }
-
+input:focus, textarea:focus, select:focus{
+  border-color:rgba(14,165,233,.55);
+  box-shadow:0 0 0 4px rgba(14,165,233,.18);
+}
 textarea{min-height:110px;resize:vertical}
-input::placeholder, textarea::placeholder{color:rgba(11,42,60,.40)}
-.helper{color:rgba(11,42,60,.58);font-size:12px;line-height:1.5;margin-top:8px}
+input::placeholder, textarea::placeholder{color:rgba(8,38,58,.45)}
+.helper{color:rgba(8,38,58,.60);font-size:12px;line-height:1.5;margin-top:8px}
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 
 @media (max-width:880px){
@@ -136,7 +153,6 @@ input::placeholder, textarea::placeholder{color:rgba(11,42,60,.40)}
   .grid{grid-template-columns:1fr}
   .formGrid{grid-template-columns:1fr}
 }
-
   </style>
 </head>
 
