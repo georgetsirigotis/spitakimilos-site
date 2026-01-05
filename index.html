@@ -3,134 +3,96 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Spitaki Milos | Διαμονή στη Μήλο</title>
-  <meta name="description" content="Spitaki Milos – άνετη διαμονή στη Μήλο. Δες φωτογραφίες και κλείσε στο Airbnb." />
+  <meta name="description" content="Spitaki Milos – διαμονή στη Μήλο (Τρυπητή) με βεράντες και θέα στη θάλασσα. Στείλε αίτημα διαθεσιμότητας ή επικοινώνησε στο WhatsApp." />
+  <link rel="canonical" href="https://spitakimilos.com/" />
+
+  <!-- Open Graph (για ωραίο preview όταν το στέλνεις) -->
+  <meta property="og:title" content="Spitaki Milos | Διαμονή στη Μήλο" />
+  <meta property="og:description" content="Τρυπητή Μήλου • Βεράντες με θέα στη θάλασσα • Στείλε αίτημα διαθεσιμότητας" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://spitakimilos.com/" />
 
   <style>
-    :root{
-      /* Greek-island palette */
-      --sky:#dff3ff;
-      --sea:#0ea5e9;     /* Aegean blue */
-      --deep:#2563eb;    /* Deep blue */
-      --sun:#fbbf24;     /* Sun */
-      --boug:#ec4899;    /* Bougainvillea */
-      --sand:#fff2d6;
+    /* =========================
+   THEME 1: Santorini Blue & White
+   Paste this at the END of your <style>
+   ========================= */
+:root{
+  --bg:#eaf7ff;
+  --card:#ffffff;
+  --text:#0b2a3c;
+  --muted:#356b7b;
+  --accent:#0ea5e9;
+  --accent2:#2563eb;
+}
 
-      --card: rgba(255,255,255,.88);
-      --card2: rgba(255,255,255,.72);
-      --text:#0b2a3c;    /* Navy */
-      --muted:#356b7b;   /* Soft blue-grey */
-      --border: rgba(11,42,60,.12);
-      --shadow: 0 14px 38px rgba(11,42,60,.14);
-    }
+/* page background */
+body{
+  background:
+    radial-gradient(1200px 520px at 18% 0%, rgba(14,165,233,.20), transparent 60%),
+    radial-gradient(900px 520px at 92% 10%, rgba(37,99,235,.14), transparent 60%),
+    linear-gradient(180deg, #eaf7ff 0%, #f7fdff 45%, #fff8ea 100%);
+  color: var(--text);
+}
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 520px at 18% 0%, rgba(14,165,233,.22), transparent 60%),
-        radial-gradient(900px 520px at 92% 8%, rgba(236,72,153,.16), transparent 60%),
-        radial-gradient(800px 520px at 70% 28%, rgba(251,191,36,.14), transparent 58%),
-        linear-gradient(180deg, var(--sky) 0%, #f7fdff 38%, var(--sand) 100%);
-    }
+/* cards */
+.card{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(11,42,60,.12);
+  box-shadow: 0 14px 38px rgba(11,42,60,.14);
+}
 
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1050px;margin:0 auto;padding:24px}
+/* buttons */
+.btn.primary{
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  color:#ffffff;
+}
+.btn.ghost{
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(11,42,60,.14);
+  color: var(--text);
+}
 
-    .top{
-      display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px;
-      padding:10px 10px 0;
-    }
-    .brand{display:flex;flex-direction:column;line-height:1.1}
-    .brand b{font-size:18px;letter-spacing:.2px}
-    .brand span{font-size:13px;color:var(--muted)}
+/* text + tags */
+p, .list{ color: var(--muted); }
+.tag{
+  background: rgba(14,165,233,.12);
+  border: 1px solid rgba(14,165,233,.25);
+  color: rgba(11,42,60,.92);
+}
 
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      padding:12px 14px;border-radius:14px;font-weight:700;
-      transition:transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
-      user-select:none;
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .btn.primary{
-      background:linear-gradient(90deg, var(--sea), var(--boug));
-      color:#ffffff;
-      box-shadow:0 10px 22px rgba(14,165,233,.22);
-    }
-    .btn.primary:hover{box-shadow:0 14px 26px rgba(236,72,153,.18)}
-    .btn.ghost{
-      background:rgba(255,255,255,.78);
-      border:1px solid var(--border);
-      color:var(--text);
-      box-shadow:0 10px 20px rgba(11,42,60,.10);
-      backdrop-filter: blur(6px);
-    }
+/* form inputs */
+label{ color: rgba(11,42,60,.72); }
+input, textarea, select{
+  background: rgba(255,255,255,.88);
+  border: 1px solid rgba(11,42,60,.18);
+  color: var(--text);
+}
+input::placeholder, textarea::placeholder{ color: rgba(11,42,60,.40); }
 
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+/* footer */
+.footer{ color: rgba(11,42,60,.58); }
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:22px;
-      box-shadow:var(--shadow);
-      backdrop-filter: blur(10px);
-    }
 
-    .heroLeft{padding:26px}
-    h1{margin:0 0 10px;font-size:36px;letter-spacing:-.2px}
-    p{margin:0 0 14px;color:var(--muted);line-height:1.65}
-
-    .tags{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
-    .tag{
-      padding:8px 10px;border-radius:999px;
-      background:rgba(14,165,233,.10);
-      border:1px solid rgba(14,165,233,.22);
-      font-size:13px;color:rgba(11,42,60,.88);
-    }
-    .tag:nth-child(2n){
-      background:rgba(251,191,36,.14);
-      border-color:rgba(251,191,36,.26);
-    }
-    .tag:nth-child(3n){
-      background:rgba(236,72,153,.10);
-      border-color:rgba(236,72,153,.22);
-    }
-
-    .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-
-    .heroRight{padding:18px;display:flex;flex-direction:column;gap:12px}
-
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
-    .mini{padding:16px}
-    .mini b{display:block;margin-bottom:6px}
-
-    .list{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
-
-    .footer{
-      margin:26px 0 6px;
-      color:rgba(11,42,60,.58);
-      font-size:13px
-    }
-
-    /* Contact form (CSS kept if you add form later) */
+    /* Contact form */
     .form{margin-top:10px}
     .formGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
     .formGrid .full{grid-column:1 / -1}
-    label{display:block;font-size:12px;color:rgba(11,42,60,.72);margin-bottom:6px}
+    label{display:block;font-size:12px;color:rgba(255,255,255,.75);margin-bottom:6px}
     input, textarea, select{
       width:100%;
       padding:12px 12px;
       border-radius:14px;
-      border:1px solid rgba(11,42,60,.16);
-      background:rgba(255,255,255,.82);
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
       color:var(--text);
       outline:none;
     }
     textarea{min-height:110px;resize:vertical}
-    input::placeholder, textarea::placeholder{color:rgba(11,42,60,.40)}
-    .helper{color:rgba(11,42,60,.58);font-size:12px;line-height:1.5;margin-top:8px}
+    input::placeholder, textarea::placeholder{color:rgba(255,255,255,.45)}
+    .helper{color:rgba(255,255,255,.55);font-size:12px;line-height:1.5;margin-top:8px}
     .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 
     @media (max-width:880px){
@@ -149,9 +111,10 @@
         <b>Spitaki Milos</b>
         <span>Ιδιωτική διαμονή στη Μήλο</span>
       </div>
+
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn ghost" href="#info">Πληροφορίες</a>
-        <a class="btn primary" href="https://www.spitakimilos.com" target="_blank" rel="noopener">Κράτηση στο Airbnb</a>
+        <a class="btn primary" href="#contact">Επικοινωνία</a>
       </div>
     </div>
 
@@ -159,8 +122,8 @@
       <div class="card heroLeft">
         <h1>Ήρεμη διαμονή στη Μήλο, με άνεση σαν στο σπίτι</h1>
         <p>
-          Καλωσήρθες στο <b>Spitaki Milos</b>. Εδώ θα βρεις μια καθαρή, ζεστή και πρακτική βάση για να εξερευνήσεις τη Μήλο.
-          Δες φωτογραφίες, παροχές και κλείσε εύκολα μέσω Airbnb.
+          Καλωσήρθες στο <b>Spitaki Milos</b>. Δες φωτογραφίες, παροχές και τοποθεσία και
+          <b>στείλε αίτημα διαθεσιμότητας</b> για τις ημερομηνίες που σε ενδιαφέρουν.
         </p>
 
         <div class="tags">
@@ -169,24 +132,27 @@
           <span class="tag">Smart TV</span>
           <span class="tag">Εξοπλισμένη κουζίνα</span>
           <span class="tag">Πλυντήριο</span>
-          <span class="tag">Βεράντες</span>
+          <span class="tag">Βεράντες • Θέα θάλασσα</span>
         </div>
 
         <div class="cta">
-          <a class="btn primary" href="https://www.spitakimilos.com" target="_blank" rel="noopener">Δες διαθεσιμότητα</a>
+          <a class="btn primary" href="#contact">Στείλε αίτημα διαθεσιμότητας</a>
           <a class="btn ghost" href="https://wa.me/306977214642" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn ghost" href="mailto:info@spitakimilos.com?subject=Ερώτηση%20για%20διαθεσιμότητα%20-%20Spitaki%20Milos&body=Γεια%20σας,%0A%0AΘα%20ήθελα%20να%20ρωτήσω%20για%20διαθεσιμότητα%20στις%20ημερομηνίες:%20____%0AΆτομα:%20____%0A%0AΕυχαριστώ!">Email</a>
+          <a class="btn ghost" href="mailto:info@spitakimilos.com">Email</a>
+
+          <!-- ΜΟΛΙΣ ΔΗΜΟΣΙΕΥΣΕΙΣ AIRBNB: άλλαξε αυτό σε link αγγελίας (airbnb.com/rooms/...) -->
+          <!-- <a class="btn ghost" href="https://www.airbnb.com/rooms/XXXXXXXX" target="_blank" rel="noopener">Airbnb</a> -->
         </div>
       </div>
 
       <div class="card heroRight">
-        <img src="images/FHD0026.JPG" alt="Spitaki Milos - Θέα" style="width:100%;height:220px;object-fit:cover;border-radius:18px;border:1px solid rgba(11,42,60,.12);" />
-        <img src="images/FHD0050.JPG" alt="Spitaki Milos - Βεράντα" style="width:100%;height:180px;object-fit:cover;border-radius:18px;border:1px solid rgba(11,42,60,.12);" />
+        <img src="images/FHD0026.JPG" alt="Spitaki Milos - Θέα" style="width:100%;height:220px;object-fit:cover;border-radius:18px;border:1px solid rgba(255,255,255,.12);" />
+        <img src="images/FHD0050.JPG" alt="Spitaki Milos - Βεράντα" style="width:100%;height:180px;object-fit:cover;border-radius:18px;border:1px solid rgba(255,255,255,.12);" />
 
-        <div class="card mini" style="background:var(--card2)">
+        <div class="card mini" style="background:rgba(255,255,255,.06)">
           <b>Tip</b>
           <span style="color:var(--muted);font-size:13px;line-height:1.6">
-            Κράτα το site απλό: παρουσίαση + link στο Airbnb. Direct bookings μπορείς να βάλεις αργότερα.
+            Για γρήγορη απάντηση, στείλε τις ημερομηνίες σου από τη φόρμα ή στο WhatsApp.
           </span>
         </div>
       </div>
@@ -199,22 +165,24 @@
           <li>Wi-Fi, A/C, Smart TV</li>
           <li>Κουζίνα με πλήρη εξοπλισμό</li>
           <li>Πλυντήριο ρούχων, είδη καθαριότητας</li>
-          <li>Φούρνος μικροκυμάτων & Φούρνο</li>
+          <li>Φούρνος μικροκυμάτων & φούρνος</li>
           <li>Έπιπλα εξωτερικού χώρου</li>
-          <li>Φρυγανιέρα & Καφετιέρα</li>
-          <li>Σίτες σε ολα τα παράθυρα</li>
+          <li>Φρυγανιέρα & καφετιέρα</li>
+          <li>Σίτες σε όλα τα παράθυρα</li>
           <li>Πιστολάκι μαλλιών</li>
-          <li>Full size ψυγείο</li>
+          <li>Μεγάλο ψυγείο</li>
         </ul>
       </div>
 
       <div class="card mini">
         <b>Τοποθεσία</b>
         <p style="color:var(--muted);margin:0;line-height:1.6">
-          Το Spitaki Milos βρίσκεται στην Τρυπητή. Το highlight του σπιτιού είναι οι βεράντες με θέα στη θάλασσα — μια ξύλινη βεράντα
-          σε ιδιωτικό δρόμο (χωρίς φασαρία από αυτοκίνητα και κόσμο), ιδανική για καφέ/ποτό, και μια μεγάλη βεράντα για χαλάρωση,
-          φαγητό ή παρέα. Για τα καθημερινά σου, θα βρεις ΑΒ Βασιλόπουλο σε περίπου 10 λεπτά, ενώ στάση λεωφορείου και φούρνος
-          είναι περίπου 10 λεπτά με τα πόδια.
+          Το <b>Spitaki Milos</b> βρίσκεται στην <b>Τρυπητή</b>. Το highlight του σπιτιού είναι οι
+          <b>βεράντες με θέα στη θάλασσα</b> μια <b>ξύλινη βεράντα</b> σε ιδιωτικό δρόμο (χωρίς 
+          φασαρία από αυτοκίνητα και κόσμο), ιδανική για καφέ/ποτό, και μια <b>μεγάλη βεράντα</b> 
+          για χαλάρωση, φαγητό ή παρέα. Για τα καθημερινά σου, θα βρεις <b>ΑΒ Βασιλόπουλο</b> 
+          σε περίπου <b>10 λεπτά</b>, ενώ <b>στάση λεωφορείου</b> και <b>φούρνος</b>
+          είναι περίπου <b>10 λεπτά με τα πόδια</b>.
         </p>
         <p style="margin:10px 0 0">
           <a class="btn ghost" href="https://maps.app.goo.gl/fMrSmKsphguYmS2f9" target="_blank" rel="noopener">Άνοιγμα χάρτη</a>
@@ -222,23 +190,155 @@
       </div>
 
       <div class="card mini">
-        <b>Κράτηση</b>
+        <b>Αίτημα διαθεσιμότητας</b>
         <p style="color:var(--muted);margin:0;line-height:1.6">
-          Δες τιμές/διαθεσιμότητα και κλείσε με ασφάλεια μέσω Airbnb.
+          Στείλε μας ημερομηνίες, άτομα και τυχόν σημειώσεις. Θα σου απαντήσουμε με διαθεσιμότητα και τιμή.
         </p>
-        <p style="margin:10px 0 0">
-          <a class="btn primary" href="https://www.spitakimilos.com" target="_blank" rel="noopener">Κράτηση στο Airbnb</a>
+        <p style="margin:10px 0 0;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="#contact">Συμπλήρωσε φόρμα</a>
+          <a class="btn ghost" href="https://wa.me/306977214642" target="_blank" rel="noopener">WhatsApp</a>
         </p>
       </div>
     </div>
 
+    <!-- CONTACT FORM -->
+    <div class="section" id="contact">
+      <div class="card mini">
+        <b>Επικοινωνία / Αίτημα διαθεσιμότητας</b>
+        <p style="color:var(--muted);margin:8px 0 0;line-height:1.6">
+          Συμπλήρωσε τα στοιχεία και πάτα “Στείλε αίτημα”. Θα ανοίξει έτοιμο email προς <b>info@spitakimilos.com</b>
+          (ή μπορείς να στείλεις το ίδιο μήνυμα στο WhatsApp).
+        </p>
+
+        <form class="form" id="inquiryForm" onsubmit="return composeEmail(event)">
+          <div class="formGrid">
+            <div>
+              <label for="name">Ονοματεπώνυμο</label>
+              <input id="name" name="name" placeholder="π.χ. Γιώργος Παπαδόπουλος" required />
+            </div>
+
+            <div>
+              <label for="phone">Τηλέφωνο (προαιρετικό)</label>
+              <input id="phone" name="phone" placeholder="π.χ. 69XXXXXXXX" />
+            </div>
+
+            <div>
+              <label for="email">Email επικοινωνίας</label>
+              <input id="email" name="email" type="email" placeholder="π.χ. name@gmail.com" required />
+            </div>
+
+            <div>
+              <label for="guests">Άτομα</label>
+              <select id="guests" name="guests" required>
+                <option value="" selected disabled>Επίλεξε</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="checkin">Check-in</label>
+              <input id="checkin" name="checkin" type="date" required />
+            </div>
+
+            <div>
+              <label for="checkout">Check-out</label>
+              <input id="checkout" name="checkout" type="date" required />
+            </div>
+
+            <div class="full">
+              <label for="message">Μήνυμα (προαιρετικό)</label>
+              <textarea id="message" name="message" placeholder="Π.χ. ώρα άφιξης, ειδικές ανάγκες, ερωτήσεις κλπ"></textarea>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn primary" type="submit">Στείλε αίτημα (Email)</button>
+            <a class="btn ghost" id="waBtn" href="#" target="_blank" rel="noopener">Στείλε στο WhatsApp</a>
+          </div>
+
+          <div class="helper">
+            * Δεν αποθηκεύουμε δεδομένα. Η φόρμα απλώς δημιουργεί έτοιμο μήνυμα email/WhatsApp για να σταλεί.
+          </div>
+        </form>
+      </div>
+    </div>
+
     <div class="footer">
-      © <span id="y"></span> Spitaki Milos • Built with GitHub + Cloudflare Pages
+      © <span id="y"></span> Spitaki Milos • Built by George Tsirigotis
     </div>
   </div>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    const DEST_EMAIL = "info@spitakimilos.com";
+    const WA_NUMBER = "306977214642";
+
+    function buildMessage() {
+      const f = document.getElementById("inquiryForm");
+      const name = f.name.value.trim();
+      const phone = f.phone.value.trim();
+      const email = f.email.value.trim();
+      const guests = f.guests.value;
+      const checkin = f.checkin.value;
+      const checkout = f.checkout.value;
+      const msg = f.message.value.trim();
+
+      const lines = [
+        "Γεια σας,",
+        "",
+        "Θα ήθελα να ρωτήσω για διαθεσιμότητα στο Spitaki Milos:",
+        `• Όνομα: ${name}`,
+        `• Email: ${email}`,
+        phone ? `• Τηλέφωνο: ${phone}` : null,
+        `• Άτομα: ${guests}`,
+        `• Check-in: ${checkin}`,
+        `• Check-out: ${checkout}`,
+        msg ? "" : null,
+        msg ? "Μήνυμα:" : null,
+        msg ? msg : null,
+        "",
+        "Ευχαριστώ!"
+      ].filter(Boolean);
+
+      return lines.join("\n");
+    }
+
+    function composeEmail(e) {
+      e.preventDefault();
+
+      const f = document.getElementById("inquiryForm");
+      const checkin = f.checkin.value;
+      const checkout = f.checkout.value;
+
+      if (checkin && checkout && checkout <= checkin) {
+        alert("Το Check-out πρέπει να είναι μετά το Check-in.");
+        return false;
+      }
+
+      const subject = "Αίτημα διαθεσιμότητας | Spitaki Milos";
+      const body = buildMessage();
+      const mailto = `mailto:${DEST_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+      return false;
+    }
+
+    function updateWhatsAppLink() {
+      const f = document.getElementById("inquiryForm");
+      if (!f) return;
+      const body = buildMessage();
+      const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(body)}`;
+      const waBtn = document.getElementById("waBtn");
+      if (waBtn) waBtn.href = url;
+    }
+
+    document.addEventListener("input", (e) => {
+      if (e.target && e.target.closest("#inquiryForm")) updateWhatsAppLink();
+    });
+
+    // αρχικό set
+    updateWhatsAppLink();
   </script>
-</body visible>
+</body>
 </html>
