@@ -58,8 +58,18 @@
 
   .top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:22px}
   .brand{display:flex;flex-direction:column;line-height:1.1}
-  .brand b{font-size:18px;letter-spacing:.2px}
   .brand span{font-size:13px;color:var(--muted)}
+
+  /* ✅ Logo styling */
+  .brand .logo{
+    height:40px;
+    width:auto;
+    display:block;
+    margin-bottom:6px;
+  }
+  @media (max-width:880px){
+    .brand .logo{height:34px}
+  }
 
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:8px;
@@ -178,7 +188,8 @@
   <div class="wrap">
     <div class="top">
       <div class="brand">
-        <b>Spitaki Milos</b>
+        <!-- ✅ Εδώ βάλαμε το logo αντί για κείμενο -->
+        <img class="logo" src="images/Spitaki_Logo.png" alt="Spitaki Milos" />
         <span data-i18n="brand_subtitle"></span>
       </div>
 
@@ -211,8 +222,6 @@
           <a class="btn primary" href="#contact" data-i18n="cta_request"></a>
           <a class="btn ghost" href="https://wa.me/306977214642" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn ghost" href="mailto:info@spitakimilos.com">Email</a>
-
-          <!-- Airbnb listing link (όταν το έχεις) -->
           <!-- <a class="btn ghost" href="https://www.airbnb.com/rooms/XXXXXXXX" target="_blank" rel="noopener">Airbnb</a> -->
         </div>
       </div>
@@ -546,6 +555,7 @@
 
       // meta/title/og
       document.title = tr.meta_title;
+
       const metaTitle = document.getElementById("metaTitle");
       if (metaTitle) metaTitle.textContent = tr.meta_title;
 
@@ -598,7 +608,7 @@
       localStorage.setItem("site_lang", lang);
       setUrlLangParam(lang);
       applyTranslations(lang);
-      updateWhatsAppLink(); // message depends on lang
+      updateWhatsAppLink();
     }
 
     // 3) Message builders (Email/WhatsApp)
