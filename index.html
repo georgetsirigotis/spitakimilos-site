@@ -60,12 +60,17 @@
   .brand{display:flex;flex-direction:column;line-height:1.1}
   .brand span{font-size:13px;color:var(--muted)}
 
-  /* ✅ Logo styling */
+  /* ✅ Logo styling (UPDATED) */
   .brand .logo{
     height:40px;
     width:auto;
+    max-width:220px;
+    object-fit:contain;
     display:block;
     margin-bottom:6px;
+
+    /* κάνει το λευκό background του PNG να “σβήνει” πάνω στο gradient */
+    mix-blend-mode:multiply;
   }
   @media (max-width:880px){
     .brand .logo{height:34px}
