@@ -71,8 +71,8 @@
 
   /* ✅ Logo styling (UPDATED) */
   .brand .logo{
-    height: clamp(70px, 6vw, 110px); /* ύψος ανάλογα με οθόνη */
-    width: 320px;                    /* fallback, θα το αλλάζει JS */
+    height: clamp(140px, 12vw, 220px); /* ύψος ανάλογα με οθόνη */
+    width: 640px;                    /* fallback, θα το αλλάζει JS */
     max-width: 100%;                 /* να μην ξεφεύγει σε μικρές οθόνες */
     object-fit: contain;             /* τώρα που δεν έχει κενά, είναι ιδανικό */
     display:block;
@@ -84,7 +84,7 @@
 
   @media (max-width:880px){
     .brand .logo{
-      height:78px;
+      height:156px;
     }
   }
 
@@ -376,13 +376,15 @@
       }
 
       const w =
-        infoBtn.getBoundingClientRect().width +
-        contactBtn.getBoundingClientRect().width +
-        gap;
+  infoBtn.getBoundingClientRect().width +
+  contactBtn.getBoundingClientRect().width +
+  gap;
 
-      // clamp για λογικά όρια
-      const clamped = Math.max(220, Math.min(Math.round(w), 520));
-      logo.style.width = clamped + "px";
+const w2 = w * 2; // ✅ x2
+
+// clamp x2 (διπλά όρια)
+const clamped = Math.max(440, Math.min(Math.round(w2), 1040));
+logo.style.width = clamped + "px";
     }
 
     function scheduleLogoSync() {
