@@ -8,12 +8,10 @@
   <meta id="metaDesc" name="description" content="Spitaki Milos – διαμονή στη Μήλο (Τρυπητή) με βεράντες και θέα στη θάλασσα. Στείλε αίτημα διαθεσιμότητας ή επικοινώνησε στο WhatsApp." />
   <link id="canonicalLink" rel="canonical" href="https://spitakimilos.com/" />
 
-  <!-- hreflang (με παραμέτρους lang) -->
   <link rel="alternate" hreflang="el" href="https://spitakimilos.com/?lang=el" />
   <link rel="alternate" hreflang="en" href="https://spitakimilos.com/?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://spitakimilos.com/" />
 
-  <!-- Open Graph -->
   <meta id="ogTitle" property="og:title" content="Spitaki Milos | Διαμονή στη Μήλο" />
   <meta id="ogDesc" property="og:description" content="Τρυπητή Μήλου • Βεράντες με θέα στη θάλασσα • Στείλε αίτημα διαθεσιμότητας" />
   <meta property="og:type" content="website" />
@@ -21,20 +19,19 @@
 
   <style>
    :root{
-    /* Aegean / Greek-island palette (v2 - πιο ζωηρό) */
-    --bgTop:#bfeaff;      /* ουρανός */
-    --bgMid:#f0fbff;      /* καθαρό φως */
-    --bgBottom:#ffe7b3;   /* άμμος/ήλιος */
+    --bgTop:#bfeaff;
+    --bgMid:#f0fbff;
+    --bgBottom:#ffe7b3;
 
     --card:rgba(255,255,255,.94);
     --card2:rgba(255,255,255,.88);
 
-    --text:#08263a;       /* βαθύ ναυτικό */
+    --text:#08263a;
     --muted:#2f5c73;
 
-    --accent:#0ea5e9;     /* αιγαίο μπλε */
-    --accent2:#fb7185;    /* bougainvillea ροζ */
-    --accent3:#f59e0b;    /* ήλιος */
+    --accent:#0ea5e9;
+    --accent2:#fb7185;
+    --accent3:#f59e0b;
 
     --border:rgba(8,38,58,.12);
     --shadow:0 18px 55px rgba(8,38,58,.16);
@@ -56,7 +53,6 @@
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1050px;margin:0 auto;padding:24px}
 
-  /* ✅ Updated: wrap για να μη σπάει σε μικρές οθόνες */
   .top{
     display:flex;
     justify-content:space-between;
@@ -69,15 +65,13 @@
   .brand{display:flex;flex-direction:column;line-height:1.1}
   .brand span{font-size:13px;color:var(--muted)}
 
-  /* ✅ Logo styling (UPDATED) */
   .brand .logo{
-    height: clamp(140px, 12vw, 220px); /* ύψος ανάλογα με οθόνη */
-    width: 640px;                    /* fallback, θα το αλλάζει JS */
-    max-width: 100%;                 /* να μην ξεφεύγει σε μικρές οθόνες */
-    object-fit: contain;             /* τώρα που δεν έχει κενά, είναι ιδανικό */
+    height: clamp(140px, 12vw, 220px);
+    width: 640px;
+    max-width: 100%;
+    object-fit: contain;
     display:block;
     margin-bottom: 8px;
-
     mix-blend-mode: normal;
     filter: drop-shadow(0 2px 10px rgba(8,38,58,.18));
   }
@@ -109,7 +103,6 @@
   }
   .btn.ghost:hover{background:rgba(255,255,255,.90)}
 
-  /* Language switcher */
   .langSwitch{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
   .langBtn{
     padding:10px 12px;
@@ -146,17 +139,71 @@
 
   .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 
-  .heroRight{padding:18px;display:flex;flex-direction:column;gap:12px}
-
-  /* Κάνει τα images να “δένουν” με το theme, ακόμα κι αν έχουν inline border */
-  .heroRight img{
-    border:1px solid rgba(8,38,58,.16) !important;
-    box-shadow:0 10px 22px rgba(8,38,58,.10);
+  .heroRight{
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    min-height:0;
   }
 
-  /* Το Tip card (που έχει inline background) να μη βγαίνει “ξεπλυμένο” */
+  .heroGallery{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-height:640px;
+    overflow-y:auto;
+    padding-right:6px;
+    min-height:0;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    scroll-behavior:smooth;
+  }
+
+  .heroGallery::-webkit-scrollbar{
+    width:8px;
+  }
+
+  .heroGallery::-webkit-scrollbar-track{
+    background:rgba(8,38,58,.06);
+    border-radius:999px;
+  }
+
+  .heroGallery::-webkit-scrollbar-thumb{
+    background:rgba(14,165,233,.40);
+    border-radius:999px;
+  }
+
+  .heroGallery img{
+    display:block;
+    width:100%;
+    object-fit:cover;
+    border-radius:18px;
+    border:1px solid rgba(8,38,58,.16) !important;
+    box-shadow:0 10px 22px rgba(8,38,58,.10);
+    background:#ffffff;
+    cursor:zoom-in;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+
+  .heroGallery img:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 28px rgba(8,38,58,.14);
+  }
+
+  .heroGallery img:focus{
+    outline:none;
+    box-shadow:
+      0 0 0 4px rgba(14,165,233,.22),
+      0 14px 28px rgba(8,38,58,.14);
+  }
+
+  .galleryImgTall{height:220px;}
+  .galleryImgMedium{height:180px;}
+
   .heroRight .mini{
     background:rgba(255,255,255,.92) !important;
+    flex-shrink:0;
   }
 
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
@@ -167,7 +214,6 @@
   .section{margin-top:18px}
   .footer{margin:26px 0 6px;color:rgba(8,38,58,.55);font-size:13px}
 
-  /* Contact form */
   .form{margin-top:10px}
   .formGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
   .formGrid .full{grid-column:1 / -1}
@@ -192,11 +238,142 @@
   .helper{color:rgba(8,38,58,.60);font-size:12px;line-height:1.5;margin-top:8px}
   .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 
+  .lightbox{
+    position:fixed;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background:rgba(8,38,58,.90);
+    padding:24px;
+    z-index:9999;
+  }
+
+  .lightbox.open{
+    display:flex;
+  }
+
+  .lightboxInner{
+    position:relative;
+    width:min(100%, 1180px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .lightboxImg{
+    display:block;
+    max-width:100%;
+    max-height:82vh;
+    width:auto;
+    height:auto;
+    border-radius:18px;
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+    background:#fff;
+  }
+
+  .lightboxBtn{
+    position:absolute;
+    border:none;
+    width:52px;
+    height:52px;
+    border-radius:999px;
+    cursor:pointer;
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    font-size:26px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    backdrop-filter:blur(6px);
+    transition:background .15s ease, transform .08s ease;
+  }
+
+  .lightboxBtn:hover{
+    background:rgba(255,255,255,.24);
+  }
+
+  .lightboxBtn:active{
+    transform:scale(.97);
+  }
+
+  .lightboxClose{
+    top:-12px;
+    right:-12px;
+  }
+
+  .lightboxPrev{
+    left:12px;
+    top:50%;
+    transform:translateY(-50%);
+  }
+
+  .lightboxNext{
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+  }
+
+  .lightboxPrev:active,
+  .lightboxNext:active{
+    transform:translateY(-50%) scale(.97);
+  }
+
+  .lightboxCaption{
+    position:absolute;
+    left:50%;
+    bottom:-52px;
+    transform:translateX(-50%);
+    color:#fff;
+    background:rgba(255,255,255,.12);
+    padding:10px 14px;
+    border-radius:999px;
+    font-size:14px;
+    white-space:nowrap;
+    max-width:min(90vw, 760px);
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
   @media (max-width:880px){
     .hero{grid-template-columns:1fr}
     h1{font-size:30px}
     .grid{grid-template-columns:1fr}
     .formGrid{grid-template-columns:1fr}
+    .heroGallery{max-height:72vh;}
+
+    .lightbox{
+      padding:16px;
+    }
+
+    .lightboxImg{
+      max-height:74vh;
+    }
+
+    .lightboxBtn{
+      width:46px;
+      height:46px;
+      font-size:22px;
+    }
+
+    .lightboxClose{
+      top:-6px;
+      right:-6px;
+    }
+
+    .lightboxPrev{
+      left:6px;
+    }
+
+    .lightboxNext{
+      right:6px;
+    }
+
+    .lightboxCaption{
+      bottom:-44px;
+      font-size:13px;
+      max-width:88vw;
+    }
   }
   </style>
 </head>
@@ -205,7 +382,6 @@
   <div class="wrap">
     <div class="top">
       <div class="brand">
-        <!-- ✅ Logo -->
         <img class="logo" src="images/Spitaki_Logo.png" alt="Spitaki Milos" />
         <span data-i18n="brand_subtitle"></span>
       </div>
@@ -244,8 +420,79 @@
       </div>
 
       <div class="card heroRight">
-        <img src="images/FHD0026.JPG" data-i18n-alt="img_alt_view" alt="Spitaki Milos - Θέα" style="width:100%;height:220px;object-fit:cover;border-radius:18px;border:1px solid rgba(255,255,255,.12);" />
-        <img src="images/FHD0050.JPG" data-i18n-alt="img_alt_terrace" alt="Spitaki Milos - Βεράντα" style="width:100%;height:180px;object-fit:cover;border-radius:18px;border:1px solid rgba(255,255,255,.12);" />
+        <div class="heroGallery" id="heroGallery">
+          <img
+            src="images/FHD0026.JPG"
+            data-i18n-alt="img_alt_view"
+            alt="Spitaki Milos - Θέα"
+            class="galleryImgTall"
+            loading="eager"
+            decoding="async"
+          />
+
+          <img
+            src="images/FHD0050.JPG"
+            data-i18n-alt="img_alt_terrace"
+            alt="Spitaki Milos - Βεράντα"
+            class="galleryImgMedium"
+            loading="eager"
+            decoding="async"
+          />
+
+          <img
+            src="images/DOMATIO-1.jpg"
+            data-i18n-alt="img_alt_room_1"
+            alt="Spitaki Milos - Υπνοδωμάτιο 1"
+            class="galleryImgMedium"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <img
+            src="images/DOMATIO-2.jpg"
+            data-i18n-alt="img_alt_room_2"
+            alt="Spitaki Milos - Υπνοδωμάτιο 2"
+            class="galleryImgMedium"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <img
+            src="images/DOMATIO-3.jpg"
+            data-i18n-alt="img_alt_room_3"
+            alt="Spitaki Milos - Υπνοδωμάτιο 3"
+            class="galleryImgMedium"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <img
+            src="images/DOMATIO-4.jpg"
+            data-i18n-alt="img_alt_room_4"
+            alt="Spitaki Milos - Υπνοδωμάτιο 4"
+            class="galleryImgMedium"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <img
+            src="images/MPANIO-1.jpg"
+            data-i18n-alt="img_alt_bathroom"
+            alt="Spitaki Milos - Μπάνιο"
+            class="galleryImgMedium"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <img
+            src="images/KOUZINA-1.jpg"
+            data-i18n-alt="img_alt_kitchen"
+            alt="Spitaki Milos - Κουζίνα"
+            class="galleryImgMedium"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
 
         <div class="card mini" style="background:rgba(255,255,255,.06)">
           <b data-i18n="tip_title"></b>
@@ -288,7 +535,6 @@
       </div>
     </div>
 
-    <!-- CONTACT FORM -->
     <div class="section" id="contact">
       <div class="card mini">
         <b data-i18n="contact_title"></b>
@@ -350,13 +596,22 @@
     </div>
   </div>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightboxInner">
+      <button class="lightboxBtn lightboxClose" id="lightboxClose" type="button" aria-label="Close">×</button>
+      <button class="lightboxBtn lightboxPrev" id="lightboxPrev" type="button" aria-label="Previous">‹</button>
+      <img class="lightboxImg" id="lightboxImg" src="" alt="" />
+      <button class="lightboxBtn lightboxNext" id="lightboxNext" type="button" aria-label="Next">›</button>
+      <div class="lightboxCaption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
     const DEST_EMAIL = "info@spitakimilos.com";
     const WA_NUMBER = "306977214642";
 
-    // ✅ Logo width = width of the 2 right buttons ("Πληροφορίες" + "Επικοινωνία")
     function syncLogoWidthToTwoButtons() {
       const logo = document.querySelector(".brand .logo");
       const infoBtn = document.querySelector('a[data-i18n="nav_info"]');
@@ -364,26 +619,22 @@
 
       if (!logo || !infoBtn || !contactBtn) return;
 
-      // gap από τον parent flex container (έχεις inline gap:10px)
       let gap = 10;
       const parent = infoBtn.parentElement;
       if (parent) {
         const cs = getComputedStyle(parent);
-        // σε flex, το cs.gap μπορεί να γυρίσει "10px 10px"
         const g = cs.columnGap || cs.gap || "0";
         gap = parseFloat(g) || 0;
       }
 
       const w =
-  infoBtn.getBoundingClientRect().width +
-  contactBtn.getBoundingClientRect().width +
-  gap;
+        infoBtn.getBoundingClientRect().width +
+        contactBtn.getBoundingClientRect().width +
+        gap;
 
-const w2 = w * 2; // ✅ x2
-
-// clamp x2 (διπλά όρια)
-const clamped = Math.max(440, Math.min(Math.round(w2), 1040));
-logo.style.width = clamped + "px";
+      const w2 = w * 2;
+      const clamped = Math.max(440, Math.min(Math.round(w2), 1040));
+      logo.style.width = clamped + "px";
     }
 
     function scheduleLogoSync() {
@@ -391,7 +642,6 @@ logo.style.width = clamped + "px";
       setTimeout(syncLogoWidthToTwoButtons, 200);
     }
 
-    // 1) Translations
     const T = {
       el: {
         meta_title: "Spitaki Milos | Διαμονή στη Μήλο",
@@ -417,6 +667,12 @@ logo.style.width = clamped + "px";
 
         img_alt_view: "Spitaki Milos - Θέα",
         img_alt_terrace: "Spitaki Milos - Βεράντα",
+        img_alt_room_1: "Spitaki Milos - Υπνοδωμάτιο 1",
+        img_alt_room_2: "Spitaki Milos - Υπνοδωμάτιο 2",
+        img_alt_room_3: "Spitaki Milos - Υπνοδωμάτιο 3",
+        img_alt_room_4: "Spitaki Milos - Υπνοδωμάτιο 4",
+        img_alt_bathroom: "Spitaki Milos - Μπάνιο",
+        img_alt_kitchen: "Spitaki Milos - Κουζίνα",
 
         tip_title: "Tip",
         tip_text: "Για γρήγορη απάντηση, στείλε τις ημερομηνίες σου από τη φόρμα ή στο WhatsApp.",
@@ -509,6 +765,12 @@ logo.style.width = clamped + "px";
 
         img_alt_view: "Spitaki Milos - Sea view",
         img_alt_terrace: "Spitaki Milos - Terrace",
+        img_alt_room_1: "Spitaki Milos - Bedroom 1",
+        img_alt_room_2: "Spitaki Milos - Bedroom 2",
+        img_alt_room_3: "Spitaki Milos - Bedroom 3",
+        img_alt_room_4: "Spitaki Milos - Bedroom 4",
+        img_alt_bathroom: "Spitaki Milos - Bathroom",
+        img_alt_kitchen: "Spitaki Milos - Kitchen",
 
         tip_title: "Tip",
         tip_text: "For a quick reply, send your dates through the form or on WhatsApp.",
@@ -577,7 +839,6 @@ logo.style.width = clamped + "px";
       }
     };
 
-    // 2) Language helpers
     let currentLang = "el";
 
     function getInitialLang() {
@@ -601,10 +862,7 @@ logo.style.width = clamped + "px";
     function applyTranslations(lang) {
       const tr = T[lang];
 
-      // html lang
       document.getElementById("htmlRoot").setAttribute("lang", lang);
-
-      // meta/title/og
       document.title = tr.meta_title;
 
       const metaTitle = document.getElementById("metaTitle");
@@ -619,7 +877,6 @@ logo.style.width = clamped + "px";
       const ogDesc = document.getElementById("ogDesc");
       if (ogDesc) ogDesc.setAttribute("content", tr.og_desc);
 
-      // text nodes
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.getAttribute("data-i18n");
         const val = tr[key];
@@ -630,7 +887,6 @@ logo.style.width = clamped + "px";
         else el.textContent = val;
       });
 
-      // placeholders
       document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
         const key = el.getAttribute("data-i18n-placeholder");
         const val = tr[key];
@@ -638,7 +894,6 @@ logo.style.width = clamped + "px";
         el.setAttribute("placeholder", val);
       });
 
-      // image alts
       document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
         const key = el.getAttribute("data-i18n-alt");
         const val = tr[key];
@@ -646,13 +901,15 @@ logo.style.width = clamped + "px";
         el.setAttribute("alt", val);
       });
 
-      // active button UI
       const btnEL = document.getElementById("btnEL");
       const btnEN = document.getElementById("btnEN");
       btnEL.classList.toggle("active", lang === "el");
       btnEN.classList.toggle("active", lang === "en");
 
-      // ✅ after text changes, resync logo width
+      if (lightboxIsOpen()) {
+        updateLightboxContent(currentLightboxIndex);
+      }
+
       scheduleLogoSync();
     }
 
@@ -665,7 +922,6 @@ logo.style.width = clamped + "px";
       updateWhatsAppLink();
     }
 
-    // 3) Message builders (Email/WhatsApp)
     function buildMessage() {
       const tr = T[currentLang];
       const f = document.getElementById("inquiryForm");
@@ -730,20 +986,110 @@ logo.style.width = clamped + "px";
       if (e.target && e.target.closest("#inquiryForm")) updateWhatsAppLink();
     });
 
-    // 4) Init
+    let galleryImages = [];
+    let currentLightboxIndex = 0;
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+
+    function lightboxIsOpen() {
+      return lightbox.classList.contains("open");
+    }
+
+    function initLightbox() {
+      galleryImages = Array.from(document.querySelectorAll(".heroGallery img"));
+
+      galleryImages.forEach((img, index) => {
+        img.dataset.index = index;
+        img.setAttribute("tabindex", "0");
+        img.setAttribute("role", "button");
+        img.setAttribute("aria-label", img.alt || "Open image");
+
+        img.addEventListener("click", () => openLightbox(index));
+
+        img.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openLightbox(index);
+          }
+        });
+      });
+    }
+
+    function updateLightboxContent(index) {
+      const img = galleryImages[index];
+      if (!img) return;
+
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "";
+      lightboxCaption.textContent = img.alt || "";
+    }
+
+    function openLightbox(index) {
+      currentLightboxIndex = index;
+      updateLightboxContent(currentLightboxIndex);
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightboxModal() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function showPrevImage() {
+      if (!galleryImages.length) return;
+      currentLightboxIndex = (currentLightboxIndex - 1 + galleryImages.length) % galleryImages.length;
+      updateLightboxContent(currentLightboxIndex);
+    }
+
+    function showNextImage() {
+      if (!galleryImages.length) return;
+      currentLightboxIndex = (currentLightboxIndex + 1) % galleryImages.length;
+      updateLightboxContent(currentLightboxIndex);
+    }
+
+    lightboxClose.addEventListener("click", closeLightboxModal);
+    lightboxPrev.addEventListener("click", showPrevImage);
+    lightboxNext.addEventListener("click", showNextImage);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeLightboxModal();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!lightboxIsOpen()) return;
+
+      if (e.key === "Escape") {
+        closeLightboxModal();
+      } else if (e.key === "ArrowLeft") {
+        showPrevImage();
+      } else if (e.key === "ArrowRight") {
+        showNextImage();
+      }
+    });
+
     document.getElementById("btnEL").addEventListener("click", () => setLang("el"));
     document.getElementById("btnEN").addEventListener("click", () => setLang("en"));
 
-    // resize => resync
     window.addEventListener("resize", scheduleLogoSync);
 
-    // fonts loaded => resync (για να είναι σωστό το measure)
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(scheduleLogoSync);
     }
 
+    initLightbox();
     setLang(getInitialLang());
     scheduleLogoSync();
+    updateWhatsAppLink();
   </script>
 </body>
 </html>
