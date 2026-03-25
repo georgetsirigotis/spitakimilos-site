@@ -51,7 +51,7 @@
   }
 
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1050px;margin:0 auto;padding:24px}
+  .wrap{max-width:1100px;margin:0 auto;padding:24px}
 
   .top{
     display:flex;
@@ -115,17 +115,6 @@
     border:1px solid rgba(14,165,233,.35);
   }
 
-  .hero{
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-    gap:18px;
-    align-items:start;
-  }
-
-  .hero > .card{
-    align-self:start;
-  }
-
   .card{
     background:linear-gradient(180deg, var(--card), var(--card2));
     border:1px solid var(--border);
@@ -134,9 +123,51 @@
     backdrop-filter:saturate(120%) blur(6px);
   }
 
-  .heroLeft{padding:26px}
-  h1{margin:0 0 10px;font-size:36px;letter-spacing:-.2px}
-  p{margin:0 0 14px;color:var(--muted);line-height:1.6}
+  .heroIntro{
+    padding:26px;
+    margin-bottom:18px;
+  }
+
+  .heroIntro h1{
+    margin:0 0 10px;
+    font-size:36px;
+    letter-spacing:-.2px;
+  }
+
+  .heroIntro p{
+    margin:0;
+    color:var(--muted);
+    line-height:1.7;
+    max-width:760px;
+    font-size:17px;
+  }
+
+  .hero{
+    display:grid;
+    grid-template-columns:.72fr 1.28fr;
+    gap:18px;
+    align-items:start;
+  }
+
+  .hero > .card{
+    align-self:start;
+  }
+
+  .heroLeft{
+    padding:22px;
+  }
+
+  .heroSideTitle{
+    display:block;
+    font-size:20px;
+    margin-bottom:8px;
+  }
+
+  .heroSideText{
+    margin:0 0 14px;
+    color:var(--muted);
+    line-height:1.6;
+  }
 
   .tags{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
   .tag{
@@ -184,7 +215,7 @@
   .featuredBtn img{
     display:block;
     width:100%;
-    height:320px;
+    height:360px;
     object-fit:cover;
     background:#fff;
     transition:transform .3s ease, filter .3s ease;
@@ -527,8 +558,9 @@
   }
 
   @media (max-width:880px){
+    .heroIntro h1{font-size:30px}
+    .heroIntro p{font-size:16px}
     .hero{grid-template-columns:1fr}
-    h1{font-size:30px}
     .grid{grid-template-columns:1fr}
     .formGrid{grid-template-columns:1fr}
 
@@ -592,10 +624,15 @@
       </div>
     </div>
 
+    <div class="card heroIntro">
+      <h1 data-i18n="hero_h1"></h1>
+      <p data-i18n="hero_p" data-i18n-html="true"></p>
+    </div>
+
     <div class="hero">
       <div class="card heroLeft">
-        <h1 data-i18n="hero_h1"></h1>
-        <p data-i18n="hero_p" data-i18n-html="true"></p>
+        <b class="heroSideTitle" data-i18n="hero_side_title"></b>
+        <p class="heroSideText" data-i18n="hero_side_text"></p>
 
         <div class="tags">
           <span class="tag" data-i18n="tag_wifi"></span>
@@ -610,7 +647,6 @@
           <a class="btn primary" href="#contact" data-i18n="cta_request"></a>
           <a class="btn ghost" href="https://wa.me/306977214642" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn ghost" href="mailto:info@spitakimilos.com">Email</a>
-          <!-- <a class="btn ghost" href="https://www.airbnb.com/rooms/XXXXXXXX" target="_blank" rel="noopener">Airbnb</a> -->
         </div>
       </div>
 
@@ -627,7 +663,7 @@
             <div class="featuredOverlay">
               <div class="galleryTopBar">
                 <span class="galleryPill" id="galleryCounter">1 / 8</span>
-                <span class="galleryPill" data-i18n="gallery_auto"></span>
+                <span class="galleryPill" data-i18n="gallery_type"></span>
               </div>
 
               <div class="galleryBottomBar">
@@ -843,7 +879,6 @@
 
     const DEST_EMAIL = "info@spitakimilos.com";
     const WA_NUMBER = "306977214642";
-    const AUTOPLAY_MS = 4200;
 
     function syncLogoWidthToTwoButtons() {
       const logo = document.querySelector(".brand .logo");
@@ -889,6 +924,9 @@
         hero_h1: "Ήρεμη διαμονή στη Μήλο, με άνεση σαν στο σπίτι σας",
         hero_p: "Καλωσήρθες στο <b>Spitaki Milos</b>. Δες φωτογραφίες, παροχές και τοποθεσία και <b>στείλε αίτημα διαθεσιμότητας</b> για τις ημερομηνίες που σε ενδιαφέρουν.",
 
+        hero_side_title: "Βασικές παροχές",
+        hero_side_text: "Όλα όσα χρειάζεσαι για μια άνετη, ξεκούραστη και πρακτική διαμονή στη Μήλο.",
+
         tag_wifi: "Wi-Fi",
         tag_ac: "A/C",
         tag_tv: "Smart TV",
@@ -909,7 +947,7 @@
 
         gallery_zoom: "Μεγέθυνση",
         gallery_swipe: "Swipe / βέλη",
-        gallery_auto: "Αυτόματη προβολή",
+        gallery_type: "Gallery φωτογραφιών",
         gallery_hint: "Σύρε, πάτα βελάκια, διάλεξε thumbnail ή άνοιξε πλήρη προβολή.",
 
         tip_title: "Tip",
@@ -992,6 +1030,9 @@
         hero_h1: "A peaceful stay in Milos, with comfort like home",
         hero_p: "Welcome to <b>Spitaki Milos</b>. Browse photos, amenities and location and <b>send an availability request</b> for your dates.",
 
+        hero_side_title: "Key amenities",
+        hero_side_text: "Everything you need for a comfortable, practical and relaxing stay in Milos.",
+
         tag_wifi: "Wi-Fi",
         tag_ac: "A/C",
         tag_tv: "Smart TV",
@@ -1012,7 +1053,7 @@
 
         gallery_zoom: "Zoom",
         gallery_swipe: "Swipe / arrows",
-        gallery_auto: "Auto slideshow",
+        gallery_type: "Photo gallery",
         gallery_hint: "Swipe, use arrows, pick a thumbnail, or open full screen.",
 
         tip_title: "Tip",
@@ -1087,10 +1128,8 @@
     let galleryImages = [];
     let dotButtons = [];
     let currentGalleryIndex = 0;
-    let autoplayId = null;
     let suppressFeaturedClick = false;
 
-    const galleryShell = document.getElementById("galleryShell");
     const featuredStage = document.getElementById("featuredStage");
     const featuredBtn = document.getElementById("featuredBtn");
     const featuredImage = document.getElementById("featuredImage");
@@ -1139,7 +1178,6 @@
         btn.setAttribute("aria-label", img.alt || `Image ${index + 1}`);
         btn.addEventListener("click", () => {
           setFeatured(index, true);
-          restartAutoplay();
         });
         galleryDots.appendChild(btn);
         return btn;
@@ -1193,14 +1231,12 @@
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
-      stopAutoplay();
     }
 
     function closeLightboxModal() {
       lightbox.classList.remove("open");
       lightbox.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
-      startAutoplay();
     }
 
     function showPrevImage() {
@@ -1215,30 +1251,6 @@
       setFeatured(nextIndex, true);
     }
 
-    function stopAutoplay() {
-      if (autoplayId) {
-        clearInterval(autoplayId);
-        autoplayId = null;
-      }
-    }
-
-    function startAutoplay() {
-      stopAutoplay();
-
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduceMotion || lightboxIsOpen() || galleryImages.length <= 1) return;
-
-      autoplayId = setInterval(() => {
-        if (document.hidden || lightboxIsOpen()) return;
-        showNextImage();
-      }, AUTOPLAY_MS);
-    }
-
-    function restartAutoplay() {
-      stopAutoplay();
-      startAutoplay();
-    }
-
     function initGallery() {
       thumbButtons = Array.from(document.querySelectorAll(".thumbBtn"));
       galleryImages = thumbButtons.map((btn) => btn.querySelector("img"));
@@ -1246,7 +1258,6 @@
       thumbButtons.forEach((btn, index) => {
         btn.addEventListener("click", () => {
           setFeatured(index, true);
-          restartAutoplay();
         });
       });
 
@@ -1416,13 +1427,11 @@
     featuredPrev.addEventListener("click", (e) => {
       e.stopPropagation();
       showPrevImage();
-      restartAutoplay();
     });
 
     featuredNext.addEventListener("click", (e) => {
       e.stopPropagation();
       showNextImage();
-      restartAutoplay();
     });
 
     featuredBtn.addEventListener("click", () => {
@@ -1446,16 +1455,6 @@
       }
     });
 
-    galleryShell.addEventListener("mouseenter", stopAutoplay);
-    galleryShell.addEventListener("mouseleave", startAutoplay);
-    galleryShell.addEventListener("focusin", stopAutoplay);
-    galleryShell.addEventListener("focusout", startAutoplay);
-
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) stopAutoplay();
-      else startAutoplay();
-    });
-
     document.addEventListener("keydown", (e) => {
       if (lightboxIsOpen()) {
         if (e.key === "Escape") {
@@ -1472,19 +1471,15 @@
 
       if (e.key === "ArrowLeft") {
         showPrevImage();
-        restartAutoplay();
       } else if (e.key === "ArrowRight") {
         showNextImage();
-        restartAutoplay();
       }
     });
 
     addSwipeSupport(featuredStage, () => {
       showNextImage();
-      restartAutoplay();
     }, () => {
       showPrevImage();
-      restartAutoplay();
     });
 
     addSwipeSupport(lightboxInner, () => {
@@ -1508,7 +1503,6 @@
     setLang(getInitialLang());
     scheduleLogoSync();
     updateWhatsAppLink();
-    startAutoplay();
   </script>
 </body>
 </html>
