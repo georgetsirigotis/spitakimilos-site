@@ -147,117 +147,221 @@
     min-height:0;
   }
 
-  .featuredBtn{
+  .galleryShell{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .featuredStage{
     position:relative;
+    border-radius:22px;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid rgba(8,38,58,.14);
+    box-shadow:0 12px 28px rgba(8,38,58,.10);
+  }
+
+  .featuredBtn{
     display:block;
     width:100%;
     border:none;
     padding:0;
     background:transparent;
     cursor:zoom-in;
-    border-radius:20px;
-    overflow:hidden;
   }
 
   .featuredBtn img{
     display:block;
     width:100%;
-    height:280px;
+    height:320px;
     object-fit:cover;
-    border-radius:20px;
-    border:1px solid rgba(8,38,58,.16);
-    box-shadow:0 10px 22px rgba(8,38,58,.10);
     background:#fff;
-    transition:transform .22s ease, box-shadow .22s ease;
+    transition:transform .3s ease, filter .3s ease;
   }
 
-  .featuredBtn:hover img{
-    transform:scale(1.01);
-    box-shadow:0 16px 32px rgba(8,38,58,.14);
+  .featuredStage:hover .featuredBtn img{
+    transform:scale(1.015);
+    filter:saturate(1.03);
   }
 
   .featuredBtn:focus-visible{
     outline:none;
-    box-shadow:0 0 0 4px rgba(14,165,233,.18);
-    border-radius:20px;
   }
 
-  .featuredBadge{
+  .featuredStage:has(.featuredBtn:focus-visible){
+    box-shadow:
+      0 0 0 4px rgba(14,165,233,.18),
+      0 16px 32px rgba(8,38,58,.14);
+  }
+
+  .featuredOverlay{
     position:absolute;
+    inset:0;
+    pointer-events:none;
+  }
+
+  .galleryTopBar{
+    position:absolute;
+    top:12px;
+    left:12px;
     right:12px;
-    bottom:12px;
-    background:rgba(8,38,58,.62);
-    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+  }
+
+  .galleryPill{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:34px;
     padding:8px 12px;
     border-radius:999px;
+    background:rgba(8,38,58,.55);
+    color:#fff;
     font-size:12px;
-    font-weight:700;
-    backdrop-filter:blur(6px);
+    font-weight:750;
+    backdrop-filter:blur(8px);
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
+  }
+
+  .galleryBottomBar{
+    position:absolute;
+    left:12px;
+    right:12px;
+    bottom:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:10px;
+  }
+
+  .featuredNav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:2;
+    border:none;
+    width:46px;
+    height:46px;
+    border-radius:999px;
+    cursor:pointer;
+    background:rgba(255,255,255,.22);
+    color:#fff;
+    font-size:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    backdrop-filter:blur(8px);
+    box-shadow:0 10px 24px rgba(0,0,0,.12);
+    transition:background .16s ease, transform .08s ease;
+  }
+
+  .featuredNav:hover{
+    background:rgba(255,255,255,.30);
+  }
+
+  .featuredNav:active{
+    transform:translateY(-50%) scale(.97);
+  }
+
+  .featuredPrev{left:12px;}
+  .featuredNext{right:12px;}
+
+  .galleryDots{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    padding:2px 0 4px;
+  }
+
+  .galleryDot{
+    width:9px;
+    height:9px;
+    border:none;
+    border-radius:999px;
+    background:rgba(8,38,58,.18);
+    cursor:pointer;
+    transition:transform .16s ease, background .16s ease, width .16s ease;
+  }
+
+  .galleryDot:hover{
+    background:rgba(14,165,233,.55);
+  }
+
+  .galleryDot.active{
+    width:22px;
+    background:linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+
+  .galleryDot:focus-visible{
+    outline:none;
+    box-shadow:0 0 0 4px rgba(14,165,233,.18);
   }
 
   .featuredCaption{
-    margin-top:2px;
     color:var(--muted);
     font-size:13px;
-    line-height:1.5;
+    line-height:1.55;
     min-height:20px;
+    text-align:center;
+    margin-top:-2px;
   }
 
-  .thumbGrid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
+  .thumbRail{
+    display:flex;
     gap:10px;
-    max-height:360px;
-    overflow-y:auto;
-    padding-right:4px;
-    min-height:0;
-    overscroll-behavior:contain;
+    overflow-x:auto;
+    padding:4px 2px 8px;
+    scroll-snap-type:x proximity;
     -webkit-overflow-scrolling:touch;
   }
 
-  .thumbGrid::-webkit-scrollbar{
-    width:8px;
-  }
-
-  .thumbGrid::-webkit-scrollbar-track{
+  .thumbRail::-webkit-scrollbar{height:8px;}
+  .thumbRail::-webkit-scrollbar-track{
     background:rgba(8,38,58,.06);
     border-radius:999px;
   }
-
-  .thumbGrid::-webkit-scrollbar-thumb{
+  .thumbRail::-webkit-scrollbar-thumb{
     background:rgba(14,165,233,.40);
     border-radius:999px;
   }
 
   .thumbBtn{
-    position:relative;
+    flex:0 0 auto;
+    width:110px;
     border:none;
-    padding:0;
     background:transparent;
-    cursor:pointer;
+    padding:0;
     border-radius:16px;
-    overflow:hidden;
+    cursor:pointer;
+    scroll-snap-align:start;
   }
 
   .thumbBtn img{
     display:block;
-    width:100%;
-    height:108px;
+    width:110px;
+    height:82px;
     object-fit:cover;
     border-radius:16px;
     border:2px solid transparent;
     box-shadow:0 8px 18px rgba(8,38,58,.08);
     background:#fff;
-    transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+    transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease, opacity .16s ease;
+    opacity:.92;
   }
 
   .thumbBtn:hover img{
     transform:translateY(-2px);
-    box-shadow:0 12px 22px rgba(8,38,58,.12);
+    opacity:1;
   }
 
   .thumbBtn.active img{
     border-color:var(--accent);
+    opacity:1;
     box-shadow:0 0 0 4px rgba(14,165,233,.16), 0 12px 22px rgba(8,38,58,.12);
   }
 
@@ -268,6 +372,14 @@
   .thumbBtn:focus-visible img{
     border-color:var(--accent2);
     box-shadow:0 0 0 4px rgba(251,113,133,.18), 0 12px 22px rgba(8,38,58,.12);
+    opacity:1;
+  }
+
+  .galleryHint{
+    text-align:center;
+    color:rgba(8,38,58,.58);
+    font-size:12px;
+    margin-top:-2px;
   }
 
   .heroRight .mini{
@@ -313,7 +425,7 @@
     display:none;
     align-items:center;
     justify-content:center;
-    background:rgba(8,38,58,.90);
+    background:rgba(8,38,58,.92);
     padding:24px;
     z-index:9999;
   }
@@ -409,12 +521,22 @@
     h1{font-size:30px}
     .grid{grid-template-columns:1fr}
     .formGrid{grid-template-columns:1fr}
-    .featuredBtn img{height:250px;}
-    .thumbGrid{
-      grid-template-columns:repeat(3,1fr);
-      max-height:300px;
+
+    .featuredBtn img{height:255px;}
+    .featuredNav{
+      width:42px;
+      height:42px;
+      font-size:22px;
     }
-    .thumbBtn img{height:86px;}
+    .featuredPrev{left:10px;}
+    .featuredNext{right:10px;}
+
+    .thumbBtn{width:96px;}
+    .thumbBtn img{
+      width:96px;
+      height:74px;
+    }
+
     .lightbox{
       padding:16px;
     }
@@ -483,93 +605,115 @@
       </div>
 
       <div class="card heroRight">
-        <button class="featuredBtn" id="featuredBtn" type="button" aria-label="Open large image">
-          <img id="featuredImage" src="images/FHD0026.JPG" alt="Spitaki Milos - Θέα" />
-          <span class="featuredBadge" data-i18n="gallery_zoom"></span>
-        </button>
+        <div class="galleryShell" id="galleryShell">
+          <div class="featuredStage" id="featuredStage">
+            <button class="featuredBtn" id="featuredBtn" type="button" aria-label="Open large image">
+              <img id="featuredImage" src="images/FHD0026.JPG" alt="Spitaki Milos - Θέα" />
+            </button>
 
-        <div class="featuredCaption" id="featuredCaption">Spitaki Milos - Θέα</div>
+            <button class="featuredNav featuredPrev" id="featuredPrev" type="button" aria-label="Previous image">‹</button>
+            <button class="featuredNav featuredNext" id="featuredNext" type="button" aria-label="Next image">›</button>
 
-        <div class="thumbGrid" id="thumbGrid">
-          <button class="thumbBtn active" type="button" data-index="0">
-            <img
-              src="images/FHD0026.JPG"
-              data-i18n-alt="img_alt_view"
-              alt="Spitaki Milos - Θέα"
-              loading="eager"
-              decoding="async"
-            />
-          </button>
+            <div class="featuredOverlay">
+              <div class="galleryTopBar">
+                <span class="galleryPill" id="galleryCounter">1 / 8</span>
+                <span class="galleryPill" data-i18n="gallery_auto"></span>
+              </div>
 
-          <button class="thumbBtn" type="button" data-index="1">
-            <img
-              src="images/FHD0050.JPG"
-              data-i18n-alt="img_alt_terrace"
-              alt="Spitaki Milos - Βεράντα"
-              loading="eager"
-              decoding="async"
-            />
-          </button>
+              <div class="galleryBottomBar">
+                <span class="galleryPill" data-i18n="gallery_swipe"></span>
+                <span class="galleryPill" data-i18n="gallery_zoom"></span>
+              </div>
+            </div>
+          </div>
 
-          <button class="thumbBtn" type="button" data-index="2">
-            <img
-              src="images/DOMATIO-1.jpg"
-              data-i18n-alt="img_alt_room_1"
-              alt="Spitaki Milos - Υπνοδωμάτιο 1"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
+          <div class="galleryDots" id="galleryDots" aria-label="Gallery navigation"></div>
 
-          <button class="thumbBtn" type="button" data-index="3">
-            <img
-              src="images/DOMATIO-2.jpg"
-              data-i18n-alt="img_alt_room_2"
-              alt="Spitaki Milos - Υπνοδωμάτιο 2"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
+          <div class="featuredCaption" id="featuredCaption">Spitaki Milos - Θέα</div>
 
-          <button class="thumbBtn" type="button" data-index="4">
-            <img
-              src="images/DOMATIO-3.jpg"
-              data-i18n-alt="img_alt_room_3"
-              alt="Spitaki Milos - Υπνοδωμάτιο 3"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
+          <div class="thumbRail" id="thumbRail">
+            <button class="thumbBtn active" type="button" data-index="0">
+              <img
+                src="images/FHD0026.JPG"
+                data-i18n-alt="img_alt_view"
+                alt="Spitaki Milos - Θέα"
+                loading="eager"
+                decoding="async"
+              />
+            </button>
 
-          <button class="thumbBtn" type="button" data-index="5">
-            <img
-              src="images/DOMATIO-4.jpg"
-              data-i18n-alt="img_alt_room_4"
-              alt="Spitaki Milos - Υπνοδωμάτιο 4"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
+            <button class="thumbBtn" type="button" data-index="1">
+              <img
+                src="images/FHD0050.JPG"
+                data-i18n-alt="img_alt_terrace"
+                alt="Spitaki Milos - Βεράντα"
+                loading="eager"
+                decoding="async"
+              />
+            </button>
 
-          <button class="thumbBtn" type="button" data-index="6">
-            <img
-              src="images/MPANIO-1.jpg"
-              data-i18n-alt="img_alt_bathroom"
-              alt="Spitaki Milos - Μπάνιο"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
+            <button class="thumbBtn" type="button" data-index="2">
+              <img
+                src="images/DOMATIO-1.jpg"
+                data-i18n-alt="img_alt_room_1"
+                alt="Spitaki Milos - Υπνοδωμάτιο 1"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
 
-          <button class="thumbBtn" type="button" data-index="7">
-            <img
-              src="images/KOUZINA-1.jpg"
-              data-i18n-alt="img_alt_kitchen"
-              alt="Spitaki Milos - Κουζίνα"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
+            <button class="thumbBtn" type="button" data-index="3">
+              <img
+                src="images/DOMATIO-2.jpg"
+                data-i18n-alt="img_alt_room_2"
+                alt="Spitaki Milos - Υπνοδωμάτιο 2"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+
+            <button class="thumbBtn" type="button" data-index="4">
+              <img
+                src="images/DOMATIO-3.jpg"
+                data-i18n-alt="img_alt_room_3"
+                alt="Spitaki Milos - Υπνοδωμάτιο 3"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+
+            <button class="thumbBtn" type="button" data-index="5">
+              <img
+                src="images/DOMATIO-4.jpg"
+                data-i18n-alt="img_alt_room_4"
+                alt="Spitaki Milos - Υπνοδωμάτιο 4"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+
+            <button class="thumbBtn" type="button" data-index="6">
+              <img
+                src="images/MPANIO-1.jpg"
+                data-i18n-alt="img_alt_bathroom"
+                alt="Spitaki Milos - Μπάνιο"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+
+            <button class="thumbBtn" type="button" data-index="7">
+              <img
+                src="images/KOUZINA-1.jpg"
+                data-i18n-alt="img_alt_kitchen"
+                alt="Spitaki Milos - Κουζίνα"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+          </div>
+
+          <div class="galleryHint" data-i18n="gallery_hint"></div>
         </div>
 
         <div class="card mini" style="background:rgba(255,255,255,.06)">
@@ -675,7 +819,7 @@
   </div>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightboxInner">
+    <div class="lightboxInner" id="lightboxInner">
       <button class="lightboxBtn lightboxClose" id="lightboxClose" type="button" aria-label="Close">×</button>
       <button class="lightboxBtn lightboxPrev" id="lightboxPrev" type="button" aria-label="Previous">‹</button>
       <img class="lightboxImg" id="lightboxImg" src="" alt="" />
@@ -689,6 +833,7 @@
 
     const DEST_EMAIL = "info@spitakimilos.com";
     const WA_NUMBER = "306977214642";
+    const AUTOPLAY_MS = 4200;
 
     function syncLogoWidthToTwoButtons() {
       const logo = document.querySelector(".brand .logo");
@@ -753,6 +898,9 @@
         img_alt_kitchen: "Spitaki Milos - Κουζίνα",
 
         gallery_zoom: "Μεγέθυνση",
+        gallery_swipe: "Swipe / βέλη",
+        gallery_auto: "Αυτόματη προβολή",
+        gallery_hint: "Σύρε, πάτα βελάκια, διάλεξε thumbnail ή άνοιξε πλήρη προβολή.",
 
         tip_title: "Tip",
         tip_text: "Για γρήγορη απάντηση, στείλε τις ημερομηνίες σου από τη φόρμα ή στο WhatsApp.",
@@ -853,6 +1001,9 @@
         img_alt_kitchen: "Spitaki Milos - Kitchen",
 
         gallery_zoom: "Zoom",
+        gallery_swipe: "Swipe / arrows",
+        gallery_auto: "Auto slideshow",
+        gallery_hint: "Swipe, use arrows, pick a thumbnail, or open full screen.",
 
         tip_title: "Tip",
         tip_text: "For a quick reply, send your dates through the form or on WhatsApp.",
@@ -924,13 +1075,23 @@
     let currentLang = "el";
     let thumbButtons = [];
     let galleryImages = [];
+    let dotButtons = [];
     let currentGalleryIndex = 0;
+    let autoplayId = null;
+    let suppressFeaturedClick = false;
 
+    const galleryShell = document.getElementById("galleryShell");
+    const featuredStage = document.getElementById("featuredStage");
     const featuredBtn = document.getElementById("featuredBtn");
     const featuredImage = document.getElementById("featuredImage");
     const featuredCaption = document.getElementById("featuredCaption");
+    const featuredPrev = document.getElementById("featuredPrev");
+    const featuredNext = document.getElementById("featuredNext");
+    const galleryCounter = document.getElementById("galleryCounter");
+    const galleryDots = document.getElementById("galleryDots");
 
     const lightbox = document.getElementById("lightbox");
+    const lightboxInner = document.getElementById("lightboxInner");
     const lightboxImg = document.getElementById("lightboxImg");
     const lightboxCaption = document.getElementById("lightboxCaption");
     const lightboxClose = document.getElementById("lightboxClose");
@@ -959,6 +1120,22 @@
       return lightbox.classList.contains("open");
     }
 
+    function createDots() {
+      galleryDots.innerHTML = "";
+      dotButtons = galleryImages.map((img, index) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "galleryDot";
+        btn.setAttribute("aria-label", img.alt || `Image ${index + 1}`);
+        btn.addEventListener("click", () => {
+          setFeatured(index, true);
+          restartAutoplay();
+        });
+        galleryDots.appendChild(btn);
+        return btn;
+      });
+    }
+
     function updateLightboxContent(index) {
       const img = galleryImages[index];
       if (!img) return;
@@ -973,17 +1150,26 @@
 
       currentGalleryIndex = index;
       const img = galleryImages[index];
+
       featuredImage.src = img.src;
       featuredImage.alt = img.alt || "";
       featuredCaption.textContent = img.alt || "";
+      galleryCounter.textContent = `${index + 1} / ${galleryImages.length}`;
 
       thumbButtons.forEach((btn, btnIndex) => {
         btn.classList.toggle("active", btnIndex === index);
-        btn.setAttribute("aria-label", galleryImages[btnIndex].alt || "Select image");
+      });
+
+      dotButtons.forEach((btn, btnIndex) => {
+        btn.classList.toggle("active", btnIndex === index);
       });
 
       if (shouldScrollThumb && thumbButtons[index]) {
-        thumbButtons[index].scrollIntoView({ block: "nearest", behavior: "smooth" });
+        thumbButtons[index].scrollIntoView({
+          behavior: "smooth",
+          inline: "center",
+          block: "nearest"
+        });
       }
 
       if (lightboxIsOpen()) {
@@ -991,32 +1177,56 @@
       }
     }
 
-    function openLightbox(index) {
+    function openLightbox(index = currentGalleryIndex) {
       currentGalleryIndex = index;
       updateLightboxContent(currentGalleryIndex);
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
+      stopAutoplay();
     }
 
     function closeLightboxModal() {
       lightbox.classList.remove("open");
       lightbox.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
+      startAutoplay();
     }
 
     function showPrevImage() {
       if (!galleryImages.length) return;
       const nextIndex = (currentGalleryIndex - 1 + galleryImages.length) % galleryImages.length;
       setFeatured(nextIndex, true);
-      updateLightboxContent(nextIndex);
     }
 
     function showNextImage() {
       if (!galleryImages.length) return;
       const nextIndex = (currentGalleryIndex + 1) % galleryImages.length;
       setFeatured(nextIndex, true);
-      updateLightboxContent(nextIndex);
+    }
+
+    function stopAutoplay() {
+      if (autoplayId) {
+        clearInterval(autoplayId);
+        autoplayId = null;
+      }
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion || lightboxIsOpen() || galleryImages.length <= 1) return;
+
+      autoplayId = setInterval(() => {
+        if (document.hidden || lightboxIsOpen()) return;
+        showNextImage();
+      }, AUTOPLAY_MS);
+    }
+
+    function restartAutoplay() {
+      stopAutoplay();
+      startAutoplay();
     }
 
     function initGallery() {
@@ -1024,11 +1234,13 @@
       galleryImages = thumbButtons.map((btn) => btn.querySelector("img"));
 
       thumbButtons.forEach((btn, index) => {
-        btn.addEventListener("click", () => setFeatured(index, true));
-        btn.addEventListener("dblclick", () => openLightbox(index));
+        btn.addEventListener("click", () => {
+          setFeatured(index, true);
+          restartAutoplay();
+        });
       });
 
-      featuredBtn.addEventListener("click", () => openLightbox(currentGalleryIndex));
+      createDots();
       setFeatured(0);
     }
 
@@ -1079,6 +1291,7 @@
       btnEL.classList.toggle("active", lang === "el");
       btnEN.classList.toggle("active", lang === "en");
 
+      createDots();
       setFeatured(currentGalleryIndex);
       scheduleLogoSync();
     }
@@ -1152,13 +1365,70 @@
       if (waBtn) waBtn.href = url;
     }
 
+    function addSwipeSupport(element, onSwipeLeft, onSwipeRight) {
+      let startX = 0;
+      let startY = 0;
+      let endX = 0;
+      let endY = 0;
+
+      element.addEventListener("touchstart", (e) => {
+        const t = e.changedTouches[0];
+        startX = t.clientX;
+        startY = t.clientY;
+        endX = t.clientX;
+        endY = t.clientY;
+      }, { passive: true });
+
+      element.addEventListener("touchmove", (e) => {
+        const t = e.changedTouches[0];
+        endX = t.clientX;
+        endY = t.clientY;
+      }, { passive: true });
+
+      element.addEventListener("touchend", () => {
+        const diffX = endX - startX;
+        const diffY = endY - startY;
+
+        if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+          suppressFeaturedClick = true;
+          setTimeout(() => { suppressFeaturedClick = false; }, 320);
+
+          if (diffX < 0) onSwipeLeft();
+          else onSwipeRight();
+        }
+      }, { passive: true });
+    }
+
     document.addEventListener("input", (e) => {
       if (e.target && e.target.closest("#inquiryForm")) updateWhatsAppLink();
     });
 
+    featuredPrev.addEventListener("click", (e) => {
+      e.stopPropagation();
+      showPrevImage();
+      restartAutoplay();
+    });
+
+    featuredNext.addEventListener("click", (e) => {
+      e.stopPropagation();
+      showNextImage();
+      restartAutoplay();
+    });
+
+    featuredBtn.addEventListener("click", () => {
+      if (suppressFeaturedClick) return;
+      openLightbox(currentGalleryIndex);
+    });
+
     lightboxClose.addEventListener("click", closeLightboxModal);
-    lightboxPrev.addEventListener("click", showPrevImage);
-    lightboxNext.addEventListener("click", showNextImage);
+    lightboxPrev.addEventListener("click", () => {
+      showPrevImage();
+      updateLightboxContent(currentGalleryIndex);
+    });
+    lightboxNext.addEventListener("click", () => {
+      showNextImage();
+      updateLightboxContent(currentGalleryIndex);
+    });
 
     lightbox.addEventListener("click", (e) => {
       if (e.target === lightbox) {
@@ -1166,16 +1436,53 @@
       }
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (!lightboxIsOpen()) return;
+    galleryShell.addEventListener("mouseenter", stopAutoplay);
+    galleryShell.addEventListener("mouseleave", startAutoplay);
+    galleryShell.addEventListener("focusin", stopAutoplay);
+    galleryShell.addEventListener("focusout", startAutoplay);
 
-      if (e.key === "Escape") {
-        closeLightboxModal();
-      } else if (e.key === "ArrowLeft") {
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stopAutoplay();
+      else startAutoplay();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (lightboxIsOpen()) {
+        if (e.key === "Escape") {
+          closeLightboxModal();
+        } else if (e.key === "ArrowLeft") {
+          showPrevImage();
+          updateLightboxContent(currentGalleryIndex);
+        } else if (e.key === "ArrowRight") {
+          showNextImage();
+          updateLightboxContent(currentGalleryIndex);
+        }
+        return;
+      }
+
+      if (e.key === "ArrowLeft") {
         showPrevImage();
+        restartAutoplay();
       } else if (e.key === "ArrowRight") {
         showNextImage();
+        restartAutoplay();
       }
+    });
+
+    addSwipeSupport(featuredStage, () => {
+      showNextImage();
+      restartAutoplay();
+    }, () => {
+      showPrevImage();
+      restartAutoplay();
+    });
+
+    addSwipeSupport(lightboxInner, () => {
+      showNextImage();
+      updateLightboxContent(currentGalleryIndex);
+    }, () => {
+      showPrevImage();
+      updateLightboxContent(currentGalleryIndex);
     });
 
     document.getElementById("btnEL").addEventListener("click", () => setLang("el"));
@@ -1191,6 +1498,7 @@
     setLang(getInitialLang());
     scheduleLogoSync();
     updateWhatsAppLink();
+    startAutoplay();
   </script>
 </body>
 </html>
