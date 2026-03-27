@@ -38,9 +38,19 @@
   }
 
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+
+  html{
+    scroll-behavior:smooth;
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
   body{
     margin:0;
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
     color:var(--text);
     background:
@@ -50,8 +60,15 @@
       linear-gradient(180deg, var(--bgTop) 0%, var(--bgMid) 35%, var(--bgBottom) 100%);
   }
 
+  img{max-width:100%}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1100px;margin:0 auto;padding:24px}
+
+  .wrap{
+    max-width:1100px;
+    width:min(1100px, calc(100% - 24px));
+    margin:0 auto;
+    padding:24px 12px;
+  }
 
   .top{
     display:flex;
@@ -59,10 +76,10 @@
     align-items:flex-start;
     flex-wrap:wrap;
     gap:14px;
-    margin-bottom:22px
+    margin-bottom:22px;
   }
 
-  .brand{display:flex;flex-direction:column;line-height:1.1}
+  .brand{display:flex;flex-direction:column;line-height:1.1;min-width:0}
   .brand span{font-size:13px;color:var(--muted)}
 
   .brand .logo{
@@ -126,6 +143,7 @@
   .heroIntro{
     padding:26px;
     margin-bottom:18px;
+    min-width:0;
   }
 
   .heroIntro h1{
@@ -144,17 +162,20 @@
 
   .hero{
     display:grid;
-    grid-template-columns:.72fr 1.28fr;
+    grid-template-columns:minmax(0, .72fr) minmax(0, 1.28fr);
     gap:18px;
     align-items:start;
+    min-width:0;
   }
 
   .hero > .card{
     align-self:start;
+    min-width:0;
   }
 
   .heroLeft{
     padding:22px;
+    min-width:0;
   }
 
   .heroSideTitle{
@@ -185,13 +206,19 @@
     flex-direction:column;
     gap:12px;
     min-height:0;
+    min-width:0;
     height:auto;
+    overflow:hidden;
   }
 
   .galleryShell{
     display:flex;
     flex-direction:column;
     gap:10px;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    overflow:hidden;
   }
 
   .featuredStage{
@@ -201,11 +228,16 @@
     background:#fff;
     border:1px solid rgba(8,38,58,.14);
     box-shadow:0 12px 28px rgba(8,38,58,.10);
+    width:100%;
+    max-width:100%;
+    min-width:0;
   }
 
   .featuredBtn{
     display:block;
     width:100%;
+    max-width:100%;
+    min-width:0;
     border:none;
     padding:0;
     background:transparent;
@@ -215,6 +247,7 @@
   .featuredBtn img{
     display:block;
     width:100%;
+    max-width:100%;
     height:360px;
     object-fit:cover;
     background:#fff;
@@ -240,6 +273,7 @@
     position:absolute;
     inset:0;
     pointer-events:none;
+    max-width:100%;
   }
 
   .galleryTopBar{
@@ -251,6 +285,7 @@
     justify-content:space-between;
     align-items:center;
     gap:10px;
+    max-width:calc(100% - 24px);
   }
 
   .galleryPill{
@@ -266,6 +301,7 @@
     font-weight:750;
     backdrop-filter:blur(8px);
     box-shadow:0 8px 20px rgba(0,0,0,.10);
+    max-width:100%;
   }
 
   .galleryBottomBar{
@@ -277,6 +313,7 @@
     justify-content:space-between;
     align-items:end;
     gap:10px;
+    max-width:calc(100% - 24px);
   }
 
   .featuredNav{
@@ -317,6 +354,9 @@
     justify-content:center;
     gap:7px;
     padding:2px 0 4px;
+    width:100%;
+    max-width:100%;
+    min-width:0;
   }
 
   .galleryDot{
@@ -350,12 +390,19 @@
     min-height:20px;
     text-align:center;
     margin-top:-2px;
+    width:100%;
+    max-width:100%;
+    min-width:0;
   }
 
   .thumbRail{
     display:flex;
     gap:10px;
+    width:100%;
+    max-width:100%;
+    min-width:0;
     overflow-x:auto;
+    overflow-y:hidden;
     padding:4px 2px 8px;
     scroll-snap-type:x proximity;
     -webkit-overflow-scrolling:touch;
@@ -421,6 +468,9 @@
     color:rgba(8,38,58,.58);
     font-size:12px;
     margin-top:-2px;
+    width:100%;
+    max-width:100%;
+    min-width:0;
   }
 
   .heroRight .mini{
@@ -558,6 +608,11 @@
   }
 
   @media (max-width:880px){
+    .wrap{
+      width:min(100%, calc(100% - 16px));
+      padding:16px 8px;
+    }
+
     .heroIntro h1{font-size:30px}
     .heroIntro p{font-size:16px}
     .hero{grid-template-columns:1fr}
@@ -662,7 +717,7 @@
 
             <div class="featuredOverlay">
               <div class="galleryTopBar">
-                <span class="galleryPill" id="galleryCounter">1 / 8</span>
+                <span class="galleryPill" id="galleryCounter">1 / 13</span>
                 <span class="galleryPill" data-i18n="gallery_type"></span>
               </div>
 
@@ -675,7 +730,7 @@
 
           <div class="galleryDots" id="galleryDots" aria-label="Gallery navigation"></div>
 
-          <div class="featuredCaption" id="featuredCaption">Spitaki Milos - Θέα</div>
+          <div class="featuredCaption" id="featuredCaption">Spitaki Milos</div>
 
           <div class="thumbRail" id="thumbRail">
             <button class="thumbBtn active" type="button" data-index="0">
@@ -698,11 +753,10 @@
               />
             </button>
 
-            <button class="thumbBtn" type="button" data-index="3">
+            <button class="thumbBtn" type="button" data-index="2">
               <img
                 src="images/BERANTA-1.jpg"
-                data-i18n-alt="img_alt_room_2"
-                alt="Spitaki Milos - Υπνοδωμάτιο 2"
+                alt="Spitaki Milos - Βεράντα 1"
                 loading="lazy"
                 decoding="async"
               />
@@ -711,44 +765,40 @@
             <button class="thumbBtn" type="button" data-index="3">
               <img
                 src="images/BERANTA-2.jpg"
-                data-i18n-alt="img_alt_room_2"
-                alt="Spitaki Milos - Υπνοδωμάτιο 2"
+                alt="Spitaki Milos - Βεράντα 2"
                 loading="lazy"
                 decoding="async"
               />
             </button>
-            
-            <button class="thumbBtn" type="button" data-index="3">
+
+            <button class="thumbBtn" type="button" data-index="4">
               <img
                 src="images/BERANTA-3.jpg"
-                data-i18n-alt="img_alt_room_2"
-                alt="Spitaki Milos - Υπνοδωμάτιο 2"
+                alt="Spitaki Milos - Βεράντα 3"
                 loading="lazy"
                 decoding="async"
               />
             </button>
 
-            <button class="thumbBtn" type="button" data-index="3">
+            <button class="thumbBtn" type="button" data-index="5">
               <img
                 src="images/BERANTA-4.jpg"
-                data-i18n-alt="img_alt_room_2"
-                alt="Spitaki Milos - Υπνοδωμάτιο 2"
+                alt="Spitaki Milos - Βεράντα 4"
                 loading="lazy"
                 decoding="async"
               />
             </button>
 
-            <button class="thumbBtn" type="button" data-index="3">
+            <button class="thumbBtn" type="button" data-index="6">
               <img
                 src="images/BERANTA-5.jpg"
-                data-i18n-alt="img_alt_room_2"
-                alt="Spitaki Milos - Υπνοδωμάτιο 2"
+                alt="Spitaki Milos - Βεράντα 5"
                 loading="lazy"
                 decoding="async"
               />
             </button>
 
-            <button class="thumbBtn" type="button" data-index="2">
+            <button class="thumbBtn" type="button" data-index="7">
               <img
                 src="images/DOMATIO-1.jpg"
                 data-i18n-alt="img_alt_room_1"
@@ -758,7 +808,7 @@
               />
             </button>
 
-            <button class="thumbBtn" type="button" data-index="3">
+            <button class="thumbBtn" type="button" data-index="8">
               <img
                 src="images/DOMATIO-2.jpg"
                 data-i18n-alt="img_alt_room_2"
@@ -768,7 +818,7 @@
               />
             </button>
 
-            <button class="thumbBtn" type="button" data-index="4">
+            <button class="thumbBtn" type="button" data-index="9">
               <img
                 src="images/DOMATIO-3.jpg"
                 data-i18n-alt="img_alt_room_3"
@@ -778,7 +828,7 @@
               />
             </button>
 
-            <button class="thumbBtn" type="button" data-index="5">
+            <button class="thumbBtn" type="button" data-index="10">
               <img
                 src="images/DOMATIO-4.jpg"
                 data-i18n-alt="img_alt_room_4"
@@ -788,7 +838,7 @@
               />
             </button>
 
-            <button class="thumbBtn" type="button" data-index="6">
+            <button class="thumbBtn" type="button" data-index="11">
               <img
                 src="images/MPANIO-1.jpg"
                 data-i18n-alt="img_alt_bathroom"
@@ -798,7 +848,7 @@
               />
             </button>
 
-            <button class="thumbBtn" type="button" data-index="7">
+            <button class="thumbBtn" type="button" data-index="12">
               <img
                 src="images/KOUZINA-1.jpg"
                 data-i18n-alt="img_alt_kitchen"
@@ -920,7 +970,7 @@
       <button class="lightboxBtn lightboxPrev" id="lightboxPrev" type="button" aria-label="Previous">‹</button>
       <img class="lightboxImg" id="lightboxImg" src="" alt="" />
       <button class="lightboxBtn lightboxNext" id="lightboxNext" type="button" aria-label="Next">›</button>
-      <div class="lightboxCaption" id="lightboxCaption"></div>
+      <div class="lightboxCaption" id="lightboxCaption">Spitaki Milos</div>
     </div>
   </div>
 
@@ -1044,7 +1094,7 @@
         lbl_checkin: "Check-in",
         lbl_checkout: "Check-out",
         lbl_message: "Μήνυμα (προαιρετικό)",
-        ph_message: "Π.χ. ώρα άφιξης, ειδικές ανάγκες, ερωτήσεις κλπ",
+        ph_message: "Π.χ. ώρα άφιξης, ειδικές ανάγκες, ερωτήσεις κլπ",
 
         btn_send_email: "Στείλε αίτημα (Email)",
         btn_send_wa: "Στείλε στο WhatsApp",
@@ -1225,7 +1275,7 @@
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "galleryDot";
-        btn.setAttribute("aria-label", img.alt || `Image ${index + 1}`);
+        btn.setAttribute("aria-label", `Image ${index + 1}`);
         btn.addEventListener("click", () => {
           setFeatured(index, true);
         });
@@ -1240,7 +1290,7 @@
 
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt || "";
-      lightboxCaption.textContent = img.alt || "";
+      lightboxCaption.textContent = "Spitaki Milos";
     }
 
     function setFeatured(index, shouldScrollThumb = false) {
@@ -1251,7 +1301,7 @@
 
       featuredImage.src = img.src;
       featuredImage.alt = img.alt || "";
-      featuredCaption.textContent = img.alt || "";
+      featuredCaption.textContent = "Spitaki Milos";
       galleryCounter.textContent = `${index + 1} / ${galleryImages.length}`;
 
       thumbButtons.forEach((btn, btnIndex) => {
