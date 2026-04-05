@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title id="metaTitle">Spitaki Milos | Διαμονή στη Μήλο</title>
-  <meta id="metaDesc" name="description" content="Spitaki Milos – διαμονή στη Μήλο (Τρυπητή) με βεράντες και θέα στη θάλασσα. Κράτηση μέσω Airbnb ή Booking.com και άμεση επικοινωνία μέσω WhatsApp." />
+  <meta id="metaDesc" name="description" content="Spitaki Milos – ιδιωτική διαμονή στην Τρυπητή Μήλου με βεράντες και θέα στη θάλασσα. Κράτηση μέσω Airbnb ή Booking.com, ή άμεσο αίτημα διαθεσιμότητας." />
   <link id="canonicalLink" rel="canonical" href="https://spitakimilos.com/" />
 
   <link rel="alternate" hreflang="el" href="https://spitakimilos.com/?lang=el" />
@@ -19,12 +19,13 @@
 
   <style>
     :root{
-      --bgTop:#bfeaff;
-      --bgMid:#f5fbff;
-      --bgBottom:#ffe9bc;
+      --bgTop:#c7ecff;
+      --bgMid:#f7fcff;
+      --bgBottom:#ffedc8;
 
-      --card:rgba(255,255,255,.95);
-      --card2:rgba(255,255,255,.88);
+      --card:rgba(255,255,255,.94);
+      --card2:rgba(255,255,255,.86);
+      --glass:rgba(255,255,255,.72);
 
       --text:#08263a;
       --muted:#2f5c73;
@@ -32,13 +33,16 @@
       --accent:#0ea5e9;
       --accent2:#fb7185;
       --accent3:#f59e0b;
+      --accentDark:#0b7fb4;
 
-      --border:rgba(8,38,58,.12);
+      --border:rgba(8,38,58,.11);
       --shadow:0 18px 55px rgba(8,38,58,.16);
+      --shadowSoft:0 12px 30px rgba(8,38,58,.09);
 
       --airbnb:#FF385C;
       --booking:#003580;
       --success:#10b981;
+      --gold:#c99a2e;
     }
 
     *{box-sizing:border-box}
@@ -59,8 +63,8 @@
       color:var(--text);
       background:
         radial-gradient(1000px 520px at 18% 0%, rgba(14,165,233,.42), transparent 62%),
-        radial-gradient(900px 520px at 88% 8%, rgba(251,113,133,.24), transparent 60%),
-        radial-gradient(900px 520px at 70% 95%, rgba(245,158,11,.20), transparent 60%),
+        radial-gradient(900px 520px at 88% 8%, rgba(251,113,133,.22), transparent 60%),
+        radial-gradient(900px 520px at 70% 95%, rgba(245,158,11,.18), transparent 60%),
         linear-gradient(180deg, var(--bgTop) 0%, var(--bgMid) 35%, var(--bgBottom) 100%);
     }
 
@@ -68,10 +72,10 @@
     a{color:inherit;text-decoration:none}
 
     .wrap{
-      max-width:1160px;
-      width:min(1160px, calc(100% - 24px));
+      max-width:1180px;
+      width:min(1180px, calc(100% - 24px));
       margin:0 auto;
-      padding:20px 12px 110px;
+      padding:18px 12px 120px;
     }
 
     .top{
@@ -96,13 +100,13 @@
     }
 
     .brand .logo{
-      height: clamp(140px, 12vw, 220px);
-      width: 640px;
-      max-width: 100%;
-      object-fit: contain;
+      height:clamp(140px, 12vw, 220px);
+      width:660px;
+      max-width:100%;
+      object-fit:contain;
       display:block;
-      margin-bottom: 8px;
-      filter: drop-shadow(0 2px 10px rgba(8,38,58,.18));
+      margin-bottom:8px;
+      filter:drop-shadow(0 2px 10px rgba(8,38,58,.18));
     }
 
     .topActions{
@@ -118,10 +122,10 @@
       justify-content:center;
       gap:8px;
       padding:12px 14px;
-      border-radius:14px;
-      font-weight:700;
+      border-radius:15px;
+      font-weight:750;
       cursor:pointer;
-      transition:transform .08s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+      transition:transform .08s ease, box-shadow .14s ease, background .14s ease, border-color .14s ease;
       user-select:none;
       border:1px solid transparent;
       line-height:1.2;
@@ -133,26 +137,26 @@
       background:linear-gradient(90deg, var(--accent), var(--accent2));
       color:#fff;
       border:none;
-      box-shadow:0 10px 22px rgba(14,165,233,.22);
+      box-shadow:0 12px 24px rgba(14,165,233,.24);
     }
 
     .btn.primary:hover{
-      box-shadow:0 14px 28px rgba(14,165,233,.28);
+      box-shadow:0 16px 30px rgba(14,165,233,.30);
     }
 
     .btn.ghost{
-      background:rgba(255,255,255,.82);
+      background:rgba(255,255,255,.84);
       border:1px solid var(--border);
       color:var(--text);
+      backdrop-filter:blur(10px);
     }
 
     .btn.ghost:hover{
-      background:rgba(255,255,255,.94);
+      background:rgba(255,255,255,.95);
+      box-shadow:0 10px 22px rgba(8,38,58,.08);
     }
 
-    .btn.full{
-      width:100%;
-    }
+    .btn.full{width:100%}
 
     .langSwitch{
       display:flex;
@@ -164,7 +168,7 @@
     .langBtn{
       padding:10px 12px;
       border-radius:999px;
-      font-weight:750;
+      font-weight:800;
       letter-spacing:.4px;
     }
 
@@ -176,46 +180,45 @@
     .card{
       background:linear-gradient(180deg, var(--card), var(--card2));
       border:1px solid var(--border);
-      border-radius:24px;
+      border-radius:26px;
       box-shadow:var(--shadow);
-      backdrop-filter:saturate(120%) blur(6px);
+      backdrop-filter:saturate(125%) blur(8px);
     }
 
-    .announcement{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
-      padding:12px 16px;
+    .heroBanner{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:18px;
       margin-bottom:18px;
-      background:linear-gradient(90deg, rgba(255,255,255,.82), rgba(255,255,255,.66));
-      border:1px solid rgba(8,38,58,.08);
-      border-radius:18px;
-      box-shadow:0 10px 24px rgba(8,38,58,.08);
+      align-items:stretch;
     }
 
-    .announcementLeft{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      align-items:center;
+    .heroIntro{
+      padding:30px;
+      position:relative;
+      overflow:hidden;
+      min-width:0;
+      background:
+        radial-gradient(500px 240px at 0% 0%, rgba(14,165,233,.12), transparent 70%),
+        radial-gradient(480px 260px at 100% 100%, rgba(251,113,133,.10), transparent 70%),
+        linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.88));
     }
 
-    .announcementPill{
+    .heroKicker{
       display:inline-flex;
       align-items:center;
       gap:8px;
+      padding:9px 12px;
       border-radius:999px;
-      padding:8px 12px;
-      background:rgba(255,255,255,.76);
+      background:rgba(255,255,255,.78);
       border:1px solid rgba(8,38,58,.08);
-      font-size:13px;
-      color:var(--text);
-      font-weight:650;
+      box-shadow:0 8px 18px rgba(8,38,58,.05);
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:14px;
     }
 
-    .dot{
+    .heroKickerDot{
       width:8px;
       height:8px;
       border-radius:999px;
@@ -223,24 +226,88 @@
       box-shadow:0 0 0 6px rgba(16,185,129,.12);
     }
 
-    .heroIntro{
-      padding:28px;
-      margin-bottom:18px;
-    }
-
     .heroIntro h1{
-      margin:0 0 10px;
-      font-size:40px;
-      letter-spacing:-.4px;
-      line-height:1.05;
+      margin:0 0 12px;
+      font-size:44px;
+      line-height:1.02;
+      letter-spacing:-.45px;
+      max-width:720px;
     }
 
     .heroIntro p{
       margin:0;
       color:var(--muted);
-      line-height:1.75;
-      max-width:820px;
+      line-height:1.8;
+      max-width:760px;
       font-size:17px;
+    }
+
+    .heroBadges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .heroBadge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      background:rgba(14,165,233,.10);
+      border:1px solid rgba(14,165,233,.14);
+      color:#0b4f71;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .heroMiniPanel{
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.88));
+    }
+
+    .miniPanelTitle{
+      margin:0;
+      font-size:18px;
+      font-weight:850;
+    }
+
+    .miniPanelText{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .miniStats{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+
+    .miniStat{
+      background:rgba(14,165,233,.06);
+      border:1px solid rgba(14,165,233,.10);
+      border-radius:18px;
+      padding:14px;
+    }
+
+    .miniStatLabel{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:4px;
+    }
+
+    .miniStatValue{
+      display:block;
+      font-size:16px;
+      font-weight:850;
     }
 
     .hero{
@@ -248,6 +315,7 @@
       grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
       gap:18px;
       align-items:start;
+      margin-bottom:18px;
     }
 
     .hero > .card{
@@ -265,12 +333,13 @@
       display:block;
       font-size:20px;
       margin-bottom:8px;
+      font-weight:850;
     }
 
     .heroSideText{
       margin:0;
       color:var(--muted);
-      line-height:1.7;
+      line-height:1.75;
     }
 
     .tags{
@@ -281,21 +350,22 @@
     }
 
     .tag{
-      padding:8px 10px;
+      padding:8px 11px;
       border-radius:999px;
       font-size:13px;
       background:rgba(14,165,233,.14);
       border:1px solid rgba(14,165,233,.22);
       color:#0b3a54;
-      font-weight:650;
+      font-weight:700;
     }
 
     .bookingPanel{
-      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.90));
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
       border:1px solid rgba(8,38,58,.09);
-      border-radius:22px;
+      border-radius:24px;
       padding:18px;
-      box-shadow:0 14px 28px rgba(8,38,58,.08);
+      box-shadow:0 14px 30px rgba(8,38,58,.08);
     }
 
     .bookingPanelHead{
@@ -308,7 +378,7 @@
 
     .bookingPanelTitle{
       font-size:18px;
-      font-weight:800;
+      font-weight:850;
       margin:0;
     }
 
@@ -316,7 +386,7 @@
       margin:6px 0 0;
       color:var(--muted);
       font-size:14px;
-      line-height:1.6;
+      line-height:1.65;
     }
 
     .miniBadge{
@@ -329,7 +399,7 @@
       color:#0b6a4a;
       border:1px solid rgba(16,185,129,.18);
       font-size:12px;
-      font-weight:800;
+      font-weight:850;
       white-space:nowrap;
     }
 
@@ -351,7 +421,7 @@
       background:rgba(255,255,255,.98);
       border:1px solid rgba(8,38,58,.12);
       box-shadow:0 10px 22px rgba(8,38,58,.08);
-      font-weight:800;
+      font-weight:850;
       min-height:50px;
     }
 
@@ -402,7 +472,7 @@
       background:rgba(0,53,128,.10);
       color:var(--booking);
       font-size:12px;
-      font-weight:800;
+      font-weight:850;
       letter-spacing:.2px;
     }
 
@@ -440,7 +510,7 @@
 
     .statValue{
       font-size:15px;
-      font-weight:800;
+      font-weight:850;
     }
 
     .heroRight{
@@ -461,7 +531,7 @@
 
     .featuredStage{
       position:relative;
-      border-radius:22px;
+      border-radius:24px;
       overflow:hidden;
       background:#fff;
       border:1px solid rgba(8,38,58,.14);
@@ -481,7 +551,7 @@
     .featuredBtn img{
       display:block;
       width:100%;
-      height:390px;
+      height:410px;
       object-fit:cover;
       background:#fff;
       transition:transform .3s ease, filter .3s ease;
@@ -699,28 +769,49 @@
     }
 
     .heroRight .mini{
-      background:rgba(255,255,255,.92) !important;
+      background:rgba(255,255,255,.08) !important;
       flex-shrink:0;
+    }
+
+    .sectionTitleWrap{
+      margin:26px 0 12px;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:end;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .sectionTitle{
+      margin:0;
+      font-size:28px;
+      letter-spacing:-.3px;
+    }
+
+    .sectionText{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:720px;
     }
 
     .trustRow{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:14px;
-      margin-top:18px;
     }
 
     .trustCard{
-      padding:16px;
-      border-radius:20px;
-      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.86));
+      padding:18px;
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.87));
       border:1px solid rgba(8,38,58,.08);
       box-shadow:0 10px 24px rgba(8,38,58,.06);
     }
 
     .trustIcon{
-      width:42px;
-      height:42px;
+      width:44px;
+      height:44px;
       border-radius:14px;
       display:flex;
       align-items:center;
@@ -729,11 +820,11 @@
       background:rgba(14,165,233,.10);
       color:#0b4d6f;
       margin-bottom:10px;
-      font-weight:800;
+      font-weight:850;
     }
 
     .trustTitle{
-      font-weight:800;
+      font-weight:850;
       margin-bottom:6px;
       display:block;
     }
@@ -741,50 +832,218 @@
     .trustText{
       color:var(--muted);
       font-size:14px;
-      line-height:1.65;
+      line-height:1.7;
       margin:0;
     }
+
+    .bookingOptions{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .optionCard{
+      padding:20px;
+      border-radius:24px;
+      background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.88));
+      border:1px solid rgba(8,38,58,.08);
+      box-shadow:var(--shadowSoft);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .optionCard.featured{
+      border-color:rgba(14,165,233,.24);
+      box-shadow:0 18px 36px rgba(14,165,233,.14);
+    }
+
+    .optionRibbon{
+      position:absolute;
+      top:14px;
+      right:14px;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:850;
+      color:#7a5600;
+      background:rgba(245,158,11,.16);
+      border:1px solid rgba(245,158,11,.22);
+    }
+
+    .optionHeader{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:12px;
+    }
+
+    .optionIcon{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:850;
+    }
+
+    .optionAirbnb{
+      background:rgba(255,56,92,.12);
+      color:var(--airbnb);
+    }
+
+    .optionBooking{
+      background:rgba(0,53,128,.10);
+      color:var(--booking);
+    }
+
+    .optionDirect{
+      background:rgba(14,165,233,.10);
+      color:var(--accentDark);
+    }
+
+    .optionTitle{
+      margin:0;
+      font-size:18px;
+      font-weight:850;
+    }
+
+    .optionSubtitle{
+      margin:2px 0 0;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.55;
+    }
+
+    .optionList{
+      margin:0 0 16px;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .optionList li{margin-bottom:2px;}
 
     .grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:14px;
-      margin-top:18px;
     }
 
     .mini{
-      padding:16px;
+      padding:18px;
     }
 
     .mini b{
       display:block;
-      margin-bottom:6px;
+      margin-bottom:8px;
+      font-weight:850;
     }
 
     .list{
       margin:0;
       padding-left:18px;
       color:var(--muted);
-      line-height:1.8;
+      line-height:1.85;
     }
 
     .section{margin-top:18px}
 
-    .form{margin-top:10px}
+    .faqWrap{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+
+    .faqItem{
+      background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.88));
+      border:1px solid rgba(8,38,58,.08);
+      border-radius:20px;
+      box-shadow:0 10px 24px rgba(8,38,58,.05);
+      overflow:hidden;
+    }
+
+    .faqBtn{
+      width:100%;
+      border:none;
+      background:transparent;
+      padding:16px 18px;
+      text-align:left;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      cursor:pointer;
+      font:inherit;
+      color:inherit;
+    }
+
+    .faqBtnTitle{
+      font-weight:850;
+      line-height:1.4;
+    }
+
+    .faqIcon{
+      width:30px;
+      height:30px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(14,165,233,.10);
+      color:var(--accentDark);
+      font-weight:850;
+      flex-shrink:0;
+      transition:transform .18s ease;
+    }
+
+    .faqItem.open .faqIcon{
+      transform:rotate(45deg);
+    }
+
+    .faqAnswer{
+      display:grid;
+      grid-template-rows:0fr;
+      transition:grid-template-rows .22s ease;
+    }
+
+    .faqItem.open .faqAnswer{
+      grid-template-rows:1fr;
+    }
+
+    .faqAnswerInner{
+      overflow:hidden;
+    }
+
+    .faqAnswerText{
+      margin:0;
+      padding:0 18px 18px;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:14px;
+    }
+
+    .form{
+      margin-top:10px;
+    }
+
     .formGrid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:10px;
       margin-top:10px;
     }
-    .formGrid .full{grid-column:1 / -1}
+
+    .formGrid .full{
+      grid-column:1 / -1;
+    }
 
     label{
       display:block;
       font-size:12px;
       color:rgba(8,38,58,.75);
       margin-bottom:6px;
-      font-weight:700;
+      font-weight:750;
     }
 
     input, textarea, select{
@@ -810,13 +1069,13 @@
     }
 
     input::placeholder, textarea::placeholder{
-      color:rgba(8,38,58,.45)
+      color:rgba(8,38,58,.45);
     }
 
     .helper{
       color:rgba(8,38,58,.60);
       font-size:12px;
-      line-height:1.5;
+      line-height:1.55;
       margin-top:8px;
     }
 
@@ -828,7 +1087,7 @@
     }
 
     .footer{
-      margin:26px 0 6px;
+      margin:30px 0 6px;
       color:rgba(8,38,58,.55);
       font-size:13px;
     }
@@ -939,7 +1198,7 @@
       display:none;
       padding:10px;
       border-radius:18px;
-      background:rgba(255,255,255,.92);
+      background:rgba(255,255,255,.94);
       border:1px solid rgba(8,38,58,.10);
       box-shadow:0 18px 50px rgba(8,38,58,.18);
       backdrop-filter:blur(10px);
@@ -958,7 +1217,7 @@
 
     .stickyLeadTitle{
       font-size:13px;
-      font-weight:800;
+      font-weight:850;
       margin:0 0 2px;
     }
 
@@ -974,15 +1233,17 @@
       padding:10px 12px;
       border-radius:14px;
       font-size:13px;
-      font-weight:800;
+      font-weight:850;
     }
 
-    @media (max-width:980px){
+    @media (max-width:1050px){
+      .heroBanner,
       .hero{
         grid-template-columns:1fr;
       }
 
       .trustRow,
+      .bookingOptions,
       .grid,
       .statsStrip{
         grid-template-columns:1fr;
@@ -992,7 +1253,7 @@
     @media (max-width:880px){
       .wrap{
         width:min(100%, calc(100% - 16px));
-        padding:16px 8px 120px;
+        padding:16px 8px 126px;
       }
 
       .brand .logo{
@@ -1000,7 +1261,7 @@
       }
 
       .heroIntro h1{
-        font-size:31px;
+        font-size:32px;
       }
 
       .heroIntro p{
@@ -1012,7 +1273,7 @@
       }
 
       .featuredBtn img{
-        height:255px;
+        height:270px;
       }
 
       .featuredNav{
@@ -1037,10 +1298,6 @@
 
       .ctaRow .btn{
         width:100%;
-      }
-
-      .announcement{
-        align-items:flex-start;
       }
 
       .stickyBooking{
@@ -1105,21 +1362,44 @@
       </div>
     </div>
 
-    <div class="announcement">
-      <div class="announcementLeft">
-        <span class="announcementPill">
-          <span class="dot" aria-hidden="true"></span>
-          <span data-i18n="announce_1"></span>
-        </span>
-        <span class="announcementPill" data-i18n="announce_2"></span>
-        <span class="announcementPill" data-i18n="announce_3"></span>
-      </div>
-      <a class="btn primary" href="#contact" data-i18n="announce_cta"></a>
-    </div>
+    <div class="heroBanner">
+      <div class="card heroIntro">
+        <div class="heroKicker">
+          <span class="heroKickerDot" aria-hidden="true"></span>
+          <span data-i18n="hero_kicker"></span>
+        </div>
 
-    <div class="card heroIntro">
-      <h1 data-i18n="hero_h1"></h1>
-      <p data-i18n="hero_p" data-i18n-html="true"></p>
+        <h1 data-i18n="hero_h1"></h1>
+        <p data-i18n="hero_p" data-i18n-html="true"></p>
+
+        <div class="heroBadges">
+          <span class="heroBadge" data-i18n="hero_badge_1"></span>
+          <span class="heroBadge" data-i18n="hero_badge_2"></span>
+          <span class="heroBadge" data-i18n="hero_badge_3"></span>
+        </div>
+      </div>
+
+      <div class="card heroMiniPanel">
+        <h2 class="miniPanelTitle" data-i18n="mini_panel_title"></h2>
+        <p class="miniPanelText" data-i18n="mini_panel_text"></p>
+
+        <div class="miniStats">
+          <div class="miniStat">
+            <span class="miniStatLabel" data-i18n="mini_stat_1_label"></span>
+            <span class="miniStatValue" data-i18n="mini_stat_1_value"></span>
+          </div>
+
+          <div class="miniStat">
+            <span class="miniStatLabel" data-i18n="mini_stat_2_label"></span>
+            <span class="miniStatValue" data-i18n="mini_stat_2_value"></span>
+          </div>
+
+          <div class="miniStat">
+            <span class="miniStatLabel" data-i18n="mini_stat_3_label"></span>
+            <span class="miniStatValue" data-i18n="mini_stat_3_value"></span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="hero">
@@ -1221,85 +1501,26 @@
           <div class="featuredCaption" id="featuredCaption">Spitaki Milos</div>
 
           <div class="thumbRail" id="thumbRail">
-            <button class="thumbBtn active" type="button" data-index="0">
-              <img src="images/SPITAKIMILOS.jpg" data-i18n-alt="img_alt_view" alt="Spitaki Milos - Θέα" loading="eager" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="1">
-              <img src="images/FHD0026.JPG" data-i18n-alt="img_alt_view" alt="Spitaki Milos - Θέα" loading="eager" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="2">
-              <img src="images/FHD0050.JPG" data-i18n-alt="img_alt_terrace" alt="Spitaki Milos - Βεράντα" loading="eager" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="3">
-              <img src="images/BERANTA-1.jpg" alt="Spitaki Milos - Βεράντα 1" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="4">
-              <img src="images/BERANTA-2.jpg" alt="Spitaki Milos - Βεράντα 2" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="5">
-              <img src="images/BERANTA-3.jpg" alt="Spitaki Milos - Βεράντα 3" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="6">
-              <img src="images/BERANTA-4.jpg" alt="Spitaki Milos - Βεράντα 4" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="7">
-              <img src="images/BERANTA-5.jpg" alt="Spitaki Milos - Βεράντα 5" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="8">
-              <img src="images/BERANTA-6.jpg" alt="Spitaki Milos - Βεράντα 6" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="9">
-              <img src="images/BERANTA-7.jpg" alt="Spitaki Milos - Βεράντα 7" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="10">
-              <img src="images/BERANTA-8.jpg" alt="Spitaki Milos - Βεράντα 8" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="11">
-              <img src="images/BERANTA-9.jpg" alt="Spitaki Milos - Βεράντα 9" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="12">
-              <img src="images/BERANTA-10.jpg" alt="Spitaki Milos - Βεράντα 10" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="13">
-              <img src="images/XOL-1.jpg" alt="Spitaki Milos - Χολ" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="14">
-              <img src="images/DOMATIO-1.jpg" data-i18n-alt="img_alt_room_1" alt="Spitaki Milos - Υπνοδωμάτιο 1" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="15">
-              <img src="images/DOMATIO-2.jpg" data-i18n-alt="img_alt_room_2" alt="Spitaki Milos - Υπνοδωμάτιο 2" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="16">
-              <img src="images/DOMATIO-3.jpg" data-i18n-alt="img_alt_room_3" alt="Spitaki Milos - Υπνοδωμάτιο 3" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="17">
-              <img src="images/DOMATIO-4.jpg" data-i18n-alt="img_alt_room_4" alt="Spitaki Milos - Υπνοδωμάτιο 4" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="18">
-              <img src="images/MPANIO-1.jpg" data-i18n-alt="img_alt_bathroom" alt="Spitaki Milos - Μπάνιο" loading="lazy" decoding="async" />
-            </button>
-
-            <button class="thumbBtn" type="button" data-index="19">
-              <img src="images/KOUZINA-1.jpg" data-i18n-alt="img_alt_kitchen" alt="Spitaki Milos - Κουζίνα" loading="lazy" decoding="async" />
-            </button>
+            <button class="thumbBtn active" type="button" data-index="0"><img src="images/SPITAKIMILOS.jpg" data-i18n-alt="img_alt_view" alt="Spitaki Milos - Θέα" loading="eager" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="1"><img src="images/FHD0026.JPG" data-i18n-alt="img_alt_view" alt="Spitaki Milos - Θέα" loading="eager" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="2"><img src="images/FHD0050.JPG" data-i18n-alt="img_alt_terrace" alt="Spitaki Milos - Βεράντα" loading="eager" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="3"><img src="images/BERANTA-1.jpg" alt="Spitaki Milos - Βεράντα 1" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="4"><img src="images/BERANTA-2.jpg" alt="Spitaki Milos - Βεράντα 2" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="5"><img src="images/BERANTA-3.jpg" alt="Spitaki Milos - Βεράντα 3" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="6"><img src="images/BERANTA-4.jpg" alt="Spitaki Milos - Βεράντα 4" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="7"><img src="images/BERANTA-5.jpg" alt="Spitaki Milos - Βεράντα 5" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="8"><img src="images/BERANTA-6.jpg" alt="Spitaki Milos - Βεράντα 6" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="9"><img src="images/BERANTA-7.jpg" alt="Spitaki Milos - Βεράντα 7" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="10"><img src="images/BERANTA-8.jpg" alt="Spitaki Milos - Βεράντα 8" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="11"><img src="images/BERANTA-9.jpg" alt="Spitaki Milos - Βεράντα 9" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="12"><img src="images/BERANTA-10.jpg" alt="Spitaki Milos - Βεράντα 10" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="13"><img src="images/XOL-1.jpg" alt="Spitaki Milos - Χολ" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="14"><img src="images/DOMATIO-1.jpg" data-i18n-alt="img_alt_room_1" alt="Spitaki Milos - Υπνοδωμάτιο 1" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="15"><img src="images/DOMATIO-2.jpg" data-i18n-alt="img_alt_room_2" alt="Spitaki Milos - Υπνοδωμάτιο 2" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="16"><img src="images/DOMATIO-3.jpg" data-i18n-alt="img_alt_room_3" alt="Spitaki Milos - Υπνοδωμάτιο 3" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="17"><img src="images/DOMATIO-4.jpg" data-i18n-alt="img_alt_room_4" alt="Spitaki Milos - Υπνοδωμάτιο 4" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="18"><img src="images/MPANIO-1.jpg" data-i18n-alt="img_alt_bathroom" alt="Spitaki Milos - Μπάνιο" loading="lazy" decoding="async" /></button>
+            <button class="thumbBtn" type="button" data-index="19"><img src="images/KOUZINA-1.jpg" data-i18n-alt="img_alt_kitchen" alt="Spitaki Milos - Κουζίνα" loading="lazy" decoding="async" /></button>
           </div>
 
           <div class="galleryHint" data-i18n="gallery_hint"></div>
@@ -1309,6 +1530,13 @@
           <b data-i18n="tip_title"></b>
           <span style="color:var(--muted);font-size:13px;line-height:1.7" data-i18n="tip_text"></span>
         </div>
+      </div>
+    </div>
+
+    <div class="sectionTitleWrap">
+      <div>
+        <h2 class="sectionTitle" data-i18n="trust_section_title"></h2>
+        <p class="sectionText" data-i18n="trust_section_text"></p>
       </div>
     </div>
 
@@ -1332,6 +1560,82 @@
       </div>
     </div>
 
+    <div class="sectionTitleWrap">
+      <div>
+        <h2 class="sectionTitle" data-i18n="options_section_title"></h2>
+        <p class="sectionText" data-i18n="options_section_text"></p>
+      </div>
+    </div>
+
+    <div class="bookingOptions">
+      <div class="optionCard">
+        <div class="optionHeader">
+          <div class="optionIcon optionAirbnb">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+              <path d="M12 3.5c1.5 0 2.47 1.3 3.28 3.08l4.22 9.3c.86 1.9-.29 4.12-2.36 4.12-1.03 0-1.93-.56-2.43-1.42L12 14.2l-2.71 4.38A2.83 2.83 0 0 1 6.86 20c-2.07 0-3.22-2.22-2.36-4.12l4.22-9.3C9.53 4.8 10.5 3.5 12 3.5Zm0 3.07c-.32 0-.67.3-1.08 1.2L7.13 16.2c-.16.35.06.73.44.73.18 0 .35-.1.45-.26L12 10.78l3.98 5.89c.1.16.27.26.45.26.38 0 .6-.38.44-.73l-3.79-8.43c-.41-.9-.76-1.2-1.08-1.2Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="optionTitle" data-i18n="option_airbnb_title"></h3>
+            <p class="optionSubtitle" data-i18n="option_airbnb_sub"></p>
+          </div>
+        </div>
+
+        <ul class="optionList">
+          <li data-i18n="option_airbnb_1"></li>
+          <li data-i18n="option_airbnb_2"></li>
+          <li data-i18n="option_airbnb_3"></li>
+        </ul>
+
+        <a class="btn marketBtn airbnbBtn full" href="https://www.airbnb.gr/rooms/856227490864384143?guests=1&adults=1&s=67&unique_share_id=c8b18450-59b1-4be6-be42-56be93a06c76" target="_blank" rel="noopener noreferrer" data-i18n="option_airbnb_btn"></a>
+      </div>
+
+      <div class="optionCard featured">
+        <span class="optionRibbon" data-i18n="option_featured_ribbon"></span>
+
+        <div class="optionHeader">
+          <div class="optionIcon optionBooking">B</div>
+          <div>
+            <h3 class="optionTitle" data-i18n="option_booking_title"></h3>
+            <p class="optionSubtitle" data-i18n="option_booking_sub"></p>
+          </div>
+        </div>
+
+        <ul class="optionList">
+          <li data-i18n="option_booking_1"></li>
+          <li data-i18n="option_booking_2"></li>
+          <li data-i18n="option_booking_3"></li>
+        </ul>
+
+        <a class="btn marketBtn bookingBtn full" href="https://www.booking.com/Share-jv4SCT" target="_blank" rel="noopener noreferrer" data-i18n="option_booking_btn"></a>
+      </div>
+
+      <div class="optionCard">
+        <div class="optionHeader">
+          <div class="optionIcon optionDirect">✉</div>
+          <div>
+            <h3 class="optionTitle" data-i18n="option_direct_title"></h3>
+            <p class="optionSubtitle" data-i18n="option_direct_sub"></p>
+          </div>
+        </div>
+
+        <ul class="optionList">
+          <li data-i18n="option_direct_1"></li>
+          <li data-i18n="option_direct_2"></li>
+          <li data-i18n="option_direct_3"></li>
+        </ul>
+
+        <a class="btn primary full" href="#contact" data-i18n="option_direct_btn"></a>
+      </div>
+    </div>
+
+    <div class="sectionTitleWrap">
+      <div>
+        <h2 class="sectionTitle" data-i18n="details_section_title"></h2>
+        <p class="sectionText" data-i18n="details_section_text"></p>
+      </div>
+    </div>
+
     <div class="grid">
       <div class="card mini" id="info">
         <b data-i18n="amenities_title"></b>
@@ -1350,7 +1654,7 @@
 
       <div class="card mini">
         <b data-i18n="location_title"></b>
-        <p style="color:var(--muted);margin:0;line-height:1.7" data-i18n="location_p" data-i18n-html="true"></p>
+        <p style="color:var(--muted);margin:0;line-height:1.75" data-i18n="location_p" data-i18n-html="true"></p>
         <p style="margin:12px 0 0">
           <a class="btn ghost" href="https://maps.app.goo.gl/fMrSmKsphguYmS2f9" target="_blank" rel="noopener" data-i18n="open_map"></a>
         </p>
@@ -1358,7 +1662,7 @@
 
       <div class="card mini">
         <b data-i18n="request_title"></b>
-        <p style="color:var(--muted);margin:0;line-height:1.7" data-i18n="request_p"></p>
+        <p style="color:var(--muted);margin:0;line-height:1.75" data-i18n="request_p"></p>
 
         <div class="ctaStack" style="margin-top:10px">
           <div class="ctaRow">
@@ -1388,10 +1692,67 @@
       </div>
     </div>
 
+    <div class="sectionTitleWrap">
+      <div>
+        <h2 class="sectionTitle" data-i18n="faq_section_title"></h2>
+        <p class="sectionText" data-i18n="faq_section_text"></p>
+      </div>
+    </div>
+
+    <div class="faqWrap">
+      <div class="faqItem">
+        <button class="faqBtn" type="button">
+          <span class="faqBtnTitle" data-i18n="faq_1_q"></span>
+          <span class="faqIcon">+</span>
+        </button>
+        <div class="faqAnswer">
+          <div class="faqAnswerInner">
+            <p class="faqAnswerText" data-i18n="faq_1_a"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <button class="faqBtn" type="button">
+          <span class="faqBtnTitle" data-i18n="faq_2_q"></span>
+          <span class="faqIcon">+</span>
+        </button>
+        <div class="faqAnswer">
+          <div class="faqAnswerInner">
+            <p class="faqAnswerText" data-i18n="faq_2_a"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <button class="faqBtn" type="button">
+          <span class="faqBtnTitle" data-i18n="faq_3_q"></span>
+          <span class="faqIcon">+</span>
+        </button>
+        <div class="faqAnswer">
+          <div class="faqAnswerInner">
+            <p class="faqAnswerText" data-i18n="faq_3_a"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <button class="faqBtn" type="button">
+          <span class="faqBtnTitle" data-i18n="faq_4_q"></span>
+          <span class="faqIcon">+</span>
+        </button>
+        <div class="faqAnswer">
+          <div class="faqAnswerInner">
+            <p class="faqAnswerText" data-i18n="faq_4_a"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="section" id="contact">
       <div class="card mini">
         <b data-i18n="contact_title"></b>
-        <p style="color:var(--muted);margin:8px 0 0;line-height:1.7" data-i18n="contact_p" data-i18n-html="true"></p>
+        <p style="color:var(--muted);margin:8px 0 0;line-height:1.75" data-i18n="contact_p" data-i18n-html="true"></p>
 
         <form class="form" id="inquiryForm" onsubmit="return composeEmail(event)">
           <div class="formGrid">
@@ -1504,13 +1865,17 @@
 
     function scheduleLogoSync() {
       requestAnimationFrame(syncLogoWidthToTwoButtons);
-      setTimeout(syncLogoWidthToTwoButtons, 200);
+      setTimeout(syncLogoSync, 200);
+    }
+
+    function syncLogoSync() {
+      syncLogoWidthToTwoButtons();
     }
 
     const T = {
       el: {
         meta_title: "Spitaki Milos | Διαμονή στη Μήλο",
-        meta_desc: "Spitaki Milos – διαμονή στη Μήλο (Τρυπητή) με βεράντες και θέα στη θάλασσα. Κράτηση μέσω Airbnb ή Booking.com και άμεση επικοινωνία μέσω WhatsApp.",
+        meta_desc: "Spitaki Milos – ιδιωτική διαμονή στην Τρυπητή Μήλου με βεράντες και θέα στη θάλασσα. Κράτηση μέσω Airbnb ή Booking.com, ή άμεσο αίτημα διαθεσιμότητας.",
         og_title: "Spitaki Milos | Διαμονή στη Μήλο",
         og_desc: "Τρυπητή Μήλου • Βεράντες με θέα στη θάλασσα • Κράτηση μέσω Airbnb ή Booking.com",
 
@@ -1518,13 +1883,21 @@
         nav_info: "Πληροφορίες",
         nav_contact: "Επικοινωνία",
 
-        announce_1: "Live σε Airbnb & Booking.com",
-        announce_2: "Ιδανικό για ήρεμη διαμονή",
-        announce_3: "Άμεση επικοινωνία με τον ιδιοκτήτη",
-        announce_cta: "Ζήτησε διαθεσιμότητα",
-
-        hero_h1: "Ήρεμη διαμονή στη Μήλο, με άνεση σαν στο σπίτι σας",
+        hero_kicker: "Μια ήσυχη επιλογή διαμονής στην Τρυπητή Μήλου",
+        hero_h1: "Boutique αισθητική, ηρεμία και βεράντες με θέα στη θάλασσα",
         hero_p: "Καλωσήρθες στο <b>Spitaki Milos</b>. Δες φωτογραφίες, παροχές και τοποθεσία και επίλεξε τον τρόπο που σε εξυπηρετεί καλύτερα: <b>κράτηση μέσω Airbnb</b>, <b>Booking.com</b> ή <b>άμεσο αίτημα διαθεσιμότητας</b>.",
+        hero_badge_1: "Live σε Airbnb & Booking.com",
+        hero_badge_2: "Ήσυχη διαμονή στην Τρυπητή",
+        hero_badge_3: "Άμεση επικοινωνία για ερωτήσεις",
+
+        mini_panel_title: "Με μια ματιά",
+        mini_panel_text: "Το Spitaki Milos είναι μια ιδιωτική επιλογή διαμονής για όσους θέλουν Μήλο με πιο ήρεμο χαρακτήρα, πρακτικές παροχές και όμορφους εξωτερικούς χώρους.",
+        mini_stat_1_label: "Κατάλληλο για",
+        mini_stat_1_value: "Έως 4 άτομα",
+        mini_stat_2_label: "Το δυνατό σημείο",
+        mini_stat_2_value: "Βεράντες με θέα",
+        mini_stat_3_label: "Περιοχή",
+        mini_stat_3_value: "Τρυπητή, Μήλος",
 
         hero_side_title: "Βασικές παροχές",
         hero_side_text: "Όλα όσα χρειάζεσαι για μια άνετη, ξεκούραστη και πρακτική διαμονή στη Μήλο.",
@@ -1569,12 +1942,43 @@
         tip_title: "Tip",
         tip_text: "Για πιο γρήγορη απάντηση, στείλε ημερομηνίες και αριθμό ατόμων από τη φόρμα ή στο WhatsApp.",
 
+        trust_section_title: "Γιατί ξεχωρίζει",
+        trust_section_text: "Ένα πιο προσεγμένο, ήσυχο και πρακτικό σημείο διαμονής για όσους θέλουν να απολαύσουν τη Μήλο χωρίς περιττή πολυπλοκότητα.",
+
         trust_1_title: "Διαθέσιμο σε γνωστές πλατφόρμες",
         trust_1_text: "Μπορείς να προχωρήσεις σε κράτηση μέσω Airbnb ή Booking.com, ανάλογα με ό,τι σε εξυπηρετεί περισσότερο.",
         trust_2_title: "Ξεχωρίζει για τις βεράντες",
         trust_2_text: "Το δυνατό σημείο του σπιτιού είναι οι βεράντες με θέα στη θάλασσα και η ήσυχη αίσθηση διαμονής.",
         trust_3_title: "Άμεση επικοινωνία",
         trust_3_text: "Αν θέλεις πληροφορίες πριν κλείσεις, μπορείς να στείλεις email ή μήνυμα στο WhatsApp άμεσα.",
+
+        options_section_title: "Επίλεξε τον τρόπο κράτησης που σε βολεύει",
+        options_section_text: "Μπορείς να κλείσεις μέσω γνωστής πλατφόρμας ή να στείλεις πρώτα αίτημα για διαθεσιμότητα και πληροφορίες.",
+
+        option_airbnb_title: "Airbnb",
+        option_airbnb_sub: "Ιδανικό αν προτιμάς κράτηση μέσα από Airbnb.",
+        option_airbnb_1: "Άμεσο άνοιγμα της καταχώρισης",
+        option_airbnb_2: "Οικείο περιβάλλον για πολλούς επισκέπτες",
+        option_airbnb_3: "Κατάλληλο για γρήγορο booking flow",
+        option_airbnb_btn: "Άνοιγμα Airbnb",
+
+        option_featured_ribbon: "Δημοφιλής επιλογή",
+        option_booking_title: "Booking.com",
+        option_booking_sub: "Ιδανικό αν χρησιμοποιείς συχνά Booking.com για διαμονές.",
+        option_booking_1: "Άμεση μετάβαση στην καταχώριση",
+        option_booking_2: "Εξοικείωση για ταξιδιώτες που κλείνουν μέσω Booking",
+        option_booking_3: "Καθαρή και άμεση πορεία προς κράτηση",
+        option_booking_btn: "Άνοιγμα Booking.com",
+
+        option_direct_title: "Άμεσο αίτημα",
+        option_direct_sub: "Ιδανικό αν θέλεις πρώτα να ρωτήσεις διαθεσιμότητα ή λεπτομέρειες.",
+        option_direct_1: "Ερώτηση για ημερομηνίες και απορίες",
+        option_direct_2: "Επικοινωνία μέσω email ή WhatsApp",
+        option_direct_3: "Χρήσιμο πριν την τελική απόφαση",
+        option_direct_btn: "Στείλε αίτημα",
+
+        details_section_title: "Πληροφορίες διαμονής",
+        details_section_text: "Όσα χρειάζεται να ξέρει ο επισκέπτης με καθαρό και πρακτικό τρόπο.",
 
         amenities_title: "Παροχές",
         amenity_1: "Wi-Fi, A/C, Smart TV",
@@ -1588,8 +1992,7 @@
         amenity_9: "Μεγάλο ψυγείο",
 
         location_title: "Τοποθεσία",
-        location_p:
-          "Το Spitaki Milos βρίσκεται στην Τρυπητή. Το highlight του σπιτιού είναι οι βεράντες με θέα στη θάλασσα: μια ξύλινη βεράντα σε ιδιωτικό δρόμο, ιδανική για καφέ ή ποτό, και μια μεγάλη βεράντα για χαλάρωση, φαγητό ή παρέα. Για τα καθημερινά σου, θα βρεις ΑΒ Βασιλόπουλο σε περίπου 10 λεπτά, ενώ στάση λεωφορείου και φούρνος είναι περίπου 10 λεπτά με τα πόδια.",
+        location_p: "Το Spitaki Milos βρίσκεται στην Τρυπητή. Το highlight του σπιτιού είναι οι βεράντες με θέα στη θάλασσα: μια ξύλινη βεράντα σε ιδιωτικό δρόμο, ιδανική για καφέ ή ποτό, και μια μεγάλη βεράντα για χαλάρωση, φαγητό ή παρέα. Για τα καθημερινά σου, θα βρεις ΑΒ Βασιλόπουλο σε περίπου 10 λεπτά, ενώ στάση λεωφορείου και φούρνος είναι περίπου 10 λεπτά με τα πόδια.",
         open_map: "Άνοιγμα χάρτη",
 
         request_title: "Αίτημα διαθεσιμότητας",
@@ -1597,6 +2000,17 @@
         request_btn_form: "Συμπλήρωσε φόρμα",
         request_btn_airbnb: "Άνοιγμα Airbnb",
         request_btn_booking: "Άνοιγμα Booking.com",
+
+        faq_section_title: "Συχνές ερωτήσεις",
+        faq_section_text: "Μερικές βασικές πληροφορίες που βοηθούν τον επισκέπτη πριν κάνει κράτηση ή επικοινωνήσει.",
+        faq_1_q: "Ποιος είναι ο καλύτερος τρόπος για άμεση κράτηση;",
+        faq_1_a: "Αν θέλεις να προχωρήσεις απευθείας, μπορείς να ανοίξεις την καταχώριση στο Airbnb ή στο Booking.com και να δεις τη διαθεσιμότητα εκείνη τη στιγμή.",
+        faq_2_q: "Μπορώ να ρωτήσω πρώτα για διαθεσιμότητα πριν κλείσω;",
+        faq_2_a: "Ναι. Μπορείς να χρησιμοποιήσεις τη φόρμα επικοινωνίας ή το WhatsApp και να στείλεις τις ημερομηνίες και τον αριθμό ατόμων που σε ενδιαφέρουν.",
+        faq_3_q: "Για πόσα άτομα είναι κατάλληλο το σπίτι;",
+        faq_3_a: "Το Spitaki Milos είναι κατάλληλο για έως 4 άτομα, με κύριο υπνοδωμάτιο και επιπλέον δυνατότητα ύπνου στο σαλόνι.",
+        faq_4_q: "Τι ξεχωρίζει περισσότερο στο ακίνητο;",
+        faq_4_a: "Το στοιχείο που ξεχωρίζει περισσότερο είναι οι βεράντες με θέα στη θάλασσα και η ήσυχη αίσθηση της περιοχής στην Τρυπητή.",
 
         contact_title: "Επικοινωνία / Αίτημα διαθεσιμότητας",
         contact_p: "Συμπλήρωσε τα στοιχεία και πάτα “Στείλε αίτημα”. Θα ανοίξει έτοιμο email προς <b>info@spitakimilos.com</b> (ή μπορείς να στείλεις το ίδιο μήνυμα στο WhatsApp).",
@@ -1642,7 +2056,7 @@
 
       en: {
         meta_title: "Spitaki Milos | Stay in Milos",
-        meta_desc: "Spitaki Milos – a private stay in Milos (Trypiti) with terraces and sea view. Book via Airbnb or Booking.com, or contact us directly on WhatsApp.",
+        meta_desc: "Spitaki Milos – private stay in Trypiti, Milos with terraces and sea view. Book via Airbnb or Booking.com, or send a direct availability request.",
         og_title: "Spitaki Milos | Stay in Milos",
         og_desc: "Trypiti, Milos • Sea-view terraces • Book via Airbnb or Booking.com",
 
@@ -1650,13 +2064,21 @@
         nav_info: "Info",
         nav_contact: "Contact",
 
-        announce_1: "Live on Airbnb & Booking.com",
-        announce_2: "Ideal for a peaceful stay",
-        announce_3: "Direct contact with owner",
-        announce_cta: "Check availability",
-
-        hero_h1: "A peaceful stay in Milos, with comfort like home",
+        hero_kicker: "A peaceful stay option in Trypiti, Milos",
+        hero_h1: "Boutique feel, quiet surroundings, and terraces with sea view",
         hero_p: "Welcome to <b>Spitaki Milos</b>. Browse photos, amenities and location and choose what suits you best: <b>book via Airbnb</b>, <b>Booking.com</b> or <b>send a direct availability request</b>.",
+        hero_badge_1: "Live on Airbnb & Booking.com",
+        hero_badge_2: "Quiet stay in Trypiti",
+        hero_badge_3: "Direct contact for questions",
+
+        mini_panel_title: "At a glance",
+        mini_panel_text: "Spitaki Milos is a private stay option for guests who want Milos with a calmer atmosphere, practical amenities, and beautiful outdoor spaces.",
+        mini_stat_1_label: "Suitable for",
+        mini_stat_1_value: "Up to 4 guests",
+        mini_stat_2_label: "Main highlight",
+        mini_stat_2_value: "Sea-view terraces",
+        mini_stat_3_label: "Area",
+        mini_stat_3_value: "Trypiti, Milos",
 
         hero_side_title: "Key amenities",
         hero_side_text: "Everything you need for a comfortable, practical and relaxing stay in Milos.",
@@ -1669,7 +2091,7 @@
         tag_terraces: "Terraces • Sea view",
 
         booking_panel_title: "Book or ask for availability",
-        booking_panel_sub: "Choose a platform for instant booking or send a direct message for availability and special questions.",
+        booking_panel_sub: "Choose a platform for instant booking or send a message for availability and special questions.",
         booking_panel_badge: "Quick access",
 
         cta_request: "Send availability request",
@@ -1701,12 +2123,43 @@
         tip_title: "Tip",
         tip_text: "For a faster reply, send your dates and number of guests through the form or WhatsApp.",
 
+        trust_section_title: "Why it stands out",
+        trust_section_text: "A more thoughtful, quiet and practical stay option for visitors who want to enjoy Milos without unnecessary complexity.",
+
         trust_1_title: "Available on known platforms",
         trust_1_text: "You can complete your booking via Airbnb or Booking.com, depending on what suits you best.",
         trust_2_title: "Known for its terraces",
-        trust_2_text: "The strongest point of the house is its sea-view terraces and the peaceful stay experience.",
+        trust_2_text: "The strongest point of the house is its sea-view terraces and the calm stay experience.",
         trust_3_title: "Direct communication",
         trust_3_text: "If you want details before booking, you can message directly by email or WhatsApp.",
+
+        options_section_title: "Choose the booking path that suits you",
+        options_section_text: "You can book through a familiar platform or send a direct request first for availability and details.",
+
+        option_airbnb_title: "Airbnb",
+        option_airbnb_sub: "Ideal if you prefer booking within Airbnb.",
+        option_airbnb_1: "Instant access to the listing",
+        option_airbnb_2: "Familiar environment for many guests",
+        option_airbnb_3: "Suitable for a fast booking flow",
+        option_airbnb_btn: "Open Airbnb",
+
+        option_featured_ribbon: "Popular option",
+        option_booking_title: "Booking.com",
+        option_booking_sub: "Ideal if you often use Booking.com for stays.",
+        option_booking_1: "Direct access to the listing",
+        option_booking_2: "Comfortable for travelers used to Booking",
+        option_booking_3: "Clear and direct path to booking",
+        option_booking_btn: "Open Booking.com",
+
+        option_direct_title: "Direct request",
+        option_direct_sub: "Ideal if you want to ask about availability or details first.",
+        option_direct_1: "Ask about dates and questions",
+        option_direct_2: "Communicate via email or WhatsApp",
+        option_direct_3: "Useful before your final decision",
+        option_direct_btn: "Send request",
+
+        details_section_title: "Stay details",
+        details_section_text: "Everything a guest should know, presented in a clear and practical way.",
 
         amenities_title: "Amenities",
         amenity_1: "Wi-Fi, A/C, Smart TV",
@@ -1728,6 +2181,17 @@
         request_btn_form: "Fill in the form",
         request_btn_airbnb: "Open Airbnb",
         request_btn_booking: "Open Booking.com",
+
+        faq_section_title: "Frequently asked questions",
+        faq_section_text: "A few useful points that help the guest before booking or getting in touch.",
+        faq_1_q: "What is the best way to book instantly?",
+        faq_1_a: "If you want to proceed immediately, you can open the listing on Airbnb or Booking.com and check live availability there.",
+        faq_2_q: "Can I ask about availability before booking?",
+        faq_2_a: "Yes. You can use the contact form or WhatsApp and send the dates and number of guests you are interested in.",
+        faq_3_q: "How many guests is the house suitable for?",
+        faq_3_a: "Spitaki Milos is suitable for up to 4 guests, with a main bedroom and extra sleeping option in the living room.",
+        faq_4_q: "What is the main highlight of the property?",
+        faq_4_a: "The strongest highlight is the sea-view terraces and the peaceful feel of the area in Trypiti.",
 
         contact_title: "Contact / Availability request",
         contact_p: "Fill in your details and press “Send request”. A ready email to <b>info@spitakimilos.com</b> will open (or you can send the same message on WhatsApp).",
@@ -1914,6 +2378,16 @@
       setFeatured(0);
     }
 
+    function initFaq() {
+      const items = document.querySelectorAll(".faqItem");
+      items.forEach((item) => {
+        const btn = item.querySelector(".faqBtn");
+        btn.addEventListener("click", () => {
+          item.classList.toggle("open");
+        });
+      });
+    }
+
     function applyTranslations(lang) {
       const tr = T[lang];
 
@@ -1963,7 +2437,7 @@
 
       createDots();
       setFeatured(currentGalleryIndex);
-      scheduleLogoSync();
+      syncLogoSync();
     }
 
     function setLang(lang) {
@@ -2142,15 +2616,16 @@
     document.getElementById("btnEL").addEventListener("click", () => setLang("el"));
     document.getElementById("btnEN").addEventListener("click", () => setLang("en"));
 
-    window.addEventListener("resize", scheduleLogoSync);
+    window.addEventListener("resize", syncLogoSync);
 
     if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(scheduleLogoSync);
+      document.fonts.ready.then(syncLogoSync);
     }
 
     initGallery();
+    initFaq();
     setLang(getInitialLang());
-    scheduleLogoSync();
+    syncLogoSync();
     updateWhatsAppLink();
   </script>
 </body>
