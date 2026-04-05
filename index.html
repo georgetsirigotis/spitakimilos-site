@@ -35,6 +35,9 @@
 
     --border:rgba(8,38,58,.12);
     --shadow:0 18px 55px rgba(8,38,58,.16);
+
+    --airbnb:#FF385C;
+    --booking:#003580;
   }
 
   *{box-sizing:border-box}
@@ -102,7 +105,7 @@
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:8px;
     padding:12px 14px;border-radius:14px;font-weight:650;cursor:pointer;
-    transition:transform .08s ease, box-shadow .12s ease, background .12s ease;
+    transition:transform .08s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
     user-select:none;
   }
   .btn:active{transform:translateY(1px)}
@@ -198,7 +201,97 @@
     color:#0b3a54;
   }
 
-  .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .ctaStack{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:14px;
+  }
+
+  .ctaRow{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+  }
+
+  .ctaRow .btn{
+    min-height:48px;
+  }
+
+  .ctaRow.primaryRow .btn.primary{
+    min-width:260px;
+    font-size:15px;
+  }
+
+  .marketBtn{
+    background:rgba(255,255,255,.94);
+    border:1px solid rgba(8,38,58,.12);
+    box-shadow:0 8px 20px rgba(8,38,58,.08);
+    font-weight:700;
+  }
+
+  .marketBtn:hover{
+    transform:translateY(-1px);
+    box-shadow:0 12px 24px rgba(8,38,58,.12);
+  }
+
+  .airbnbBtn{
+    border-color:rgba(255,56,92,.28);
+  }
+
+  .airbnbBtn:hover{
+    border-color:rgba(255,56,92,.45);
+  }
+
+  .bookingBtn{
+    border-color:rgba(0,53,128,.22);
+  }
+
+  .bookingBtn:hover{
+    border-color:rgba(0,53,128,.40);
+  }
+
+  .brandMark{
+    width:22px;
+    height:22px;
+    min-width:22px;
+    border-radius:999px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 10px rgba(8,38,58,.10);
+  }
+
+  .brandMark svg{
+    width:14px;
+    height:14px;
+    display:block;
+  }
+
+  .airbnbMark{
+    background:rgba(255,56,92,.14);
+    color:var(--airbnb);
+  }
+
+  .bookingMark{
+    background:rgba(0,53,128,.10);
+    color:var(--booking);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.2px;
+  }
+
+  .supportBtn{
+    background:rgba(255,255,255,.78);
+  }
+
+  .ctaHint{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+    margin-top:2px;
+  }
 
   .heroRight{
     padding:18px;
@@ -634,6 +727,15 @@
       height:74px;
     }
 
+    .ctaRow{
+      flex-direction:column;
+      align-items:stretch;
+    }
+
+    .ctaRow .btn{
+      width:100%;
+    }
+
     .lightbox{
       padding:16px;
     }
@@ -698,10 +800,33 @@
           <span class="tag" data-i18n="tag_terraces"></span>
         </div>
 
-        <div class="cta">
-          <a class="btn primary" href="#contact" data-i18n="cta_request"></a>
-          <a class="btn ghost" href="https://wa.me/306977214642" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn ghost" href="mailto:info@spitakimilos.com">Email</a>
+        <div class="ctaStack">
+          <div class="ctaRow primaryRow">
+            <a class="btn primary" href="#contact" data-i18n="cta_request"></a>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn marketBtn airbnbBtn" href="https://www.airbnb.gr/rooms/856227490864384143?guests=1&adults=1&s=67&unique_share_id=c8b18450-59b1-4be6-be42-56be93a06c76" target="_blank" rel="noopener noreferrer">
+              <span class="brandMark airbnbMark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 3.5c1.5 0 2.47 1.3 3.28 3.08l4.22 9.3c.86 1.9-.29 4.12-2.36 4.12-1.03 0-1.93-.56-2.43-1.42L12 14.2l-2.71 4.38A2.83 2.83 0 0 1 6.86 20c-2.07 0-3.22-2.22-2.36-4.12l4.22-9.3C9.53 4.8 10.5 3.5 12 3.5Zm0 3.07c-.32 0-.67.3-1.08 1.2L7.13 16.2c-.16.35.06.73.44.73.18 0 .35-.1.45-.26L12 10.78l3.98 5.89c.1.16.27.26.45.26.38 0 .6-.38.44-.73l-3.79-8.43c-.41-.9-.76-1.2-1.08-1.2Z" fill="currentColor"/>
+                </svg>
+              </span>
+              <span data-i18n="cta_airbnb"></span>
+            </a>
+
+            <a class="btn marketBtn bookingBtn" href="https://www.booking.com/Share-jv4SCT" target="_blank" rel="noopener noreferrer">
+              <span class="brandMark bookingMark" aria-hidden="true">B</span>
+              <span data-i18n="cta_booking"></span>
+            </a>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn ghost supportBtn" href="https://wa.me/306977214642" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn ghost supportBtn" href="mailto:info@spitakimilos.com">Email</a>
+          </div>
+
+          <div class="ctaHint" data-i18n="cta_hint"></div>
         </div>
       </div>
 
@@ -960,10 +1085,32 @@
       <div class="card mini">
         <b data-i18n="request_title"></b>
         <p style="color:var(--muted);margin:0;line-height:1.6" data-i18n="request_p"></p>
-        <p style="margin:10px 0 0;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="#contact" data-i18n="request_btn_form"></a>
-          <a class="btn ghost" href="https://wa.me/306977214642" target="_blank" rel="noopener">WhatsApp</a>
-        </p>
+
+        <div class="ctaStack" style="margin-top:10px">
+          <div class="ctaRow primaryRow">
+            <a class="btn primary" href="#contact" data-i18n="request_btn_form"></a>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn marketBtn airbnbBtn" href="https://www.airbnb.gr/rooms/856227490864384143?guests=1&adults=1&s=67&unique_share_id=c8b18450-59b1-4be6-be42-56be93a06c76" target="_blank" rel="noopener noreferrer">
+              <span class="brandMark airbnbMark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 3.5c1.5 0 2.47 1.3 3.28 3.08l4.22 9.3c.86 1.9-.29 4.12-2.36 4.12-1.03 0-1.93-.56-2.43-1.42L12 14.2l-2.71 4.38A2.83 2.83 0 0 1 6.86 20c-2.07 0-3.22-2.22-2.36-4.12l4.22-9.3C9.53 4.8 10.5 3.5 12 3.5Zm0 3.07c-.32 0-.67.3-1.08 1.2L7.13 16.2c-.16.35.06.73.44.73.18 0 .35-.1.45-.26L12 10.78l3.98 5.89c.1.16.27.26.45.26.38 0 .6-.38.44-.73l-3.79-8.43c-.41-.9-.76-1.2-1.08-1.2Z" fill="currentColor"/>
+                </svg>
+              </span>
+              <span data-i18n="request_btn_airbnb"></span>
+            </a>
+
+            <a class="btn marketBtn bookingBtn" href="https://www.booking.com/Share-jv4SCT" target="_blank" rel="noopener noreferrer">
+              <span class="brandMark bookingMark" aria-hidden="true">B</span>
+              <span data-i18n="request_btn_booking"></span>
+            </a>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn ghost supportBtn" href="https://wa.me/306977214642" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1099,6 +1246,9 @@
         tag_terraces: "Βεράντες • Θέα θάλασσα",
 
         cta_request: "Στείλε αίτημα διαθεσιμότητας",
+        cta_airbnb: "Κράτηση μέσω Airbnb",
+        cta_booking: "Κράτηση μέσω Booking.com",
+        cta_hint: "Για άμεση κράτηση χρησιμοποίησε Airbnb ή Booking.com. Για ερώτηση ή ειδικό αίτημα χρησιμοποίησε τη φόρμα ή το WhatsApp.",
 
         img_alt_view: "Spitaki Milos - Θέα",
         img_alt_terrace: "Spitaki Milos - Βεράντα",
@@ -1141,6 +1291,8 @@
         request_title: "Αίτημα διαθεσιμότητας",
         request_p: "Στείλε μας ημερομηνίες, άτομα και τυχόν σημειώσεις. Θα σου απαντήσουμε με διαθεσιμότητα και τιμή.",
         request_btn_form: "Συμπλήρωσε φόρμα",
+        request_btn_airbnb: "Άνοιγμα Airbnb",
+        request_btn_booking: "Άνοιγμα Booking.com",
 
         contact_title: "Επικοινωνία / Αίτημα διαθεσιμότητας",
         contact_p:
@@ -1205,6 +1357,9 @@
         tag_terraces: "Terraces • Sea view",
 
         cta_request: "Send availability request",
+        cta_airbnb: "Book on Airbnb",
+        cta_booking: "Book on Booking.com",
+        cta_hint: "For instant booking, use Airbnb or Booking.com. For questions or special requests, use the form or WhatsApp.",
 
         img_alt_view: "Spitaki Milos - Sea view",
         img_alt_terrace: "Spitaki Milos - Terrace",
@@ -1246,6 +1401,8 @@
         request_title: "Availability request",
         request_p: "Send us your dates, number of guests and any notes. We’ll reply with availability and price.",
         request_btn_form: "Fill in the form",
+        request_btn_airbnb: "Open Airbnb",
+        request_btn_booking: "Open Booking.com",
 
         contact_title: "Contact / Availability request",
         contact_p:
