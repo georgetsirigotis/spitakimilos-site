@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title id="metaTitle">Spitaki Milos | Διαμονή στη Μήλο</title>
-  <meta id="metaDesc" name="description" content="Spitaki Milos – διαμονή στη Μήλο (Τρυπητή) με βεράντες και θέα στη θάλασσα. Στείλε αίτημα διαθεσιμότητας ή επικοινώνησε στο WhatsApp." />
+  <meta id="metaDesc" name="description" content="Spitaki Milos – διαμονή στη Μήλο (Τρυπητή) με βεράντες και θέα στη θάλασσα. Κράτηση μέσω Airbnb ή Booking.com και άμεση επικοινωνία μέσω WhatsApp." />
   <link id="canonicalLink" rel="canonical" href="https://spitakimilos.com/" />
 
   <link rel="alternate" hreflang="el" href="https://spitakimilos.com/?lang=el" />
@@ -13,752 +13,1076 @@
   <link rel="alternate" hreflang="x-default" href="https://spitakimilos.com/" />
 
   <meta id="ogTitle" property="og:title" content="Spitaki Milos | Διαμονή στη Μήλο" />
-  <meta id="ogDesc" property="og:description" content="Τρυπητή Μήλου • Βεράντες με θέα στη θάλασσα • Στείλε αίτημα διαθεσιμότητας" />
+  <meta id="ogDesc" property="og:description" content="Τρυπητή Μήλου • Βεράντες με θέα στη θάλασσα • Κράτηση μέσω Airbnb ή Booking.com" />
   <meta property="og:type" content="website" />
   <meta id="ogUrl" property="og:url" content="https://spitakimilos.com/" />
 
   <style>
-   :root{
-    --bgTop:#bfeaff;
-    --bgMid:#f0fbff;
-    --bgBottom:#ffe7b3;
+    :root{
+      --bgTop:#bfeaff;
+      --bgMid:#f5fbff;
+      --bgBottom:#ffe9bc;
 
-    --card:rgba(255,255,255,.94);
-    --card2:rgba(255,255,255,.88);
+      --card:rgba(255,255,255,.95);
+      --card2:rgba(255,255,255,.88);
 
-    --text:#08263a;
-    --muted:#2f5c73;
+      --text:#08263a;
+      --muted:#2f5c73;
 
-    --accent:#0ea5e9;
-    --accent2:#fb7185;
-    --accent3:#f59e0b;
+      --accent:#0ea5e9;
+      --accent2:#fb7185;
+      --accent3:#f59e0b;
 
-    --border:rgba(8,38,58,.12);
-    --shadow:0 18px 55px rgba(8,38,58,.16);
+      --border:rgba(8,38,58,.12);
+      --shadow:0 18px 55px rgba(8,38,58,.16);
 
-    --airbnb:#FF385C;
-    --booking:#003580;
-  }
-
-  *{box-sizing:border-box}
-
-  html{
-    scroll-behavior:smooth;
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden;
-  }
-
-  body{
-    margin:0;
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-    color:var(--text);
-    background:
-      radial-gradient(1000px 520px at 18% 0%, rgba(14,165,233,.42), transparent 62%),
-      radial-gradient(900px 520px at 88% 8%, rgba(251,113,133,.28), transparent 60%),
-      radial-gradient(900px 520px at 70% 95%, rgba(245,158,11,.25), transparent 60%),
-      linear-gradient(180deg, var(--bgTop) 0%, var(--bgMid) 35%, var(--bgBottom) 100%);
-  }
-
-  img{max-width:100%}
-  a{color:inherit;text-decoration:none}
-
-  .wrap{
-    max-width:1100px;
-    width:min(1100px, calc(100% - 24px));
-    margin:0 auto;
-    padding:24px 12px;
-  }
-
-  .top{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    flex-wrap:wrap;
-    gap:14px;
-    margin-bottom:22px;
-  }
-
-  .brand{display:flex;flex-direction:column;line-height:1.1;min-width:0}
-  .brand span{font-size:13px;color:var(--muted)}
-
-  .brand .logo{
-    height: clamp(140px, 12vw, 220px);
-    width: 640px;
-    max-width: 100%;
-    object-fit: contain;
-    display:block;
-    margin-bottom: 8px;
-    mix-blend-mode: normal;
-    filter: drop-shadow(0 2px 10px rgba(8,38,58,.18));
-  }
-
-  @media (max-width:880px){
-    .brand .logo{
-      height:156px;
+      --airbnb:#FF385C;
+      --booking:#003580;
+      --success:#10b981;
     }
-  }
 
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    padding:12px 14px;border-radius:14px;font-weight:650;cursor:pointer;
-    transition:transform .08s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
-    user-select:none;
-  }
-  .btn:active{transform:translateY(1px)}
-  .btn.primary{
-    background:linear-gradient(90deg, var(--accent), var(--accent2));
-    color:#ffffff;
-    border:none;
-    box-shadow:0 10px 22px rgba(14,165,233,.22);
-  }
-  .btn.primary:hover{box-shadow:0 14px 28px rgba(14,165,233,.28)}
-  .btn.ghost{
-    background:rgba(255,255,255,.78);
-    border:1px solid var(--border);
-    color:var(--text);
-  }
-  .btn.ghost:hover{background:rgba(255,255,255,.90)}
+    *{box-sizing:border-box}
+
+    html{
+      scroll-behavior:smooth;
+      width:100%;
+      max-width:100%;
+      overflow-x:hidden;
+    }
+
+    body{
+      margin:0;
+      width:100%;
+      max-width:100%;
+      overflow-x:hidden;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 520px at 18% 0%, rgba(14,165,233,.42), transparent 62%),
+        radial-gradient(900px 520px at 88% 8%, rgba(251,113,133,.24), transparent 60%),
+        radial-gradient(900px 520px at 70% 95%, rgba(245,158,11,.20), transparent 60%),
+        linear-gradient(180deg, var(--bgTop) 0%, var(--bgMid) 35%, var(--bgBottom) 100%);
+    }
+
+    img{max-width:100%}
+    a{color:inherit;text-decoration:none}
 
-  .langSwitch{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-  .langBtn{
-    padding:10px 12px;
-    border-radius:999px;
-    font-weight:750;
-    letter-spacing:.4px;
-  }
-  .langBtn.active{
-    background:rgba(14,165,233,.18);
-    border:1px solid rgba(14,165,233,.35);
-  }
-
-  .card{
-    background:linear-gradient(180deg, var(--card), var(--card2));
-    border:1px solid var(--border);
-    border-radius:22px;
-    box-shadow:var(--shadow);
-    backdrop-filter:saturate(120%) blur(6px);
-  }
-
-  .heroIntro{
-    padding:26px;
-    margin-bottom:18px;
-    min-width:0;
-  }
-
-  .heroIntro h1{
-    margin:0 0 10px;
-    font-size:36px;
-    letter-spacing:-.2px;
-  }
-
-  .heroIntro p{
-    margin:0;
-    color:var(--muted);
-    line-height:1.7;
-    max-width:760px;
-    font-size:17px;
-  }
-
-  .hero{
-    display:grid;
-    grid-template-columns:minmax(0, .72fr) minmax(0, 1.28fr);
-    gap:18px;
-    align-items:start;
-    min-width:0;
-  }
-
-  .hero > .card{
-    align-self:start;
-    min-width:0;
-  }
-
-  .heroLeft{
-    padding:22px;
-    min-width:0;
-  }
-
-  .heroSideTitle{
-    display:block;
-    font-size:20px;
-    margin-bottom:8px;
-  }
-
-  .heroSideText{
-    margin:0 0 14px;
-    color:var(--muted);
-    line-height:1.6;
-  }
-
-  .tags{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
-  .tag{
-    padding:8px 10px;border-radius:999px;font-size:13px;
-    background:rgba(14,165,233,.14);
-    border:1px solid rgba(14,165,233,.22);
-    color:#0b3a54;
-  }
-
-  .ctaStack{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    margin-top:14px;
-  }
-
-  .ctaRow{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    align-items:center;
-  }
-
-  .ctaRow .btn{
-    min-height:48px;
-  }
-
-  .ctaRow.primaryRow .btn.primary{
-    min-width:260px;
-    font-size:15px;
-  }
-
-  .marketBtn{
-    background:rgba(255,255,255,.94);
-    border:1px solid rgba(8,38,58,.12);
-    box-shadow:0 8px 20px rgba(8,38,58,.08);
-    font-weight:700;
-  }
-
-  .marketBtn:hover{
-    transform:translateY(-1px);
-    box-shadow:0 12px 24px rgba(8,38,58,.12);
-  }
-
-  .airbnbBtn{
-    border-color:rgba(255,56,92,.28);
-  }
-
-  .airbnbBtn:hover{
-    border-color:rgba(255,56,92,.45);
-  }
-
-  .bookingBtn{
-    border-color:rgba(0,53,128,.22);
-  }
-
-  .bookingBtn:hover{
-    border-color:rgba(0,53,128,.40);
-  }
-
-  .brandMark{
-    width:22px;
-    height:22px;
-    min-width:22px;
-    border-radius:999px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 4px 10px rgba(8,38,58,.10);
-  }
-
-  .brandMark svg{
-    width:14px;
-    height:14px;
-    display:block;
-  }
-
-  .airbnbMark{
-    background:rgba(255,56,92,.14);
-    color:var(--airbnb);
-  }
-
-  .bookingMark{
-    background:rgba(0,53,128,.10);
-    color:var(--booking);
-    font-size:12px;
-    font-weight:800;
-    letter-spacing:.2px;
-  }
-
-  .supportBtn{
-    background:rgba(255,255,255,.78);
-  }
-
-  .ctaHint{
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.6;
-    margin-top:2px;
-  }
-
-  .heroRight{
-    padding:18px;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    min-height:0;
-    min-width:0;
-    height:auto;
-    overflow:hidden;
-  }
-
-  .galleryShell{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    width:100%;
-    max-width:100%;
-    min-width:0;
-    overflow:hidden;
-  }
-
-  .featuredStage{
-    position:relative;
-    border-radius:22px;
-    overflow:hidden;
-    background:#fff;
-    border:1px solid rgba(8,38,58,.14);
-    box-shadow:0 12px 28px rgba(8,38,58,.10);
-    width:100%;
-    max-width:100%;
-    min-width:0;
-  }
-
-  .featuredBtn{
-    display:block;
-    width:100%;
-    max-width:100%;
-    min-width:0;
-    border:none;
-    padding:0;
-    background:transparent;
-    cursor:zoom-in;
-  }
-
-  .featuredBtn img{
-    display:block;
-    width:100%;
-    max-width:100%;
-    height:360px;
-    object-fit:cover;
-    background:#fff;
-    transition:transform .3s ease, filter .3s ease;
-  }
-
-  .featuredStage:hover .featuredBtn img{
-    transform:scale(1.015);
-    filter:saturate(1.03);
-  }
-
-  .featuredBtn:focus-visible{
-    outline:none;
-  }
-
-  .featuredStage:has(.featuredBtn:focus-visible){
-    box-shadow:
-      0 0 0 4px rgba(14,165,233,.18),
-      0 16px 32px rgba(8,38,58,.14);
-  }
-
-  .featuredOverlay{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    max-width:100%;
-  }
-
-  .galleryTopBar{
-    position:absolute;
-    top:12px;
-    left:12px;
-    right:12px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px;
-    max-width:calc(100% - 24px);
-  }
-
-  .galleryPill{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:34px;
-    padding:8px 12px;
-    border-radius:999px;
-    background:rgba(8,38,58,.55);
-    color:#fff;
-    font-size:12px;
-    font-weight:750;
-    backdrop-filter:blur(8px);
-    box-shadow:0 8px 20px rgba(0,0,0,.10);
-    max-width:100%;
-  }
-
-  .galleryBottomBar{
-    position:absolute;
-    left:12px;
-    right:12px;
-    bottom:12px;
-    display:flex;
-    justify-content:space-between;
-    align-items:end;
-    gap:10px;
-    max-width:calc(100% - 24px);
-  }
-
-  .featuredNav{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    z-index:2;
-    border:none;
-    width:46px;
-    height:46px;
-    border-radius:999px;
-    cursor:pointer;
-    background:rgba(255,255,255,.22);
-    color:#fff;
-    font-size:24px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    backdrop-filter:blur(8px);
-    box-shadow:0 10px 24px rgba(0,0,0,.12);
-    transition:background .16s ease, transform .08s ease;
-  }
-
-  .featuredNav:hover{
-    background:rgba(255,255,255,.30);
-  }
-
-  .featuredNav:active{
-    transform:translateY(-50%) scale(.97);
-  }
-
-  .featuredPrev{left:12px;}
-  .featuredNext{right:12px;}
-
-  .galleryDots{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:7px;
-    padding:2px 0 4px;
-    width:100%;
-    max-width:100%;
-    min-width:0;
-  }
-
-  .galleryDot{
-    width:9px;
-    height:9px;
-    border:none;
-    border-radius:999px;
-    background:rgba(8,38,58,.18);
-    cursor:pointer;
-    transition:transform .16s ease, background .16s ease, width .16s ease;
-  }
-
-  .galleryDot:hover{
-    background:rgba(14,165,233,.55);
-  }
-
-  .galleryDot.active{
-    width:22px;
-    background:linear-gradient(90deg, var(--accent), var(--accent2));
-  }
-
-  .galleryDot:focus-visible{
-    outline:none;
-    box-shadow:0 0 0 4px rgba(14,165,233,.18);
-  }
-
-  .featuredCaption{
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.55;
-    min-height:20px;
-    text-align:center;
-    margin-top:-2px;
-    width:100%;
-    max-width:100%;
-    min-width:0;
-  }
-
-  .thumbRail{
-    display:flex;
-    gap:10px;
-    width:100%;
-    max-width:100%;
-    min-width:0;
-    overflow-x:auto;
-    overflow-y:hidden;
-    padding:4px 2px 8px;
-    scroll-snap-type:x proximity;
-    -webkit-overflow-scrolling:touch;
-  }
-
-  .thumbRail::-webkit-scrollbar{height:8px;}
-  .thumbRail::-webkit-scrollbar-track{
-    background:rgba(8,38,58,.06);
-    border-radius:999px;
-  }
-  .thumbRail::-webkit-scrollbar-thumb{
-    background:rgba(14,165,233,.40);
-    border-radius:999px;
-  }
-
-  .thumbBtn{
-    flex:0 0 auto;
-    width:110px;
-    border:none;
-    background:transparent;
-    padding:0;
-    border-radius:16px;
-    cursor:pointer;
-    scroll-snap-align:start;
-  }
-
-  .thumbBtn img{
-    display:block;
-    width:110px;
-    height:82px;
-    object-fit:cover;
-    border-radius:16px;
-    border:2px solid transparent;
-    box-shadow:0 8px 18px rgba(8,38,58,.08);
-    background:#fff;
-    transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease, opacity .16s ease;
-    opacity:.92;
-  }
-
-  .thumbBtn:hover img{
-    transform:translateY(-2px);
-    opacity:1;
-  }
-
-  .thumbBtn.active img{
-    border-color:var(--accent);
-    opacity:1;
-    box-shadow:0 0 0 4px rgba(14,165,233,.16), 0 12px 22px rgba(8,38,58,.12);
-  }
-
-  .thumbBtn:focus-visible{
-    outline:none;
-  }
-
-  .thumbBtn:focus-visible img{
-    border-color:var(--accent2);
-    box-shadow:0 0 0 4px rgba(251,113,133,.18), 0 12px 22px rgba(8,38,58,.12);
-    opacity:1;
-  }
-
-  .galleryHint{
-    text-align:center;
-    color:rgba(8,38,58,.58);
-    font-size:12px;
-    margin-top:-2px;
-    width:100%;
-    max-width:100%;
-    min-width:0;
-  }
-
-  .heroRight .mini{
-    background:rgba(255,255,255,.92) !important;
-    flex-shrink:0;
-  }
-
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
-  .mini{padding:16px}
-  .mini b{display:block;margin-bottom:6px}
-  .list{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
-
-  .section{margin-top:18px}
-  .footer{margin:26px 0 6px;color:rgba(8,38,58,.55);font-size:13px}
-
-  .form{margin-top:10px}
-  .formGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-  .formGrid .full{grid-column:1 / -1}
-  label{display:block;font-size:12px;color:rgba(8,38,58,.75);margin-bottom:6px}
-
-  input, textarea, select{
-    width:100%;
-    padding:12px 12px;
-    border-radius:14px;
-    border:1px solid rgba(8,38,58,.16);
-    background:rgba(255,255,255,.92);
-    color:var(--text);
-    outline:none;
-    transition:border-color .12s ease, box-shadow .12s ease, transform .08s ease;
-  }
-  input:focus, textarea:focus, select:focus{
-    border-color:rgba(14,165,233,.55);
-    box-shadow:0 0 0 4px rgba(14,165,233,.18);
-  }
-  textarea{min-height:110px;resize:vertical}
-  input::placeholder, textarea::placeholder{color:rgba(8,38,58,.45)}
-  .helper{color:rgba(8,38,58,.60);font-size:12px;line-height:1.5;margin-top:8px}
-  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-
-  .lightbox{
-    position:fixed;
-    inset:0;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    background:rgba(8,38,58,.92);
-    padding:24px;
-    z-index:9999;
-  }
-
-  .lightbox.open{
-    display:flex;
-  }
-
-  .lightboxInner{
-    position:relative;
-    width:min(100%, 1180px);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .lightboxImg{
-    display:block;
-    max-width:100%;
-    max-height:82vh;
-    width:auto;
-    height:auto;
-    border-radius:18px;
-    box-shadow:0 20px 60px rgba(0,0,0,.35);
-    background:#fff;
-  }
-
-  .lightboxBtn{
-    position:absolute;
-    border:none;
-    width:52px;
-    height:52px;
-    border-radius:999px;
-    cursor:pointer;
-    background:rgba(255,255,255,.16);
-    color:#fff;
-    font-size:26px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    backdrop-filter:blur(6px);
-    transition:background .15s ease, transform .08s ease;
-  }
-
-  .lightboxBtn:hover{
-    background:rgba(255,255,255,.24);
-  }
-
-  .lightboxBtn:active{
-    transform:scale(.97);
-  }
-
-  .lightboxClose{
-    top:-12px;
-    right:-12px;
-  }
-
-  .lightboxPrev{
-    left:12px;
-    top:50%;
-    transform:translateY(-50%);
-  }
-
-  .lightboxNext{
-    right:12px;
-    top:50%;
-    transform:translateY(-50%);
-  }
-
-  .lightboxPrev:active,
-  .lightboxNext:active{
-    transform:translateY(-50%) scale(.97);
-  }
-
-  .lightboxCaption{
-    position:absolute;
-    left:50%;
-    bottom:-52px;
-    transform:translateX(-50%);
-    color:#fff;
-    background:rgba(255,255,255,.12);
-    padding:10px 14px;
-    border-radius:999px;
-    font-size:14px;
-    white-space:nowrap;
-    max-width:min(90vw, 760px);
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-
-  @media (max-width:880px){
     .wrap{
-      width:min(100%, calc(100% - 16px));
-      padding:16px 8px;
+      max-width:1160px;
+      width:min(1160px, calc(100% - 24px));
+      margin:0 auto;
+      padding:20px 12px 110px;
     }
 
-    .heroIntro h1{font-size:30px}
-    .heroIntro p{font-size:16px}
-    .hero{grid-template-columns:1fr}
-    .grid{grid-template-columns:1fr}
-    .formGrid{grid-template-columns:1fr}
-
-    .featuredBtn img{height:255px;}
-    .featuredNav{
-      width:42px;
-      height:42px;
-      font-size:22px;
-    }
-    .featuredPrev{left:10px;}
-    .featuredNext{right:10px;}
-
-    .thumbBtn{width:96px;}
-    .thumbBtn img{
-      width:96px;
-      height:74px;
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:18px;
     }
 
-    .ctaRow{
+    .brand{
+      display:flex;
       flex-direction:column;
-      align-items:stretch;
+      line-height:1.1;
+      min-width:0;
     }
 
-    .ctaRow .btn{
+    .brand span{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .brand .logo{
+      height: clamp(140px, 12vw, 220px);
+      width: 640px;
+      max-width: 100%;
+      object-fit: contain;
+      display:block;
+      margin-bottom: 8px;
+      filter: drop-shadow(0 2px 10px rgba(8,38,58,.18));
+    }
+
+    .topActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:700;
+      cursor:pointer;
+      transition:transform .08s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+      border:1px solid transparent;
+      line-height:1.2;
+    }
+
+    .btn:active{transform:translateY(1px)}
+
+    .btn.primary{
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      color:#fff;
+      border:none;
+      box-shadow:0 10px 22px rgba(14,165,233,.22);
+    }
+
+    .btn.primary:hover{
+      box-shadow:0 14px 28px rgba(14,165,233,.28);
+    }
+
+    .btn.ghost{
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--border);
+      color:var(--text);
+    }
+
+    .btn.ghost:hover{
+      background:rgba(255,255,255,.94);
+    }
+
+    .btn.full{
       width:100%;
     }
 
-    .lightbox{
-      padding:16px;
+    .langSwitch{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
     }
-    .lightboxImg{
-      max-height:74vh;
+
+    .langBtn{
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:750;
+      letter-spacing:.4px;
     }
-    .lightboxBtn{
+
+    .langBtn.active{
+      background:rgba(14,165,233,.18);
+      border:1px solid rgba(14,165,233,.35);
+    }
+
+    .card{
+      background:linear-gradient(180deg, var(--card), var(--card2));
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      backdrop-filter:saturate(120%) blur(6px);
+    }
+
+    .announcement{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 16px;
+      margin-bottom:18px;
+      background:linear-gradient(90deg, rgba(255,255,255,.82), rgba(255,255,255,.66));
+      border:1px solid rgba(8,38,58,.08);
+      border-radius:18px;
+      box-shadow:0 10px 24px rgba(8,38,58,.08);
+    }
+
+    .announcementLeft{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+    }
+
+    .announcementPill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border-radius:999px;
+      padding:8px 12px;
+      background:rgba(255,255,255,.76);
+      border:1px solid rgba(8,38,58,.08);
+      font-size:13px;
+      color:var(--text);
+      font-weight:650;
+    }
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--success);
+      box-shadow:0 0 0 6px rgba(16,185,129,.12);
+    }
+
+    .heroIntro{
+      padding:28px;
+      margin-bottom:18px;
+    }
+
+    .heroIntro h1{
+      margin:0 0 10px;
+      font-size:40px;
+      letter-spacing:-.4px;
+      line-height:1.05;
+    }
+
+    .heroIntro p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+      max-width:820px;
+      font-size:17px;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
+      gap:18px;
+      align-items:start;
+    }
+
+    .hero > .card{
+      min-width:0;
+    }
+
+    .heroLeft{
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .heroSideTitle{
+      display:block;
+      font-size:20px;
+      margin-bottom:8px;
+    }
+
+    .heroSideText{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:2px 0 0;
+    }
+
+    .tag{
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:13px;
+      background:rgba(14,165,233,.14);
+      border:1px solid rgba(14,165,233,.22);
+      color:#0b3a54;
+      font-weight:650;
+    }
+
+    .bookingPanel{
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.90));
+      border:1px solid rgba(8,38,58,.09);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:0 14px 28px rgba(8,38,58,.08);
+    }
+
+    .bookingPanelHead{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:10px;
+    }
+
+    .bookingPanelTitle{
+      font-size:18px;
+      font-weight:800;
+      margin:0;
+    }
+
+    .bookingPanelSub{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .miniBadge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(16,185,129,.10);
+      color:#0b6a4a;
+      border:1px solid rgba(16,185,129,.18);
+      font-size:12px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .ctaStack{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:4px;
+    }
+
+    .ctaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+
+    .marketBtn{
+      background:rgba(255,255,255,.98);
+      border:1px solid rgba(8,38,58,.12);
+      box-shadow:0 10px 22px rgba(8,38,58,.08);
+      font-weight:800;
+      min-height:50px;
+    }
+
+    .marketBtn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 14px 26px rgba(8,38,58,.11);
+    }
+
+    .airbnbBtn{
+      border-color:rgba(255,56,92,.28);
+    }
+
+    .airbnbBtn:hover{
+      border-color:rgba(255,56,92,.46);
+    }
+
+    .bookingBtn{
+      border-color:rgba(0,53,128,.22);
+    }
+
+    .bookingBtn:hover{
+      border-color:rgba(0,53,128,.42);
+    }
+
+    .brandMark{
+      width:22px;
+      height:22px;
+      min-width:22px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 4px 10px rgba(8,38,58,.10);
+    }
+
+    .brandMark svg{
+      width:14px;
+      height:14px;
+      display:block;
+    }
+
+    .airbnbMark{
+      background:rgba(255,56,92,.14);
+      color:var(--airbnb);
+    }
+
+    .bookingMark{
+      background:rgba(0,53,128,.10);
+      color:var(--booking);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .supportBtn{
+      background:rgba(255,255,255,.82);
+    }
+
+    .ctaHint{
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.65;
+      margin-top:2px;
+    }
+
+    .statsStrip{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-top:2px;
+    }
+
+    .statCard{
+      background:rgba(14,165,233,.06);
+      border:1px solid rgba(14,165,233,.12);
+      border-radius:18px;
+      padding:12px;
+    }
+
+    .statLabel{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:4px;
+    }
+
+    .statValue{
+      font-size:15px;
+      font-weight:800;
+    }
+
+    .heroRight{
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      overflow:hidden;
+    }
+
+    .galleryShell{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      width:100%;
+      overflow:hidden;
+    }
+
+    .featuredStage{
+      position:relative;
+      border-radius:22px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid rgba(8,38,58,.14);
+      box-shadow:0 12px 28px rgba(8,38,58,.10);
+      width:100%;
+    }
+
+    .featuredBtn{
+      display:block;
+      width:100%;
+      border:none;
+      padding:0;
+      background:transparent;
+      cursor:zoom-in;
+    }
+
+    .featuredBtn img{
+      display:block;
+      width:100%;
+      height:390px;
+      object-fit:cover;
+      background:#fff;
+      transition:transform .3s ease, filter .3s ease;
+    }
+
+    .featuredStage:hover .featuredBtn img{
+      transform:scale(1.015);
+      filter:saturate(1.03);
+    }
+
+    .featuredBtn:focus-visible{
+      outline:none;
+    }
+
+    .featuredStage:has(.featuredBtn:focus-visible){
+      box-shadow:
+        0 0 0 4px rgba(14,165,233,.18),
+        0 16px 32px rgba(8,38,58,.14);
+    }
+
+    .featuredOverlay{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      max-width:100%;
+    }
+
+    .galleryTopBar{
+      position:absolute;
+      top:12px;
+      left:12px;
+      right:12px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      max-width:calc(100% - 24px);
+    }
+
+    .galleryPill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:34px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(8,38,58,.56);
+      color:#fff;
+      font-size:12px;
+      font-weight:750;
+      backdrop-filter:blur(8px);
+      box-shadow:0 8px 20px rgba(0,0,0,.10);
+      max-width:100%;
+    }
+
+    .galleryBottomBar{
+      position:absolute;
+      left:12px;
+      right:12px;
+      bottom:12px;
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:10px;
+      max-width:calc(100% - 24px);
+    }
+
+    .featuredNav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:2;
+      border:none;
       width:46px;
       height:46px;
-      font-size:22px;
+      border-radius:999px;
+      cursor:pointer;
+      background:rgba(255,255,255,.22);
+      color:#fff;
+      font-size:24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      backdrop-filter:blur(8px);
+      box-shadow:0 10px 24px rgba(0,0,0,.12);
+      transition:background .16s ease, transform .08s ease;
     }
-    .lightboxClose{
-      top:-6px;
-      right:-6px;
+
+    .featuredNav:hover{
+      background:rgba(255,255,255,.30);
     }
-    .lightboxPrev{left:6px;}
-    .lightboxNext{right:6px;}
-    .lightboxCaption{
-      bottom:-44px;
+
+    .featuredNav:active{
+      transform:translateY(-50%) scale(.97);
+    }
+
+    .featuredPrev{left:12px;}
+    .featuredNext{right:12px;}
+
+    .galleryDots{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:7px;
+      padding:2px 0 4px;
+      width:100%;
+    }
+
+    .galleryDot{
+      width:9px;
+      height:9px;
+      border:none;
+      border-radius:999px;
+      background:rgba(8,38,58,.18);
+      cursor:pointer;
+      transition:transform .16s ease, background .16s ease, width .16s ease;
+    }
+
+    .galleryDot:hover{
+      background:rgba(14,165,233,.55);
+    }
+
+    .galleryDot.active{
+      width:22px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .galleryDot:focus-visible{
+      outline:none;
+      box-shadow:0 0 0 4px rgba(14,165,233,.18);
+    }
+
+    .featuredCaption{
+      color:var(--muted);
       font-size:13px;
-      max-width:88vw;
+      line-height:1.55;
+      min-height:20px;
+      text-align:center;
+      margin-top:-2px;
+      width:100%;
     }
-  }
+
+    .thumbRail{
+      display:flex;
+      gap:10px;
+      width:100%;
+      overflow-x:auto;
+      overflow-y:hidden;
+      padding:4px 2px 8px;
+      scroll-snap-type:x proximity;
+      -webkit-overflow-scrolling:touch;
+    }
+
+    .thumbRail::-webkit-scrollbar{height:8px;}
+    .thumbRail::-webkit-scrollbar-track{
+      background:rgba(8,38,58,.06);
+      border-radius:999px;
+    }
+    .thumbRail::-webkit-scrollbar-thumb{
+      background:rgba(14,165,233,.40);
+      border-radius:999px;
+    }
+
+    .thumbBtn{
+      flex:0 0 auto;
+      width:110px;
+      border:none;
+      background:transparent;
+      padding:0;
+      border-radius:16px;
+      cursor:pointer;
+      scroll-snap-align:start;
+    }
+
+    .thumbBtn img{
+      display:block;
+      width:110px;
+      height:82px;
+      object-fit:cover;
+      border-radius:16px;
+      border:2px solid transparent;
+      box-shadow:0 8px 18px rgba(8,38,58,.08);
+      background:#fff;
+      transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease, opacity .16s ease;
+      opacity:.92;
+    }
+
+    .thumbBtn:hover img{
+      transform:translateY(-2px);
+      opacity:1;
+    }
+
+    .thumbBtn.active img{
+      border-color:var(--accent);
+      opacity:1;
+      box-shadow:0 0 0 4px rgba(14,165,233,.16), 0 12px 22px rgba(8,38,58,.12);
+    }
+
+    .thumbBtn:focus-visible{
+      outline:none;
+    }
+
+    .thumbBtn:focus-visible img{
+      border-color:var(--accent2);
+      box-shadow:0 0 0 4px rgba(251,113,133,.18), 0 12px 22px rgba(8,38,58,.12);
+      opacity:1;
+    }
+
+    .galleryHint{
+      text-align:center;
+      color:rgba(8,38,58,.58);
+      font-size:12px;
+      margin-top:-2px;
+      width:100%;
+    }
+
+    .heroRight .mini{
+      background:rgba(255,255,255,.92) !important;
+      flex-shrink:0;
+    }
+
+    .trustRow{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .trustCard{
+      padding:16px;
+      border-radius:20px;
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.86));
+      border:1px solid rgba(8,38,58,.08);
+      box-shadow:0 10px 24px rgba(8,38,58,.06);
+    }
+
+    .trustIcon{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      background:rgba(14,165,233,.10);
+      color:#0b4d6f;
+      margin-bottom:10px;
+      font-weight:800;
+    }
+
+    .trustTitle{
+      font-weight:800;
+      margin-bottom:6px;
+      display:block;
+    }
+
+    .trustText{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+      margin:0;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .mini{
+      padding:16px;
+    }
+
+    .mini b{
+      display:block;
+      margin-bottom:6px;
+    }
+
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .section{margin-top:18px}
+
+    .form{margin-top:10px}
+    .formGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .formGrid .full{grid-column:1 / -1}
+
+    label{
+      display:block;
+      font-size:12px;
+      color:rgba(8,38,58,.75);
+      margin-bottom:6px;
+      font-weight:700;
+    }
+
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(8,38,58,.16);
+      background:rgba(255,255,255,.92);
+      color:var(--text);
+      outline:none;
+      transition:border-color .12s ease, box-shadow .12s ease, transform .08s ease;
+      font:inherit;
+    }
+
+    input:focus, textarea:focus, select:focus{
+      border-color:rgba(14,165,233,.55);
+      box-shadow:0 0 0 4px rgba(14,165,233,.18);
+    }
+
+    textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+
+    input::placeholder, textarea::placeholder{
+      color:rgba(8,38,58,.45)
+    }
+
+    .helper{
+      color:rgba(8,38,58,.60);
+      font-size:12px;
+      line-height:1.5;
+      margin-top:8px;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .footer{
+      margin:26px 0 6px;
+      color:rgba(8,38,58,.55);
+      font-size:13px;
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background:rgba(8,38,58,.92);
+      padding:24px;
+      z-index:9999;
+    }
+
+    .lightbox.open{
+      display:flex;
+    }
+
+    .lightboxInner{
+      position:relative;
+      width:min(100%, 1180px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .lightboxImg{
+      display:block;
+      max-width:100%;
+      max-height:82vh;
+      width:auto;
+      height:auto;
+      border-radius:18px;
+      box-shadow:0 20px 60px rgba(0,0,0,.35);
+      background:#fff;
+    }
+
+    .lightboxBtn{
+      position:absolute;
+      border:none;
+      width:52px;
+      height:52px;
+      border-radius:999px;
+      cursor:pointer;
+      background:rgba(255,255,255,.16);
+      color:#fff;
+      font-size:26px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      backdrop-filter:blur(6px);
+      transition:background .15s ease, transform .08s ease;
+    }
+
+    .lightboxBtn:hover{
+      background:rgba(255,255,255,.24);
+    }
+
+    .lightboxBtn:active{
+      transform:scale(.97);
+    }
+
+    .lightboxClose{
+      top:-12px;
+      right:-12px;
+    }
+
+    .lightboxPrev{
+      left:12px;
+      top:50%;
+      transform:translateY(-50%);
+    }
+
+    .lightboxNext{
+      right:12px;
+      top:50%;
+      transform:translateY(-50%);
+    }
+
+    .lightboxPrev:active,
+    .lightboxNext:active{
+      transform:translateY(-50%) scale(.97);
+    }
+
+    .lightboxCaption{
+      position:absolute;
+      left:50%;
+      bottom:-52px;
+      transform:translateX(-50%);
+      color:#fff;
+      background:rgba(255,255,255,.12);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:14px;
+      white-space:nowrap;
+      max-width:min(90vw, 760px);
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .stickyBooking{
+      position:fixed;
+      left:12px;
+      right:12px;
+      bottom:12px;
+      z-index:999;
+      display:none;
+      padding:10px;
+      border-radius:18px;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(8,38,58,.10);
+      box-shadow:0 18px 50px rgba(8,38,58,.18);
+      backdrop-filter:blur(10px);
+    }
+
+    .stickyBookingInner{
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr;
+      gap:8px;
+      align-items:center;
+    }
+
+    .stickyLead{
+      min-width:0;
+    }
+
+    .stickyLeadTitle{
+      font-size:13px;
+      font-weight:800;
+      margin:0 0 2px;
+    }
+
+    .stickyLeadText{
+      margin:0;
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.45;
+    }
+
+    .stickyBtn{
+      min-height:44px;
+      padding:10px 12px;
+      border-radius:14px;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    @media (max-width:980px){
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      .trustRow,
+      .grid,
+      .statsStrip{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:880px){
+      .wrap{
+        width:min(100%, calc(100% - 16px));
+        padding:16px 8px 120px;
+      }
+
+      .brand .logo{
+        height:156px;
+      }
+
+      .heroIntro h1{
+        font-size:31px;
+      }
+
+      .heroIntro p{
+        font-size:16px;
+      }
+
+      .formGrid{
+        grid-template-columns:1fr;
+      }
+
+      .featuredBtn img{
+        height:255px;
+      }
+
+      .featuredNav{
+        width:42px;
+        height:42px;
+        font-size:22px;
+      }
+
+      .featuredPrev{left:10px;}
+      .featuredNext{right:10px;}
+
+      .thumbBtn{width:96px;}
+      .thumbBtn img{
+        width:96px;
+        height:74px;
+      }
+
+      .ctaRow{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .ctaRow .btn{
+        width:100%;
+      }
+
+      .announcement{
+        align-items:flex-start;
+      }
+
+      .stickyBooking{
+        display:block;
+      }
+
+      .stickyBookingInner{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .stickyLead{
+        grid-column:1 / -1;
+      }
+
+      .lightbox{
+        padding:16px;
+      }
+
+      .lightboxImg{
+        max-height:74vh;
+      }
+
+      .lightboxBtn{
+        width:46px;
+        height:46px;
+        font-size:22px;
+      }
+
+      .lightboxClose{
+        top:-6px;
+        right:-6px;
+      }
+
+      .lightboxPrev{left:6px;}
+      .lightboxNext{right:6px;}
+
+      .lightboxCaption{
+        bottom:-44px;
+        font-size:13px;
+        max-width:88vw;
+      }
+    }
   </style>
 </head>
 
@@ -770,7 +1094,7 @@
         <span data-i18n="brand_subtitle"></span>
       </div>
 
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <div class="topActions">
         <div class="langSwitch" aria-label="Language switcher">
           <button class="btn ghost langBtn" id="btnEL" type="button" aria-label="Greek">EL</button>
           <button class="btn ghost langBtn" id="btnEN" type="button" aria-label="English">EN</button>
@@ -781,6 +1105,18 @@
       </div>
     </div>
 
+    <div class="announcement">
+      <div class="announcementLeft">
+        <span class="announcementPill">
+          <span class="dot" aria-hidden="true"></span>
+          <span data-i18n="announce_1"></span>
+        </span>
+        <span class="announcementPill" data-i18n="announce_2"></span>
+        <span class="announcementPill" data-i18n="announce_3"></span>
+      </div>
+      <a class="btn primary" href="#contact" data-i18n="announce_cta"></a>
+    </div>
+
     <div class="card heroIntro">
       <h1 data-i18n="hero_h1"></h1>
       <p data-i18n="hero_p" data-i18n-html="true"></p>
@@ -788,8 +1124,10 @@
 
     <div class="hero">
       <div class="card heroLeft">
-        <b class="heroSideTitle" data-i18n="hero_side_title"></b>
-        <p class="heroSideText" data-i18n="hero_side_text"></p>
+        <div>
+          <b class="heroSideTitle" data-i18n="hero_side_title"></b>
+          <p class="heroSideText" data-i18n="hero_side_text"></p>
+        </div>
 
         <div class="tags">
           <span class="tag" data-i18n="tag_wifi"></span>
@@ -800,33 +1138,58 @@
           <span class="tag" data-i18n="tag_terraces"></span>
         </div>
 
-        <div class="ctaStack">
-          <div class="ctaRow primaryRow">
-            <a class="btn primary" href="#contact" data-i18n="cta_request"></a>
+        <div class="bookingPanel">
+          <div class="bookingPanelHead">
+            <div>
+              <h2 class="bookingPanelTitle" data-i18n="booking_panel_title"></h2>
+              <p class="bookingPanelSub" data-i18n="booking_panel_sub"></p>
+            </div>
+            <span class="miniBadge" data-i18n="booking_panel_badge"></span>
           </div>
 
-          <div class="ctaRow">
-            <a class="btn marketBtn airbnbBtn" href="https://www.airbnb.gr/rooms/856227490864384143?guests=1&adults=1&s=67&unique_share_id=c8b18450-59b1-4be6-be42-56be93a06c76" target="_blank" rel="noopener noreferrer">
-              <span class="brandMark airbnbMark" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 3.5c1.5 0 2.47 1.3 3.28 3.08l4.22 9.3c.86 1.9-.29 4.12-2.36 4.12-1.03 0-1.93-.56-2.43-1.42L12 14.2l-2.71 4.38A2.83 2.83 0 0 1 6.86 20c-2.07 0-3.22-2.22-2.36-4.12l4.22-9.3C9.53 4.8 10.5 3.5 12 3.5Zm0 3.07c-.32 0-.67.3-1.08 1.2L7.13 16.2c-.16.35.06.73.44.73.18 0 .35-.1.45-.26L12 10.78l3.98 5.89c.1.16.27.26.45.26.38 0 .6-.38.44-.73l-3.79-8.43c-.41-.9-.76-1.2-1.08-1.2Z" fill="currentColor"/>
-                </svg>
-              </span>
-              <span data-i18n="cta_airbnb"></span>
-            </a>
+          <div class="ctaStack">
+            <div class="ctaRow">
+              <a class="btn primary full" href="#contact" data-i18n="cta_request"></a>
+            </div>
 
-            <a class="btn marketBtn bookingBtn" href="https://www.booking.com/Share-jv4SCT" target="_blank" rel="noopener noreferrer">
-              <span class="brandMark bookingMark" aria-hidden="true">B</span>
-              <span data-i18n="cta_booking"></span>
-            </a>
+            <div class="ctaRow">
+              <a class="btn marketBtn airbnbBtn" href="https://www.airbnb.gr/rooms/856227490864384143?guests=1&adults=1&s=67&unique_share_id=c8b18450-59b1-4be6-be42-56be93a06c76" target="_blank" rel="noopener noreferrer">
+                <span class="brandMark airbnbMark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 3.5c1.5 0 2.47 1.3 3.28 3.08l4.22 9.3c.86 1.9-.29 4.12-2.36 4.12-1.03 0-1.93-.56-2.43-1.42L12 14.2l-2.71 4.38A2.83 2.83 0 0 1 6.86 20c-2.07 0-3.22-2.22-2.36-4.12l4.22-9.3C9.53 4.8 10.5 3.5 12 3.5Zm0 3.07c-.32 0-.67.3-1.08 1.2L7.13 16.2c-.16.35.06.73.44.73.18 0 .35-.1.45-.26L12 10.78l3.98 5.89c.1.16.27.26.45.26.38 0 .6-.38.44-.73l-3.79-8.43c-.41-.9-.76-1.2-1.08-1.2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span data-i18n="cta_airbnb"></span>
+              </a>
+
+              <a class="btn marketBtn bookingBtn" href="https://www.booking.com/Share-jv4SCT" target="_blank" rel="noopener noreferrer">
+                <span class="brandMark bookingMark" aria-hidden="true">B</span>
+                <span data-i18n="cta_booking"></span>
+              </a>
+            </div>
+
+            <div class="ctaRow">
+              <a class="btn ghost supportBtn" href="https://wa.me/306977214642" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn ghost supportBtn" href="mailto:info@spitakimilos.com">Email</a>
+            </div>
+
+            <div class="ctaHint" data-i18n="cta_hint"></div>
           </div>
 
-          <div class="ctaRow">
-            <a class="btn ghost supportBtn" href="https://wa.me/306977214642" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btn ghost supportBtn" href="mailto:info@spitakimilos.com">Email</a>
+          <div class="statsStrip">
+            <div class="statCard">
+              <span class="statLabel" data-i18n="stat_1_label"></span>
+              <span class="statValue" data-i18n="stat_1_value"></span>
+            </div>
+            <div class="statCard">
+              <span class="statLabel" data-i18n="stat_2_label"></span>
+              <span class="statValue" data-i18n="stat_2_value"></span>
+            </div>
+            <div class="statCard">
+              <span class="statLabel" data-i18n="stat_3_label"></span>
+              <span class="statValue" data-i18n="stat_3_value"></span>
+            </div>
           </div>
-
-          <div class="ctaHint" data-i18n="cta_hint"></div>
         </div>
       </div>
 
@@ -859,202 +1222,113 @@
 
           <div class="thumbRail" id="thumbRail">
             <button class="thumbBtn active" type="button" data-index="0">
-              <img
-                src="images/SPITAKIMILOS.jpg"
-                data-i18n-alt="img_alt_view"
-                alt="Spitaki Milos - Θέα"
-                loading="eager"
-                decoding="async"
-              />
+              <img src="images/SPITAKIMILOS.jpg" data-i18n-alt="img_alt_view" alt="Spitaki Milos - Θέα" loading="eager" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="1">
-              <img
-                src="images/FHD0026.JPG"
-                data-i18n-alt="img_alt_view"
-                alt="Spitaki Milos - Θέα"
-                loading="eager"
-                decoding="async"
-              />
+              <img src="images/FHD0026.JPG" data-i18n-alt="img_alt_view" alt="Spitaki Milos - Θέα" loading="eager" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="2">
-              <img
-                src="images/FHD0050.JPG"
-                data-i18n-alt="img_alt_terrace"
-                alt="Spitaki Milos - Βεράντα"
-                loading="eager"
-                decoding="async"
-              />
+              <img src="images/FHD0050.JPG" data-i18n-alt="img_alt_terrace" alt="Spitaki Milos - Βεράντα" loading="eager" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="3">
-              <img
-                src="images/BERANTA-1.jpg"
-                alt="Spitaki Milos - Βεράντα 1"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/BERANTA-1.jpg" alt="Spitaki Milos - Βεράντα 1" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="4">
-              <img
-                src="images/BERANTA-2.jpg"
-                alt="Spitaki Milos - Βεράντα 2"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/BERANTA-2.jpg" alt="Spitaki Milos - Βεράντα 2" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="5">
-              <img
-                src="images/BERANTA-3.jpg"
-                alt="Spitaki Milos - Βεράντα 3"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/BERANTA-3.jpg" alt="Spitaki Milos - Βεράντα 3" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="6">
-              <img
-                src="images/BERANTA-4.jpg"
-                alt="Spitaki Milos - Βεράντα 4"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/BERANTA-4.jpg" alt="Spitaki Milos - Βεράντα 4" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="7">
-              <img
-                src="images/BERANTA-5.jpg"
-                alt="Spitaki Milos - Βεράντα 5"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/BERANTA-5.jpg" alt="Spitaki Milos - Βεράντα 5" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="8">
-              <img
-                src="images/BERANTA-6.jpg"
-                alt="Spitaki Milos - Βεράντα 6"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/BERANTA-6.jpg" alt="Spitaki Milos - Βεράντα 6" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="9">
-              <img
-                src="images/BERANTA-7.jpg"
-                alt="Spitaki Milos - Βεράντα 7"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/BERANTA-7.jpg" alt="Spitaki Milos - Βεράντα 7" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="10">
-              <img
-                src="images/BERANTA-8.jpg"
-                alt="Spitaki Milos - Βεράντα 8"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/BERANTA-8.jpg" alt="Spitaki Milos - Βεράντα 8" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="11">
-              <img
-                src="images/BERANTA-9.jpg"
-                alt="Spitaki Milos - Βεράντα 9"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/BERANTA-9.jpg" alt="Spitaki Milos - Βεράντα 9" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="12">
-              <img
-                src="images/BERANTA-10.jpg"
-                alt="Spitaki Milos - Βεράντα 10"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/BERANTA-10.jpg" alt="Spitaki Milos - Βεράντα 10" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="13">
-              <img
-                src="images/XOL-1.jpg"
-                alt="Spitaki Milos - Χολ"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/XOL-1.jpg" alt="Spitaki Milos - Χολ" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="14">
-              <img
-                src="images/DOMATIO-1.jpg"
-                data-i18n-alt="img_alt_room_1"
-                alt="Spitaki Milos - Υπνοδωμάτιο 1"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/DOMATIO-1.jpg" data-i18n-alt="img_alt_room_1" alt="Spitaki Milos - Υπνοδωμάτιο 1" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="15">
-              <img
-                src="images/DOMATIO-2.jpg"
-                data-i18n-alt="img_alt_room_2"
-                alt="Spitaki Milos - Υπνοδωμάτιο 2"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/DOMATIO-2.jpg" data-i18n-alt="img_alt_room_2" alt="Spitaki Milos - Υπνοδωμάτιο 2" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="16">
-              <img
-                src="images/DOMATIO-3.jpg"
-                data-i18n-alt="img_alt_room_3"
-                alt="Spitaki Milos - Υπνοδωμάτιο 3"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/DOMATIO-3.jpg" data-i18n-alt="img_alt_room_3" alt="Spitaki Milos - Υπνοδωμάτιο 3" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="17">
-              <img
-                src="images/DOMATIO-4.jpg"
-                data-i18n-alt="img_alt_room_4"
-                alt="Spitaki Milos - Υπνοδωμάτιο 4"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/DOMATIO-4.jpg" data-i18n-alt="img_alt_room_4" alt="Spitaki Milos - Υπνοδωμάτιο 4" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="18">
-              <img
-                src="images/MPANIO-1.jpg"
-                data-i18n-alt="img_alt_bathroom"
-                alt="Spitaki Milos - Μπάνιο"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/MPANIO-1.jpg" data-i18n-alt="img_alt_bathroom" alt="Spitaki Milos - Μπάνιο" loading="lazy" decoding="async" />
             </button>
 
             <button class="thumbBtn" type="button" data-index="19">
-              <img
-                src="images/KOUZINA-1.jpg"
-                data-i18n-alt="img_alt_kitchen"
-                alt="Spitaki Milos - Κουζίνα"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/KOUZINA-1.jpg" data-i18n-alt="img_alt_kitchen" alt="Spitaki Milos - Κουζίνα" loading="lazy" decoding="async" />
             </button>
           </div>
 
           <div class="galleryHint" data-i18n="gallery_hint"></div>
         </div>
 
-        <div class="card mini" style="background:rgba(255,255,255,.06)">
+        <div class="card mini" style="background:rgba(255,255,255,.08)">
           <b data-i18n="tip_title"></b>
-          <span style="color:var(--muted);font-size:13px;line-height:1.6" data-i18n="tip_text"></span>
+          <span style="color:var(--muted);font-size:13px;line-height:1.7" data-i18n="tip_text"></span>
         </div>
+      </div>
+    </div>
+
+    <div class="trustRow">
+      <div class="trustCard">
+        <div class="trustIcon">✓</div>
+        <span class="trustTitle" data-i18n="trust_1_title"></span>
+        <p class="trustText" data-i18n="trust_1_text"></p>
+      </div>
+
+      <div class="trustCard">
+        <div class="trustIcon">☼</div>
+        <span class="trustTitle" data-i18n="trust_2_title"></span>
+        <p class="trustText" data-i18n="trust_2_text"></p>
+      </div>
+
+      <div class="trustCard">
+        <div class="trustIcon">✉</div>
+        <span class="trustTitle" data-i18n="trust_3_title"></span>
+        <p class="trustText" data-i18n="trust_3_text"></p>
       </div>
     </div>
 
@@ -1076,19 +1350,19 @@
 
       <div class="card mini">
         <b data-i18n="location_title"></b>
-        <p style="color:var(--muted);margin:0;line-height:1.6" data-i18n="location_p" data-i18n-html="true"></p>
-        <p style="margin:10px 0 0">
+        <p style="color:var(--muted);margin:0;line-height:1.7" data-i18n="location_p" data-i18n-html="true"></p>
+        <p style="margin:12px 0 0">
           <a class="btn ghost" href="https://maps.app.goo.gl/fMrSmKsphguYmS2f9" target="_blank" rel="noopener" data-i18n="open_map"></a>
         </p>
       </div>
 
       <div class="card mini">
         <b data-i18n="request_title"></b>
-        <p style="color:var(--muted);margin:0;line-height:1.6" data-i18n="request_p"></p>
+        <p style="color:var(--muted);margin:0;line-height:1.7" data-i18n="request_p"></p>
 
         <div class="ctaStack" style="margin-top:10px">
-          <div class="ctaRow primaryRow">
-            <a class="btn primary" href="#contact" data-i18n="request_btn_form"></a>
+          <div class="ctaRow">
+            <a class="btn primary full" href="#contact" data-i18n="request_btn_form"></a>
           </div>
 
           <div class="ctaRow">
@@ -1117,7 +1391,7 @@
     <div class="section" id="contact">
       <div class="card mini">
         <b data-i18n="contact_title"></b>
-        <p style="color:var(--muted);margin:8px 0 0;line-height:1.6" data-i18n="contact_p" data-i18n-html="true"></p>
+        <p style="color:var(--muted);margin:8px 0 0;line-height:1.7" data-i18n="contact_p" data-i18n-html="true"></p>
 
         <form class="form" id="inquiryForm" onsubmit="return composeEmail(event)">
           <div class="formGrid">
@@ -1175,6 +1449,18 @@
     </div>
   </div>
 
+  <div class="stickyBooking" id="stickyBooking">
+    <div class="stickyBookingInner">
+      <div class="stickyLead">
+        <p class="stickyLeadTitle" data-i18n="sticky_title"></p>
+        <p class="stickyLeadText" data-i18n="sticky_text"></p>
+      </div>
+
+      <a class="btn primary stickyBtn" href="https://www.airbnb.gr/rooms/856227490864384143?guests=1&adults=1&s=67&unique_share_id=c8b18450-59b1-4be6-be42-56be93a06c76" target="_blank" rel="noopener noreferrer" data-i18n="sticky_airbnb"></a>
+      <a class="btn ghost stickyBtn" href="https://www.booking.com/Share-jv4SCT" target="_blank" rel="noopener noreferrer" data-i18n="sticky_booking"></a>
+    </div>
+  </div>
+
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightboxInner" id="lightboxInner">
       <button class="lightboxBtn lightboxClose" id="lightboxClose" type="button" aria-label="Close">×</button>
@@ -1224,16 +1510,21 @@
     const T = {
       el: {
         meta_title: "Spitaki Milos | Διαμονή στη Μήλο",
-        meta_desc: "Spitaki Milos – διαμονή στη Μήλο (Τρυπητή) με βεράντες και θέα στη θάλασσα. Στείλε αίτημα διαθεσιμότητας ή επικοινώνησε στο WhatsApp.",
+        meta_desc: "Spitaki Milos – διαμονή στη Μήλο (Τρυπητή) με βεράντες και θέα στη θάλασσα. Κράτηση μέσω Airbnb ή Booking.com και άμεση επικοινωνία μέσω WhatsApp.",
         og_title: "Spitaki Milos | Διαμονή στη Μήλο",
-        og_desc: "Τρυπητή Μήλου • Βεράντες με θέα στη θάλασσα • Στείλε αίτημα διαθεσιμότητας",
+        og_desc: "Τρυπητή Μήλου • Βεράντες με θέα στη θάλασσα • Κράτηση μέσω Airbnb ή Booking.com",
 
         brand_subtitle: "Ιδιωτική διαμονή στη Μήλο",
         nav_info: "Πληροφορίες",
         nav_contact: "Επικοινωνία",
 
+        announce_1: "Live σε Airbnb & Booking.com",
+        announce_2: "Ιδανικό για ήρεμη διαμονή",
+        announce_3: "Άμεση επικοινωνία με τον ιδιοκτήτη",
+        announce_cta: "Ζήτησε διαθεσιμότητα",
+
         hero_h1: "Ήρεμη διαμονή στη Μήλο, με άνεση σαν στο σπίτι σας",
-        hero_p: "Καλωσήρθες στο <b>Spitaki Milos</b>. Δες φωτογραφίες, παροχές και τοποθεσία και <b>στείλε αίτημα διαθεσιμότητας</b> για τις ημερομηνίες που σε ενδιαφέρουν.",
+        hero_p: "Καλωσήρθες στο <b>Spitaki Milos</b>. Δες φωτογραφίες, παροχές και τοποθεσία και επίλεξε τον τρόπο που σε εξυπηρετεί καλύτερα: <b>κράτηση μέσω Airbnb</b>, <b>Booking.com</b> ή <b>άμεσο αίτημα διαθεσιμότητας</b>.",
 
         hero_side_title: "Βασικές παροχές",
         hero_side_text: "Όλα όσα χρειάζεσαι για μια άνετη, ξεκούραστη και πρακτική διαμονή στη Μήλο.",
@@ -1245,10 +1536,21 @@
         tag_washer: "Πλυντήριο",
         tag_terraces: "Βεράντες • Θέα θάλασσα",
 
+        booking_panel_title: "Κράτηση ή αίτημα διαθεσιμότητας",
+        booking_panel_sub: "Επίλεξε πλατφόρμα για άμεση κράτηση ή στείλε μήνυμα για διαθεσιμότητα και ειδικές απορίες.",
+        booking_panel_badge: "Άμεση πρόσβαση",
+
         cta_request: "Στείλε αίτημα διαθεσιμότητας",
         cta_airbnb: "Κράτηση μέσω Airbnb",
         cta_booking: "Κράτηση μέσω Booking.com",
         cta_hint: "Για άμεση κράτηση χρησιμοποίησε Airbnb ή Booking.com. Για ερώτηση ή ειδικό αίτημα χρησιμοποίησε τη φόρμα ή το WhatsApp.",
+
+        stat_1_label: "Τοποθεσία",
+        stat_1_value: "Τρυπητή, Μήλος",
+        stat_2_label: "Κατάλληλο για",
+        stat_2_value: "Έως 4 άτομα",
+        stat_3_label: "Highlight",
+        stat_3_value: "Βεράντες με θέα",
 
         img_alt_view: "Spitaki Milos - Θέα",
         img_alt_terrace: "Spitaki Milos - Βεράντα",
@@ -1265,7 +1567,14 @@
         gallery_hint: "Σύρε, πάτα βελάκια, διάλεξε thumbnail ή άνοιξε πλήρη προβολή.",
 
         tip_title: "Tip",
-        tip_text: "Για γρήγορη απάντηση, στείλε τις ημερομηνίες σου από τη φόρμα ή στο WhatsApp.",
+        tip_text: "Για πιο γρήγορη απάντηση, στείλε ημερομηνίες και αριθμό ατόμων από τη φόρμα ή στο WhatsApp.",
+
+        trust_1_title: "Διαθέσιμο σε γνωστές πλατφόρμες",
+        trust_1_text: "Μπορείς να προχωρήσεις σε κράτηση μέσω Airbnb ή Booking.com, ανάλογα με ό,τι σε εξυπηρετεί περισσότερο.",
+        trust_2_title: "Ξεχωρίζει για τις βεράντες",
+        trust_2_text: "Το δυνατό σημείο του σπιτιού είναι οι βεράντες με θέα στη θάλασσα και η ήσυχη αίσθηση διαμονής.",
+        trust_3_title: "Άμεση επικοινωνία",
+        trust_3_text: "Αν θέλεις πληροφορίες πριν κλείσεις, μπορείς να στείλεις email ή μήνυμα στο WhatsApp άμεσα.",
 
         amenities_title: "Παροχές",
         amenity_1: "Wi-Fi, A/C, Smart TV",
@@ -1280,12 +1589,7 @@
 
         location_title: "Τοποθεσία",
         location_p:
-          "Το Spitaki Milos βρίσκεται στην Τρυπητή. Το highlight του σπιτιού είναι οι " +
-          "βεράντες με θέα στη θάλασσα: μια ξύλινη βεράντα σε ιδιωτικό δρόμο (χωρίς " +
-          "φασαρία από αυτοκίνητα και κόσμο), ιδανική για καφέ/ποτό, και μια μεγάλη βεράντα " +
-          "για χαλάρωση, φαγητό ή παρέα. Για τα καθημερινά σου, θα βρεις ΑΒ Βασιλόπουλο " +
-          "σε περίπου 10 λεπτά, ενώ στάση λεωφορείου και φούρνος " +
-          "είναι περίπου 10 λεπτά με τα πόδια.",
+          "Το Spitaki Milos βρίσκεται στην Τρυπητή. Το highlight του σπιτιού είναι οι βεράντες με θέα στη θάλασσα: μια ξύλινη βεράντα σε ιδιωτικό δρόμο, ιδανική για καφέ ή ποτό, και μια μεγάλη βεράντα για χαλάρωση, φαγητό ή παρέα. Για τα καθημερινά σου, θα βρεις ΑΒ Βασιλόπουλο σε περίπου 10 λεπτά, ενώ στάση λεωφορείου και φούρνος είναι περίπου 10 λεπτά με τα πόδια.",
         open_map: "Άνοιγμα χάρτη",
 
         request_title: "Αίτημα διαθεσιμότητας",
@@ -1295,9 +1599,7 @@
         request_btn_booking: "Άνοιγμα Booking.com",
 
         contact_title: "Επικοινωνία / Αίτημα διαθεσιμότητας",
-        contact_p:
-          "Συμπλήρωσε τα στοιχεία και πάτα “Στείλε αίτημα”. Θα ανοίξει έτοιμο email προς <b>info@spitakimilos.com</b> " +
-          "(ή μπορείς να στείλεις το ίδιο μήνυμα στο WhatsApp).",
+        contact_p: "Συμπλήρωσε τα στοιχεία και πάτα “Στείλε αίτημα”. Θα ανοίξει έτοιμο email προς <b>info@spitakimilos.com</b> (ή μπορείς να στείλεις το ίδιο μήνυμα στο WhatsApp).",
 
         lbl_name: "Ονοματεπώνυμο",
         ph_name: "π.χ. Γιώργος Παπαδόπουλος",
@@ -1315,6 +1617,11 @@
         btn_send_email: "Στείλε αίτημα (Email)",
         btn_send_wa: "Στείλε στο WhatsApp",
         helper: "* Δεν αποθηκεύουμε δεδομένα. Η φόρμα απλώς δημιουργεί έτοιμο μήνυμα email/WhatsApp για να σταλεί.",
+
+        sticky_title: "Έτοιμος για κράτηση;",
+        sticky_text: "Άνοιξε απευθείας Airbnb ή Booking.com",
+        sticky_airbnb: "Airbnb",
+        sticky_booking: "Booking",
 
         footer_built: "Built by George Tsirigotis",
 
@@ -1335,16 +1642,21 @@
 
       en: {
         meta_title: "Spitaki Milos | Stay in Milos",
-        meta_desc: "Spitaki Milos – a private stay in Milos (Trypiti) with terraces and sea view. Send an availability request or contact us on WhatsApp.",
+        meta_desc: "Spitaki Milos – a private stay in Milos (Trypiti) with terraces and sea view. Book via Airbnb or Booking.com, or contact us directly on WhatsApp.",
         og_title: "Spitaki Milos | Stay in Milos",
-        og_desc: "Trypiti, Milos • Sea-view terraces • Send an availability request",
+        og_desc: "Trypiti, Milos • Sea-view terraces • Book via Airbnb or Booking.com",
 
         brand_subtitle: "Private stay in Milos",
         nav_info: "Info",
         nav_contact: "Contact",
 
+        announce_1: "Live on Airbnb & Booking.com",
+        announce_2: "Ideal for a peaceful stay",
+        announce_3: "Direct contact with owner",
+        announce_cta: "Check availability",
+
         hero_h1: "A peaceful stay in Milos, with comfort like home",
-        hero_p: "Welcome to <b>Spitaki Milos</b>. Browse photos, amenities and location and <b>send an availability request</b> for your dates.",
+        hero_p: "Welcome to <b>Spitaki Milos</b>. Browse photos, amenities and location and choose what suits you best: <b>book via Airbnb</b>, <b>Booking.com</b> or <b>send a direct availability request</b>.",
 
         hero_side_title: "Key amenities",
         hero_side_text: "Everything you need for a comfortable, practical and relaxing stay in Milos.",
@@ -1356,10 +1668,21 @@
         tag_washer: "Washing machine",
         tag_terraces: "Terraces • Sea view",
 
+        booking_panel_title: "Book or ask for availability",
+        booking_panel_sub: "Choose a platform for instant booking or send a direct message for availability and special questions.",
+        booking_panel_badge: "Quick access",
+
         cta_request: "Send availability request",
         cta_airbnb: "Book on Airbnb",
         cta_booking: "Book on Booking.com",
         cta_hint: "For instant booking, use Airbnb or Booking.com. For questions or special requests, use the form or WhatsApp.",
+
+        stat_1_label: "Location",
+        stat_1_value: "Trypiti, Milos",
+        stat_2_label: "Suitable for",
+        stat_2_value: "Up to 4 guests",
+        stat_3_label: "Highlight",
+        stat_3_value: "Sea-view terraces",
 
         img_alt_view: "Spitaki Milos - Sea view",
         img_alt_terrace: "Spitaki Milos - Terrace",
@@ -1376,7 +1699,14 @@
         gallery_hint: "Swipe, use arrows, pick a thumbnail, or open full screen.",
 
         tip_title: "Tip",
-        tip_text: "For a quick reply, send your dates through the form or on WhatsApp.",
+        tip_text: "For a faster reply, send your dates and number of guests through the form or WhatsApp.",
+
+        trust_1_title: "Available on known platforms",
+        trust_1_text: "You can complete your booking via Airbnb or Booking.com, depending on what suits you best.",
+        trust_2_title: "Known for its terraces",
+        trust_2_text: "The strongest point of the house is its sea-view terraces and the peaceful stay experience.",
+        trust_3_title: "Direct communication",
+        trust_3_text: "If you want details before booking, you can message directly by email or WhatsApp.",
 
         amenities_title: "Amenities",
         amenity_1: "Wi-Fi, A/C, Smart TV",
@@ -1390,12 +1720,7 @@
         amenity_9: "Large fridge",
 
         location_title: "Location",
-        location_p:
-          "Spitaki Milos is located in Trypiti. The highlight of the house is the " +
-          "sea-view terraces: a wooden terrace on a private road (no noise from cars or crowds), " +
-          "ideal for coffee/drinks, and a large terrace for relaxing, meals or spending time together. " +
-          "For daily essentials, you’ll find AB Vassilopoulos in about 10 minutes, while the " +
-          "bus stop and bakery are about a 10-minute walk.",
+        location_p: "Spitaki Milos is located in Trypiti. The highlight of the house is its sea-view terraces: a wooden terrace on a private road, ideal for coffee or drinks, and a large terrace for relaxing, dining or spending time together. For daily essentials, you’ll find AB Vassilopoulos in about 10 minutes, while the bus stop and bakery are about a 10-minute walk.",
         open_map: "Open map",
 
         request_title: "Availability request",
@@ -1405,9 +1730,7 @@
         request_btn_booking: "Open Booking.com",
 
         contact_title: "Contact / Availability request",
-        contact_p:
-          "Fill in your details and press “Send request”. A ready email to <b>info@spitakimilos.com</b> will open " +
-          "(or you can send the same message on WhatsApp).",
+        contact_p: "Fill in your details and press “Send request”. A ready email to <b>info@spitakimilos.com</b> will open (or you can send the same message on WhatsApp).",
 
         lbl_name: "Full name",
         ph_name: "e.g. George Papadopoulos",
@@ -1425,6 +1748,11 @@
         btn_send_email: "Send request (Email)",
         btn_send_wa: "Send on WhatsApp",
         helper: "* We don’t store any data. The form only creates a ready-to-send email/WhatsApp message.",
+
+        sticky_title: "Ready to book?",
+        sticky_text: "Open Airbnb or Booking.com directly",
+        sticky_airbnb: "Airbnb",
+        sticky_booking: "Booking",
 
         footer_built: "Built by George Tsirigotis",
 
