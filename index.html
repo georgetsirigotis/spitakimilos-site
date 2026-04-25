@@ -1236,6 +1236,88 @@
       font-weight:850;
     }
 
+    /* Beaches / Island Gallery */
+    .beachGalleryGrid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:12px;
+    }
+
+    .beachCard{
+      border:none;
+      padding:0;
+      text-align:left;
+      font:inherit;
+      color:inherit;
+      cursor:pointer;
+      overflow:hidden;
+      border-radius:24px;
+      background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.88));
+      border:1px solid rgba(8,38,58,.08);
+      box-shadow:var(--shadowSoft);
+      transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+    }
+
+    .beachCard:hover{
+      transform:translateY(-3px);
+      box-shadow:0 18px 36px rgba(8,38,58,.13);
+      border-color:rgba(14,165,233,.24);
+    }
+
+    .beachCardImgWrap{
+      height:220px;
+      overflow:hidden;
+      background:rgba(255,255,255,.7);
+    }
+
+    .beachCard img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      transition:transform .35s ease, filter .35s ease;
+    }
+
+    .beachCard:hover img{
+      transform:scale(1.045);
+      filter:saturate(1.06);
+    }
+
+    .beachCardBody{
+      padding:15px 16px 17px;
+    }
+
+    .beachCardTitle{
+      display:block;
+      font-size:17px;
+      font-weight:850;
+      margin-bottom:6px;
+    }
+
+    .beachCardText{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .beachMiniNote{
+      margin-top:10px;
+      color:rgba(8,38,58,.60);
+      font-size:13px;
+      line-height:1.65;
+      text-align:center;
+    }
+
+    #beachLightboxCaption{
+      white-space:normal;
+      text-align:center;
+      border-radius:18px;
+      line-height:1.45;
+      max-width:min(90vw, 820px);
+    }
+
     @media (max-width:1050px){
       .heroBanner,
       .hero{
@@ -1247,6 +1329,10 @@
       .grid,
       .statsStrip{
         grid-template-columns:1fr;
+      }
+
+      .beachGalleryGrid{
+        grid-template-columns:repeat(2,1fr);
       }
     }
 
@@ -1338,6 +1424,16 @@
         bottom:-44px;
         font-size:13px;
         max-width:88vw;
+      }
+    }
+
+    @media (max-width:650px){
+      .beachGalleryGrid{
+        grid-template-columns:1fr;
+      }
+
+      .beachCardImgWrap{
+        height:235px;
       }
     }
   </style>
@@ -1749,6 +1845,111 @@
       </div>
     </div>
 
+    <div class="sectionTitleWrap" id="paralies">
+      <div>
+        <h2 class="sectionTitle" data-i18n="beaches_section_title">Παραλίες</h2>
+        <p class="sectionText" data-i18n="beaches_section_text">
+          Μερικές εικόνες από αγαπημένα σημεία της Μήλου, για να πάρεις μια γεύση από το νησί πριν την άφιξή σου.
+        </p>
+      </div>
+    </div>
+
+    <div class="beachGalleryGrid" id="beachGallery">
+      <button class="beachCard" type="button"
+        data-beach-src="images/sarakiniko.jpg"
+        data-title-el="Σαρακίνικο"
+        data-title-en="Sarakiniko"
+        data-caption-el="Λευκό ηφαιστειακό τοπίο και ένα από τα πιο αναγνωρίσιμα σημεία της Μήλου."
+        data-caption-en="White volcanic landscape and one of Milos’ most recognizable spots.">
+        <div class="beachCardImgWrap">
+          <img src="images/sarakiniko.jpg" alt="Σαρακίνικο Μήλου" loading="lazy" decoding="async" />
+        </div>
+        <div class="beachCardBody">
+          <span class="beachCardTitle" data-i18n="beach_sarakiniko_title">Σαρακίνικο</span>
+          <p class="beachCardText" data-i18n="beach_sarakiniko_text">Το πιο χαρακτηριστικό σεληνιακό τοπίο της Μήλου.</p>
+        </div>
+      </button>
+
+      <button class="beachCard" type="button"
+        data-beach-src="images/kleftiko.jpg"
+        data-title-el="Κλέφτικο"
+        data-title-en="Kleftiko"
+        data-caption-el="Εντυπωσιακοί βράχοι, θαλάσσιες σπηλιές και νερά που αξίζει να δεις με σκάφος."
+        data-caption-en="Impressive rocks, sea caves and waters worth visiting by boat.">
+        <div class="beachCardImgWrap">
+          <img src="images/kleftiko.jpg" alt="Κλέφτικο Μήλου" loading="lazy" decoding="async" />
+        </div>
+        <div class="beachCardBody">
+          <span class="beachCardTitle" data-i18n="beach_kleftiko_title">Κλέφτικο</span>
+          <p class="beachCardText" data-i18n="beach_kleftiko_text">Ένα από τα πιο εντυπωσιακά θαλάσσια τοπία του νησιού.</p>
+        </div>
+      </button>
+
+      <button class="beachCard" type="button"
+        data-beach-src="images/tsigrado.jpg"
+        data-title-el="Τσιγκράδο"
+        data-title-en="Tsigrado"
+        data-caption-el="Μικρή και ιδιαίτερη παραλία με εντυπωσιακή πρόσβαση και όμορφα νερά."
+        data-caption-en="A small, unique beach with striking access and beautiful waters.">
+        <div class="beachCardImgWrap">
+          <img src="images/tsigrado.jpg" alt="Τσιγκράδο Μήλου" loading="lazy" decoding="async" />
+        </div>
+        <div class="beachCardBody">
+          <span class="beachCardTitle" data-i18n="beach_tsigrado_title">Τσιγκράδο</span>
+          <p class="beachCardText" data-i18n="beach_tsigrado_text">Μικρή παραλία με ξεχωριστή αίσθηση περιπέτειας.</p>
+        </div>
+      </button>
+
+      <button class="beachCard" type="button"
+        data-beach-src="images/firiplaka.jpg"
+        data-title-el="Φυριπλάκα"
+        data-title-en="Firiplaka"
+        data-caption-el="Μεγάλη παραλία με χρωματιστούς βράχους και καθαρά νερά."
+        data-caption-en="A long beach with colorful cliffs and clear waters.">
+        <div class="beachCardImgWrap">
+          <img src="images/firiplaka.jpg" alt="Φυριπλάκα Μήλου" loading="lazy" decoding="async" />
+        </div>
+        <div class="beachCardBody">
+          <span class="beachCardTitle" data-i18n="beach_firiplaka_title">Φυριπλάκα</span>
+          <p class="beachCardText" data-i18n="beach_firiplaka_text">Μεγάλη παραλία, ιδανική για χαλαρή μέρα δίπλα στη θάλασσα.</p>
+        </div>
+      </button>
+
+      <button class="beachCard" type="button"
+        data-beach-src="images/papafragas.jpg"
+        data-title-el="Παπάφραγκας"
+        data-title-en="Papafragas"
+        data-caption-el="Μικρός όρμος με εντυπωσιακούς βραχώδεις σχηματισμούς."
+        data-caption-en="A small cove with impressive rock formations.">
+        <div class="beachCardImgWrap">
+          <img src="images/papafragas.jpg" alt="Παπάφραγκας Μήλου" loading="lazy" decoding="async" />
+        </div>
+        <div class="beachCardBody">
+          <span class="beachCardTitle" data-i18n="beach_papafragas_title">Παπάφραγκας</span>
+          <p class="beachCardText" data-i18n="beach_papafragas_text">Ένα ιδιαίτερο σημείο με χαρακτηριστικό κυκλαδίτικο τοπίο.</p>
+        </div>
+      </button>
+
+      <button class="beachCard" type="button"
+        data-beach-src="images/plaka-sunset.jpg"
+        data-title-el="Ηλιοβασίλεμα στην Πλάκα"
+        data-title-en="Sunset in Plaka"
+        data-caption-el="Η Πλάκα είναι από τα πιο όμορφα σημεία για απογευματινή βόλτα και ηλιοβασίλεμα."
+        data-caption-en="Plaka is one of the most beautiful spots for an evening walk and sunset.">
+        <div class="beachCardImgWrap">
+          <img src="images/plaka-sunset.jpg" alt="Ηλιοβασίλεμα στην Πλάκα Μήλου" loading="lazy" decoding="async" />
+        </div>
+        <div class="beachCardBody">
+          <span class="beachCardTitle" data-i18n="beach_plaka_title">Ηλιοβασίλεμα στην Πλάκα</span>
+          <p class="beachCardText" data-i18n="beach_plaka_text">Ιδανικό σημείο για βόλτα, φωτογραφίες και θέα στο ηλιοβασίλεμα.</p>
+        </div>
+      </button>
+    </div>
+
+    <div class="beachMiniNote" data-i18n="beaches_note">
+      Οι φωτογραφίες είναι ενδεικτικές από το νησί και βοηθούν τον επισκέπτη να γνωρίσει καλύτερα τη Μήλο.
+    </div>
+
     <div class="section" id="contact">
       <div class="card mini">
         <b data-i18n="contact_title"></b>
@@ -1829,6 +2030,16 @@
       <img class="lightboxImg" id="lightboxImg" src="" alt="" />
       <button class="lightboxBtn lightboxNext" id="lightboxNext" type="button" aria-label="Next">›</button>
       <div class="lightboxCaption" id="lightboxCaption">Spitaki Milos</div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="beachLightbox" aria-hidden="true">
+    <div class="lightboxInner" id="beachLightboxInner">
+      <button class="lightboxBtn lightboxClose" id="beachLightboxClose" type="button" aria-label="Close">×</button>
+      <button class="lightboxBtn lightboxPrev" id="beachLightboxPrev" type="button" aria-label="Previous">‹</button>
+      <img class="lightboxImg" id="beachLightboxImg" src="" alt="" />
+      <button class="lightboxBtn lightboxNext" id="beachLightboxNext" type="button" aria-label="Next">›</button>
+      <div class="lightboxCaption" id="beachLightboxCaption">Παραλίες Μήλου</div>
     </div>
   </div>
 
@@ -1978,7 +2189,8 @@
         option_direct_btn: "Στείλε αίτημα",
 
         details_section_title: "Πληροφορίες διαμονής",
-        
+        details_section_text: "Όλα όσα χρειάζεται να γνωρίζει ο επισκέπτης, παρουσιασμένα καθαρά και πρακτικά.",
+
         amenities_title: "Παροχές",
         amenity_1: "Wi-Fi, A/C, Smart TV",
         amenity_2: "Κουζίνα με πλήρη εξοπλισμό",
@@ -2001,6 +2213,7 @@
         request_btn_booking: "Άνοιγμα Booking.com",
 
         faq_section_title: "Συχνές ερωτήσεις",
+        faq_section_text: "Μερικά χρήσιμα σημεία που βοηθούν τον επισκέπτη πριν την κράτηση ή την επικοινωνία.",
         faq_1_q: "Ποιος είναι ο καλύτερος τρόπος για άμεση κράτηση;",
         faq_1_a: "Αν θέλεις να προχωρήσεις απευθείας, μπορείς να ανοίξεις την καταχώριση στο Airbnb ή στο Booking.com και να δεις τη διαθεσιμότητα εκείνη τη στιγμή.",
         faq_2_q: "Μπορώ να ρωτήσω πρώτα για διαθεσιμότητα πριν κλείσω;",
@@ -2009,6 +2222,22 @@
         faq_3_a: "Το Spitaki Milos είναι κατάλληλο για έως 4 άτομα, με κύριο υπνοδωμάτιο και επιπλέον δυνατότητα ύπνου στο σαλόνι.",
         faq_4_q: "Τι ξεχωρίζει περισσότερο στο ακίνητο;",
         faq_4_a: "Το στοιχείο που ξεχωρίζει περισσότερο είναι οι βεράντες με θέα στη θάλασσα και η ήσυχη αίσθηση της περιοχής στην Τρυπητή.",
+
+        beaches_section_title: "Παραλίες",
+        beaches_section_text: "Μερικές εικόνες από αγαπημένα σημεία της Μήλου, για να πάρεις μια γεύση από το νησί πριν την άφιξή σου.",
+        beach_sarakiniko_title: "Σαρακίνικο",
+        beach_sarakiniko_text: "Το πιο χαρακτηριστικό σεληνιακό τοπίο της Μήλου.",
+        beach_kleftiko_title: "Κλέφτικο",
+        beach_kleftiko_text: "Ένα από τα πιο εντυπωσιακά θαλάσσια τοπία του νησιού.",
+        beach_tsigrado_title: "Τσιγκράδο",
+        beach_tsigrado_text: "Μικρή παραλία με ξεχωριστή αίσθηση περιπέτειας.",
+        beach_firiplaka_title: "Φυριπλάκα",
+        beach_firiplaka_text: "Μεγάλη παραλία, ιδανική για χαλαρή μέρα δίπλα στη θάλασσα.",
+        beach_papafragas_title: "Παπάφραγκας",
+        beach_papafragas_text: "Ένα ιδιαίτερο σημείο με χαρακτηριστικό κυκλαδίτικο τοπίο.",
+        beach_plaka_title: "Ηλιοβασίλεμα στην Πλάκα",
+        beach_plaka_text: "Ιδανικό σημείο για βόλτα, φωτογραφίες και θέα στο ηλιοβασίλεμα.",
+        beaches_note: "Οι φωτογραφίες είναι ενδεικτικές από το νησί και βοηθούν τον επισκέπτη να γνωρίσει καλύτερα τη Μήλο.",
 
         contact_title: "Επικοινωνία / Αίτημα διαθεσιμότητας",
         contact_p: "Συμπλήρωσε τα στοιχεία και πάτα “Στείλε αίτημα”. Θα ανοίξει έτοιμο email προς <b>info@spitakimilos.com</b> (ή μπορείς να στείλεις το ίδιο μήνυμα στο WhatsApp).",
@@ -2191,6 +2420,22 @@
         faq_4_q: "What is the main highlight of the property?",
         faq_4_a: "The strongest highlight is the sea-view terraces and the peaceful feel of the area in Trypiti.",
 
+        beaches_section_title: "Beaches",
+        beaches_section_text: "A few images from favorite spots around Milos, so guests can get a feeling of the island before they arrive.",
+        beach_sarakiniko_title: "Sarakiniko",
+        beach_sarakiniko_text: "The most iconic moon-like landscape of Milos.",
+        beach_kleftiko_title: "Kleftiko",
+        beach_kleftiko_text: "One of the island’s most impressive sea landscapes.",
+        beach_tsigrado_title: "Tsigrado",
+        beach_tsigrado_text: "A small beach with a special sense of adventure.",
+        beach_firiplaka_title: "Firiplaka",
+        beach_firiplaka_text: "A long beach, ideal for a relaxed day by the sea.",
+        beach_papafragas_title: "Papafragas",
+        beach_papafragas_text: "A unique spot with a characteristic Cycladic landscape.",
+        beach_plaka_title: "Sunset in Plaka",
+        beach_plaka_text: "An ideal place for a walk, photos and sunset views.",
+        beaches_note: "These images are indicative island photos and help guests discover Milos before their stay.",
+
         contact_title: "Contact / Availability request",
         contact_p: "Fill in your details and press “Send request”. A ready email to <b>info@spitakimilos.com</b> will open (or you can send the same message on WhatsApp).",
 
@@ -2258,6 +2503,17 @@
     const lightboxPrev = document.getElementById("lightboxPrev");
     const lightboxNext = document.getElementById("lightboxNext");
 
+    let beachGalleryItems = [];
+    let beachGalleryIndex = 0;
+
+    const beachLightbox = document.getElementById("beachLightbox");
+    const beachLightboxInner = document.getElementById("beachLightboxInner");
+    const beachLightboxImg = document.getElementById("beachLightboxImg");
+    const beachLightboxCaption = document.getElementById("beachLightboxCaption");
+    const beachLightboxClose = document.getElementById("beachLightboxClose");
+    const beachLightboxPrev = document.getElementById("beachLightboxPrev");
+    const beachLightboxNext = document.getElementById("beachLightboxNext");
+
     function getInitialLang() {
       const urlLang = new URLSearchParams(window.location.search).get("lang");
       if (urlLang && T[urlLang]) return urlLang;
@@ -2278,6 +2534,10 @@
 
     function lightboxIsOpen() {
       return lightbox.classList.contains("open");
+    }
+
+    function beachLightboxIsOpen() {
+      return beachLightbox && beachLightbox.classList.contains("open");
     }
 
     function createDots() {
@@ -2347,7 +2607,9 @@
     function closeLightboxModal() {
       lightbox.classList.remove("open");
       lightbox.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
+      if (!beachLightboxIsOpen()) {
+        document.body.style.overflow = "";
+      }
     }
 
     function showPrevImage() {
@@ -2374,6 +2636,116 @@
 
       createDots();
       setFeatured(0);
+    }
+
+    function getBeachLangValue(item, key) {
+      const langKey = currentLang === "en" ? `${key}En` : `${key}El`;
+      return item[langKey] || item[`${key}El`] || "";
+    }
+
+    function updateBeachLightboxContent(index) {
+      const item = beachGalleryItems[index];
+      if (!item || !beachLightboxImg || !beachLightboxCaption) return;
+
+      const title = getBeachLangValue(item, "title");
+      const caption = getBeachLangValue(item, "caption");
+
+      beachLightboxImg.src = item.src;
+      beachLightboxImg.alt = title;
+      beachLightboxCaption.textContent = caption ? `${title} — ${caption}` : title;
+    }
+
+    function openBeachLightbox(index = 0) {
+      if (!beachGalleryItems.length || !beachLightbox) return;
+
+      beachGalleryIndex = index;
+      updateBeachLightboxContent(beachGalleryIndex);
+
+      beachLightbox.classList.add("open");
+      beachLightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeBeachLightboxModal() {
+      if (!beachLightbox) return;
+
+      beachLightbox.classList.remove("open");
+      beachLightbox.setAttribute("aria-hidden", "true");
+
+      if (!lightboxIsOpen()) {
+        document.body.style.overflow = "";
+      }
+    }
+
+    function showPrevBeachImage() {
+      if (!beachGalleryItems.length) return;
+      beachGalleryIndex = (beachGalleryIndex - 1 + beachGalleryItems.length) % beachGalleryItems.length;
+      updateBeachLightboxContent(beachGalleryIndex);
+    }
+
+    function showNextBeachImage() {
+      if (!beachGalleryItems.length) return;
+      beachGalleryIndex = (beachGalleryIndex + 1) % beachGalleryItems.length;
+      updateBeachLightboxContent(beachGalleryIndex);
+    }
+
+    function initBeachGallery() {
+      const beachCards = Array.from(document.querySelectorAll(".beachCard"));
+
+      beachGalleryItems = beachCards.map((card) => ({
+        src: card.getAttribute("data-beach-src"),
+        titleEl: card.getAttribute("data-title-el") || "",
+        titleEn: card.getAttribute("data-title-en") || "",
+        captionEl: card.getAttribute("data-caption-el") || "",
+        captionEn: card.getAttribute("data-caption-en") || ""
+      }));
+
+      beachCards.forEach((card, index) => {
+        card.addEventListener("click", () => {
+          openBeachLightbox(index);
+        });
+      });
+
+      if (beachLightboxClose) {
+        beachLightboxClose.addEventListener("click", closeBeachLightboxModal);
+      }
+
+      if (beachLightboxPrev) {
+        beachLightboxPrev.addEventListener("click", showPrevBeachImage);
+      }
+
+      if (beachLightboxNext) {
+        beachLightboxNext.addEventListener("click", showNextBeachImage);
+      }
+
+      if (beachLightbox) {
+        beachLightbox.addEventListener("click", (e) => {
+          if (e.target === beachLightbox) {
+            closeBeachLightboxModal();
+          }
+        });
+      }
+
+      if (beachLightboxInner) {
+        addSwipeSupport(beachLightboxInner, () => {
+          showNextBeachImage();
+        }, () => {
+          showPrevBeachImage();
+        });
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (!beachLightboxIsOpen()) return;
+
+        if (e.key === "Escape" || e.key === "ArrowLeft" || e.key === "ArrowRight") {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+
+          if (e.key === "Escape") closeBeachLightboxModal();
+          if (e.key === "ArrowLeft") showPrevBeachImage();
+          if (e.key === "ArrowRight") showNextBeachImage();
+        }
+      }, true);
     }
 
     function initFaq() {
@@ -2435,6 +2807,11 @@
 
       createDots();
       setFeatured(currentGalleryIndex);
+
+      if (beachLightboxIsOpen()) {
+        updateBeachLightboxContent(beachGalleryIndex);
+      }
+
       syncLogoSync();
     }
 
@@ -2622,6 +2999,7 @@
 
     initGallery();
     initFaq();
+    initBeachGallery();
     setLang(getInitialLang());
     syncLogoSync();
     updateWhatsAppLink();
