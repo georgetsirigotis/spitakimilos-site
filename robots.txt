@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://spitakimilos.com/sitemap.xml
