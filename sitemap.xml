@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://spitakimilos.com/</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="el" href="https://spitakimilos.com/?lang=el" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://spitakimilos.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spitakimilos.com/" />
+    <image:image>
+      <image:loc>https://spitakimilos.com/images/social-preview.jpg</image:loc>
+      <image:title>Spitaki Milos sea-view terrace in Trypiti</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://spitakimilos.com/images/webp/SPITAKIMILOS.webp</image:loc>
+      <image:title>Spitaki Milos traditional Milos home since 1819</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://spitakimilos.com/milos-guide</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="el" href="https://spitakimilos.com/milos-guide?lang=el" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://spitakimilos.com/milos-guide?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spitakimilos.com/milos-guide" />
+    <image:image>
+      <image:loc>https://spitakimilos.com/images/webp/sarakiniko.webp</image:loc>
+      <image:title>Sarakiniko beach in Milos</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://spitakimilos.com/images/webp/kleftiko.webp</image:loc>
+      <image:title>Kleftiko boat trip in Milos</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://spitakimilos.com/images/webp/firiplaka.webp</image:loc>
+      <image:title>Fyriplaka beach in Milos</image:title>
+    </image:image>
+  </url>
+
+</urlset>
